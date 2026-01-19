@@ -16,9 +16,11 @@ export default function ResumePage() {
             <Card>
               <h2 className="text-lg font-semibold">Summary</h2>
               <p className="mt-2 text-zinc-300">
-                Senior DevOps / Cloud Engineer with 15 years in IT, focused on AWS platforms,
-                Terraform automation, GitLab CI/CD, and reliability practices.
+                Senior DevOps Engineer with 10+ years in IT, specialized in AWS/GCP, Terraform,
+                Kubernetes, GitLab CI/CD, and observability. Experienced standardizing pipelines across
+                teams and accelerating release cadence (1/week → 2–6/day).
               </p>
+
 
               <div className="mt-5 flex flex-wrap gap-3">
                 <Button href="/resume.pdf" variant="primary">Download PDF</Button>

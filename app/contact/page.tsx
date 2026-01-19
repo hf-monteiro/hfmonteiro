@@ -15,18 +15,22 @@ export default function ContactPage() {
             <Card>
               <h2 className="text-lg font-semibold">Email</h2>
               <p className="mt-2 text-zinc-400">Fastest for proposals and introductions.</p>
-              <a className="mt-4 inline-block text-zinc-200 hover:text-zinc-100" href="mailto:you@example.com">
-                you@example.com →
+              <a href="mailto:higor.fmonteiro@gmail.com" className="...">
+                higor.fmonteiro@gmail.com →
               </a>
+              <a href="tel:+5551981078364" className="...">
+                +55 51 98107-8364 →
+              </a>
+
             </Card>
 
             <Card>
               <h2 className="text-lg font-semibold">Profiles</h2>
               <div className="mt-4 flex flex-col gap-2">
-                <a className="text-zinc-200 hover:text-zinc-100" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+                <a className="text-zinc-200 hover:text-zinc-100" href="https://www.linkedin.com/in/higorfm/" target="_blank" rel="noreferrer">
                   LinkedIn →
                 </a>
-                <a className="text-zinc-200 hover:text-zinc-100" href="https://github.com/" target="_blank" rel="noreferrer">
+                <a className="text-zinc-200 hover:text-zinc-100" href="https://github.com/hf-monteiro" target="_blank" rel="noreferrer">
                   GitHub →
                 </a>
               </div>

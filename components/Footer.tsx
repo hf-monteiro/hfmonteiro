@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="py-10 text-sm text-zinc-400">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
             <div>
-              <p className="font-semibold text-zinc-200">Higor Fernandes Monteiro</p>
+              <p className="font-semibold text-zinc-200">Higor Monteiro</p>
               <p className="mt-2 max-w-md">
                 Senior DevOps / Cloud Engineer — AWS, Terraform, GitLab CI/CD, EKS.
               </p>

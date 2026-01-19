@@ -7,66 +7,71 @@ export type CaseStudy = {
   whatIDid: string[];
   outcomes: string[];
   stack: string[];
-  notes?: string[];
 };
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "eks-platform-multiaccount",
-    title: "EKS Platform on AWS (Multi-account)",
-    subtitle: "Terraform modules + standardized networking patterns for scalable delivery.",
-    tags: ["AWS", "EKS", "Terraform", "Networking"],
-    context:
-      "Multiple environments and teams needed a consistent, repeatable platform to deploy microservices safely across AWS accounts.",
-    whatIDid: [
-      "Designed modular Terraform structure for VPC, EKS, endpoints, and shared services.",
-      "Defined environment patterns (DEV/INT/STG/PROD) and reusable CI/CD workflows.",
-      "Established guardrails (least privilege IAM, controlled ingress, standardized observability hooks)."
-    ],
-    outcomes: [
-      "Faster environment provisioning and consistent infrastructure across accounts.",
-      "Reduced manual steps and configuration drift via IaC standards.",
-      "Improved operational reliability through consistent monitoring/alerting patterns."
-    ],
-    stack: ["EKS", "VPC", "PrivateLink", "Terraform", "GitLab CI/CD"]
-  },
-  {
-    slug: "gitlab-cicd-standardization",
+    slug: "gitlab-cicd-standardization-at-scale",
     title: "GitLab CI/CD Standardization at Scale",
-    subtitle: "From copy/paste pipelines to reusable patterns and safer deploy workflows.",
-    tags: ["GitLab", "CI/CD", "DevOps", "Governance"],
+    subtitle:
+      "From fragmented pipelines to a standardized, scalable CI/CD platform.",
+    tags: ["GitLab CI/CD", "DevOps", "Automation", "Governance"],
     context:
-      "Teams maintained many repositories with inconsistent pipeline conventions, causing frequent breakage and slow updates.",
+      "Multiple development teams were maintaining independent GitLab pipelines with inconsistent stages, naming conventions, and deployment rules. This led to slow delivery, fragile releases, and high operational overhead for DevOps support.",
     whatIDid: [
-      "Created a standard pipeline structure with clear stages and rules for MR/default branch.",
-      "Introduced reusable templates/patterns to reduce duplication across repos.",
-      "Implemented safer deploy conventions (manual prod, controlled applies, clear job naming)."
+      "Designed a standardized GitLab CI/CD pipeline model with clear stages, naming conventions, and reusable patterns.",
+      "Created shared pipeline templates to eliminate copy/paste across repositories.",
+      "Implemented safer deployment workflows with manual production gates and environment-specific rules.",
+      "Worked closely with development teams to onboard repositories incrementally without breaking existing delivery."
     ],
     outcomes: [
-      "Less pipeline drift and fewer “special snowflake” repos.",
-      "Easier rollout of improvements across multiple services.",
-      "Reduced DevOps bottleneck by giving teams a clear standard."
+      "Reduced release cycle time by ~800%, moving from weekly releases to multiple releases per day.",
+      "Significantly decreased pipeline maintenance effort and configuration drift.",
+      "Improved developer experience by providing a clear, documented CI/CD standard."
     ],
-    stack: ["GitLab CI", "Docker", "Terraform", "Runners"]
+    stack: ["GitLab CI", "Docker", "Terraform", "Kubernetes"]
   },
   {
-    slug: "observability-noise-reduction",
-    title: "Observability: Reducing Noise Without Missing Incidents",
-    subtitle: "Alert hygiene, severity model, and operational playbooks.",
-    tags: ["SRE", "Observability", "Dynatrace", "Datadog"],
+    slug: "aws-multi-account-platform-terraform",
+    title: "AWS Multi-Account Platform with Terraform",
+    subtitle:
+      "Reusable infrastructure patterns for consistent environments at scale.",
+    tags: ["AWS", "Terraform", "Platform Engineering", "IaC"],
     context:
-      "Alert fatigue was impacting response quality. The goal was higher signal-to-noise and clearer escalation paths.",
+      "The organization required a reliable way to provision and manage multiple AWS environments while enforcing security, networking, and operational standards across accounts.",
     whatIDid: [
-      "Defined severity levels and escalation rules aligned with real operational impact.",
-      "Reviewed monitors/alerts to eliminate duplicates and tune thresholds.",
-      "Created playbooks and documentation to standardize incident response."
+      "Designed modular Terraform architecture for networking, compute, and shared services.",
+      "Implemented environment separation (DEV, INT, STG, PROD) using consistent patterns.",
+      "Applied least-privilege IAM practices and standardized networking components.",
+      "Enabled repeatable infrastructure provisioning with minimal manual intervention."
     ],
     outcomes: [
-      "Lower alert noise and improved on-call experience.",
-      "Faster triage and more consistent response.",
-      "Better stakeholder communication through consistent severity definitions."
+      "Faster and more predictable environment provisioning.",
+      "Reduced configuration drift through Infrastructure as Code.",
+      "Improved security posture and operational consistency across AWS accounts."
     ],
-    stack: ["Dynatrace", "Datadog", "Runbooks"]
+    stack: ["AWS", "Terraform", "VPC", "IAM", "EKS"]
+  },
+  {
+    slug: "observability-alerting-noise-reduction",
+    title: "Observability & Alerting Noise Reduction",
+    subtitle:
+      "Improving signal-to-noise ratio and operational response.",
+    tags: ["Observability", "SRE", "Monitoring", "Alerting"],
+    context:
+      "Teams were experiencing alert fatigue due to excessive and poorly classified alerts, impacting on-call effectiveness and incident response quality.",
+    whatIDid: [
+      "Reviewed existing monitors and alerts to identify duplication and low-value signals.",
+      "Defined severity levels aligned with real business and operational impact.",
+      "Implemented clearer escalation paths and on-call expectations.",
+      "Documented operational playbooks to standardize incident response."
+    ],
+    outcomes: [
+      "Significant reduction in alert noise and false positives.",
+      "Faster incident triage and improved on-call experience.",
+      "More consistent communication during incidents."
+    ],
+    stack: ["Datadog", "CloudWatch", "Dynatrace", "Runbooks"]
   }
 ];
 
