@@ -7,6 +7,7 @@ export type CaseStudy = {
   whatIDid: string[];
   outcomes: string[];
   stack: string[];
+  notes?: string[];
 };
 
 export const caseStudies: CaseStudy[] = [
