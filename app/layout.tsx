@@ -1,19 +1,21 @@
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Higor Fernandes Monteiro | Senior DevOps Engineer",
+  title: "Higor Monteiro | DevOps / Cloud Engineer",
   description:
-    "Senior DevOps / Cloud Engineer specialized in AWS, Terraform, GitLab CI/CD, EKS and platform engineering."
+    "Case-study driven portfolio: AWS, Terraform, GitLab CI/CD, EKS, and platform engineering."
 };
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="min-h-screen bg-zinc-950 text-zinc-100">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
