@@ -27,9 +27,6 @@ export default function ResumePage() {
                 <Button href="/contact" variant="secondary">Contact</Button>
               </div>
 
-              <p className="mt-4 text-sm text-zinc-500">
-                Put your resume PDF at <code className="text-zinc-300">public/resume.pdf</code>.
-              </p>
             </Card>
 
             <Card>
