@@ -13,12 +13,12 @@ export default function Header() {
       <Container>
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center transition hover:opacity-80">
+          <a href="/" className="flex items-center gap-2 transition hover:opacity-80">
             <Image
               src="/logo.png"
               alt="hfmonteiro.dev"
-              width={48}
-              height={48}
+              width={52}
+              height={52}
               priority
             />
             <span className="sr-only">hfmonteiro.dev</span>
