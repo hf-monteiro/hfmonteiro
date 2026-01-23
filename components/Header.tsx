@@ -26,6 +26,7 @@ export default function Header() {
 
           {/* Navigation */}
           <nav className="flex items-center gap-5">
+            <NavLink href="/solutions" label="Solutions" />
             <NavLink href="/case-studies" label="Case Studies" />
             <NavLink href="/skills" label="Skills" />
             <NavLink href="/resume" label="Resume" />

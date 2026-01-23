@@ -22,6 +22,7 @@ export default function Home() {
 
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="/case-studies" variant="primary">View Case Studies</Button>
+            <Button href="/solutions" variant="secondary">Solutions</Button>
             <Button href="/resume" variant="secondary">Resume</Button>
           </div>
 
