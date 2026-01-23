@@ -135,7 +135,7 @@ export default function SolutionsPage() {
           <h1 className="text-3xl font-semibold text-zinc-100">Solutions</h1>
           <p className="mt-3 text-zinc-300">
             Practical DevOps and Cloud solutions focused on delivery speed, reliability, and security —
-            designed from real-world experience in AWS/GCP, Terraform, Kubernetes and GitLab CI/CD. :contentReference[oaicite:2]{index=2}
+            designed from real-world experience in AWS/GCP, Terraform, Kubernetes and GitLab CI/CD.
           </p>
         </div>
 
