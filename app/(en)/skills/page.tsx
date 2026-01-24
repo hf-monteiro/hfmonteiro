@@ -8,11 +8,20 @@ const copy = {
 };
 
 const groups = [
-  { title: "Cloud (AWS)", items: ["VPC", "IAM", "EKS", "MSK", "RDS/Aurora", "PrivateLink", "Route 53", "CloudWatch"] },
-  { title: "IaC", items: ["Terraform", "Module design", "State patterns", "Environments", "GitOps-friendly structure"] },
-  { title: "CI/CD", items: ["GitLab CI", "Runners on Kubernetes", "Templates", "Rules/Approvals", "Artifacts/Reports"] },
-  { title: "Observability", items: ["Dynatrace", "Datadog", "Alerting strategy", "Tracing basics", "Runbooks"] },
-  { title: "SRE / Ops", items: ["Incident response", "Escalation", "Postmortems", "Reliability guardrails"] }
+  { title: "DevOps & CI/CD", items: ["GitLab CI/CD", "AWS CodePipeline", "AWS CodeBuild", "GitHub Actions"] },
+  { title: "IaC & Automation", items: ["Terraform", "Ansible", "CloudFormation"] },
+  { title: "Cloud Platforms", items: ["AWS", "GCP"] },
+  { title: "Containers & Orchestration", items: ["Kubernetes (EKS, GKE)", "Amazon ECS", "Docker"] },
+  { title: "Traffic Management", items: ["Nginx", "HTTP/S routing", "Proxying", "TLS termination"] },
+  { title: "Monitoring & Observability", items: ["Datadog", "CloudWatch", "New Relic", "Dynatrace"] },
+  { title: "Security & Secrets", items: ["AWS IAM", "AWS WAFv2", "SSM Parameter Store", "Secrets Manager"] },
+  { title: "Code Quality & Security", items: ["Checkov", "SonarQube (CI/CD integration)"] },
+  { title: "Scripting & Languages", items: ["Bash", "Python"] },
+  { title: "Databases", items: ["RDS", "Aurora (PostgreSQL/MySQL)", "MongoDB"] },
+  { title: "Streaming & Messaging", items: ["Kafka", "AWS MSK"] },
+  { title: "Networking & Systems", items: ["Networking protocols", "Systems administration"] },
+  { title: "Methodologies", items: ["Agile", "DevOps", "ITIL", "SDLC"] },
+  { title: "Leadership", items: ["Team management", "Mentoring", "Technical consulting"] }
 ];
 
 export default function SkillsPage() {

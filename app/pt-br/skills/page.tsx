@@ -8,11 +8,20 @@ const copy = {
 };
 
 const groups = [
-  { title: "Cloud (AWS)", items: ["VPC", "IAM", "EKS", "MSK", "RDS/Aurora", "PrivateLink", "Route 53", "CloudWatch"] },
-  { title: "IaC", items: ["Terraform", "Design de modulos", "Padroes de state", "Ambientes", "Estrutura GitOps"] },
-  { title: "CI/CD", items: ["GitLab CI", "Runners no Kubernetes", "Templates", "Rules/Approvals", "Artifacts/Reports"] },
-  { title: "Observabilidade", items: ["Dynatrace", "Datadog", "Estrategia de alertas", "Fundamentos de tracing", "Runbooks"] },
-  { title: "SRE / Ops", items: ["Resposta a incidentes", "Escalacao", "Postmortems", "Guardrails de confiabilidade"] }
+  { title: "DevOps e CI/CD", items: ["GitLab CI/CD", "AWS CodePipeline", "AWS CodeBuild", "GitHub Actions"] },
+  { title: "IaC e Automacao", items: ["Terraform", "Ansible", "CloudFormation"] },
+  { title: "Plataformas Cloud", items: ["AWS", "GCP"] },
+  { title: "Containers e Orquestracao", items: ["Kubernetes (EKS, GKE)", "Amazon ECS", "Docker"] },
+  { title: "Gerenciamento de Trafego", items: ["Nginx", "Roteamento HTTP/S", "Proxy", "Terminacao TLS"] },
+  { title: "Monitoramento e Observabilidade", items: ["Datadog", "CloudWatch", "New Relic", "Dynatrace"] },
+  { title: "Seguranca e Segredos", items: ["AWS IAM", "AWS WAFv2", "SSM Parameter Store", "Secrets Manager"] },
+  { title: "Qualidade e Seguranca de Codigo", items: ["Checkov", "SonarQube (integracao com CI/CD)"] },
+  { title: "Scripting e Linguagens", items: ["Bash", "Python"] },
+  { title: "Bancos de Dados", items: ["RDS", "Aurora (PostgreSQL/MySQL)", "MongoDB"] },
+  { title: "Streaming e Mensageria", items: ["Kafka", "AWS MSK"] },
+  { title: "Redes e Sistemas", items: ["Protocolos de rede", "Administracao de sistemas"] },
+  { title: "Metodologias", items: ["Agile", "DevOps", "ITIL", "SDLC"] },
+  { title: "Lideranca", items: ["Gestao de time", "Mentoria", "Consultoria tecnica"] }
 ];
 
 export default function SkillsPage() {
