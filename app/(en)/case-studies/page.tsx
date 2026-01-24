@@ -1,36 +1,25 @@
 import Container from "@/components/Container";
 import Pill from "@/components/Pill";
 import { getCaseStudies } from "@/lib/caseStudies";
-import { LANGS, normalizeLang } from "@/lib/i18n";
 
 const copy = {
-  en: {
-    title: "Case Studies",
-    intro:
-      "A selection of real projects focused on delivery speed, reliability, and pragmatic platform engineering.",
-    back: "Back to home",
-    read: "Read case study →"
-  },
-  "pt-br": {
-    title: "Estudos de Caso",
-    intro:
-      "Uma selecao de projetos reais focados em velocidade de entrega, confiabilidade e engenharia de plataforma pragmatica.",
-    back: "Voltar para o inicio",
-    read: "Ler estudo de caso →"
-  }
+  title: "Case Studies",
+  intro:
+    "A selection of real projects focused on delivery speed, reliability, and pragmatic platform engineering.",
+  back: "Back to home",
+  read: "Read case study →"
 };
 
-export default function CaseStudiesPage({ params }: { params: { lang: string } }) {
-  const lang = normalizeLang(params.lang);
-  const t = copy[lang];
-  const base = `/${lang}`;
-  const cases = getCaseStudies(lang);
+export default function CaseStudiesPage() {
+  const t = copy;
+  const base = "";
+  const cases = getCaseStudies("en");
 
   return (
     <main>
       <Container>
         <section className="py-14">
-          <a className="text-sm text-zinc-400 hover:text-zinc-200" href={base}>
+          <a className="text-sm text-zinc-400 hover:text-zinc-200" href={`${base}/`}>
             ← {t.back}
           </a>
           <h1 className="mt-4 text-3xl font-semibold">{t.title}</h1>
@@ -60,8 +49,4 @@ export default function CaseStudiesPage({ params }: { params: { lang: string } }
       </Container>
     </main>
   );
-}
-
-export function generateStaticParams() {
-  return LANGS.map((lang) => ({ lang }));
 }

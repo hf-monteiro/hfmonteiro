@@ -2,41 +2,25 @@ import Container from "@/components/Container";
 import Card from "@/components/Card";
 import Pill from "@/components/Pill";
 import { getCaseStudies, getCaseStudy } from "@/lib/caseStudies";
-import { LANGS, normalizeLang } from "@/lib/i18n";
 
 export function generateStaticParams() {
-  return LANGS.flatMap((lang) =>
-    getCaseStudies(lang).map((c) => ({ lang, slug: c.slug }))
-  );
+  return getCaseStudies("pt-br").map((c) => ({ slug: c.slug }));
 }
 
 const copy = {
-  en: {
-    notFound: "Case study not found",
-    backToList: "Back to Case Studies",
-    back: "Back",
-    context: "Context",
-    whatIDid: "What I did",
-    outcomes: "Outcomes",
-    stack: "Tech stack",
-    notes: "Notes"
-  },
-  "pt-br": {
-    notFound: "Estudo de caso nao encontrado",
-    backToList: "Voltar para estudos de caso",
-    back: "Voltar",
-    context: "Contexto",
-    whatIDid: "O que eu fiz",
-    outcomes: "Resultados",
-    stack: "Stack",
-    notes: "Notas"
-  }
+  notFound: "Estudo de caso nao encontrado",
+  backToList: "Voltar para estudos de caso",
+  back: "Voltar",
+  context: "Contexto",
+  whatIDid: "O que eu fiz",
+  outcomes: "Resultados",
+  stack: "Stack",
+  notes: "Notas"
 };
 
-export default function CaseStudyDetail({ params }: { params: { lang: string; slug: string } }) {
-  const lang = normalizeLang(params.lang);
-  const t = copy[lang];
-  const cs = getCaseStudy(lang, params.slug);
+export default function CaseStudyDetail({ params }: { params: { slug: string } }) {
+  const t = copy;
+  const cs = getCaseStudy("pt-br", params.slug);
 
   if (!cs) {
     return (
@@ -44,7 +28,7 @@ export default function CaseStudyDetail({ params }: { params: { lang: string; sl
         <Container>
           <section className="py-14">
             <h1 className="text-2xl font-semibold">{t.notFound}</h1>
-            <a className="mt-6 inline-block text-zinc-300 hover:text-zinc-100" href={`/${lang}/case-studies`}>
+            <a className="mt-6 inline-block text-zinc-300 hover:text-zinc-100" href="/pt-br/case-studies">
               ← {t.backToList}
             </a>
           </section>
@@ -57,7 +41,7 @@ export default function CaseStudyDetail({ params }: { params: { lang: string; sl
     <main>
       <Container>
         <section className="py-14">
-          <a className="text-sm text-zinc-400 hover:text-zinc-200" href={`/${lang}/case-studies`}>
+          <a className="text-sm text-zinc-400 hover:text-zinc-200" href="/pt-br/case-studies">
             ← {t.back}
           </a>
 
@@ -65,8 +49,8 @@ export default function CaseStudyDetail({ params }: { params: { lang: string; sl
           <p className="mt-3 text-zinc-400">{cs.subtitle}</p>
 
           <div className="mt-6 flex flex-wrap gap-2">
-            {cs.tags.map((t) => (
-              <Pill key={t}>{t}</Pill>
+            {cs.tags.map((tag) => (
+              <Pill key={tag}>{tag}</Pill>
             ))}
           </div>
 

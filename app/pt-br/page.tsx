@@ -3,76 +3,42 @@ import Card from "@/components/Card";
 import Pill from "@/components/Pill";
 import Button from "@/components/Button";
 import { getCaseStudies } from "@/lib/caseStudies";
-import { LANGS, normalizeLang } from "@/lib/i18n";
 
 const copy = {
-  en: {
-    intro: "Hi, I’m Higor",
-    title: "DevOps / Cloud Engineer",
-    summary:
-      "I build reliable AWS platforms and delivery pipelines — with clean automation, strong guardrails, and pragmatic SRE practices.",
-    buttons: {
-      caseStudies: "View Case Studies",
-      solutions: "Solutions",
-      resume: "Resume"
-    },
-    pills: ["AWS", "Terraform", "GitLab CI/CD", "EKS", "Networking", "Observability"],
-    highlights: [
-      {
-        title: "Platform Engineering",
-        desc: "Reusable infrastructure patterns (multi-account, environment strategy, guardrails)."
-      },
-      {
-        title: "CI/CD at Scale",
-        desc: "Standardized pipelines, safe deploy flows, and pragmatic governance."
-      },
-      {
-        title: "SRE & Observability",
-        desc: "Alert hygiene, tracing/metrics foundations, and incident response practices."
-      }
-    ],
-    featured: {
-      title: "Featured Case Studies",
-      link: "See all →"
-    }
+  intro: "Ola, sou o Higor",
+  title: "Engenheiro DevOps / Cloud",
+  summary:
+    "Construo plataformas AWS confiaveis e pipelines de entrega — com automacao limpa, guardrails fortes e praticas SRE pragmaticas.",
+  buttons: {
+    caseStudies: "Ver estudos de caso",
+    solutions: "Solucoes",
+    resume: "Curriculo"
   },
-  "pt-br": {
-    intro: "Ola, sou o Higor",
-    title: "Engenheiro DevOps / Cloud",
-    summary:
-      "Construo plataformas AWS confiaveis e pipelines de entrega — com automacao limpa, guardrails fortes e praticas SRE pragmaticas.",
-    buttons: {
-      caseStudies: "Ver estudos de caso",
-      solutions: "Solucoes",
-      resume: "Curriculo"
+  pills: ["AWS", "Terraform", "GitLab CI/CD", "EKS", "Networking", "Observabilidade"],
+  highlights: [
+    {
+      title: "Engenharia de Plataforma",
+      desc: "Padroes reutilizaveis de infraestrutura (multi-conta, estrategia de ambientes, guardrails)."
     },
-    pills: ["AWS", "Terraform", "GitLab CI/CD", "EKS", "Networking", "Observabilidade"],
-    highlights: [
-      {
-        title: "Engenharia de Plataforma",
-        desc: "Padroes reutilizaveis de infraestrutura (multi-conta, estrategia de ambientes, guardrails)."
-      },
-      {
-        title: "CI/CD em Escala",
-        desc: "Pipelines padronizados, fluxos seguros de deploy e governanca pragmatica."
-      },
-      {
-        title: "SRE e Observabilidade",
-        desc: "Higiene de alertas, fundamentos de tracing/metricas e resposta a incidentes."
-      }
-    ],
-    featured: {
-      title: "Estudos de Caso em Destaque",
-      link: "Ver todos →"
+    {
+      title: "CI/CD em Escala",
+      desc: "Pipelines padronizados, fluxos seguros de deploy e governanca pragmatica."
+    },
+    {
+      title: "SRE e Observabilidade",
+      desc: "Higiene de alertas, fundamentos de tracing/metricas e resposta a incidentes."
     }
+  ],
+  featured: {
+    title: "Estudos de Caso em Destaque",
+    link: "Ver todos →"
   }
 };
 
-export default function Home({ params }: { params: { lang: string } }) {
-  const lang = normalizeLang(params.lang);
-  const cases = getCaseStudies(lang).slice(0, 2);
-  const t = copy[lang];
-  const base = `/${lang}`;
+export default function Home() {
+  const cases = getCaseStudies("pt-br").slice(0, 2);
+  const t = copy;
+  const base = "/pt-br";
 
   return (
     <main>
@@ -137,8 +103,4 @@ export default function Home({ params }: { params: { lang: string } }) {
       </Container>
     </main>
   );
-}
-
-export function generateStaticParams() {
-  return LANGS.map((lang) => ({ lang }));
 }

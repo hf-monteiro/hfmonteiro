@@ -16,13 +16,14 @@ type HeaderProps = {
 };
 
 export default function Header({ lang, nav }: HeaderProps) {
-  const base = `/${lang}`;
+  const base = lang === "pt-br" ? "/pt-br" : "";
+  const homeHref = base || "/";
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/70 backdrop-blur">
       <Container>
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <a href={base} className="flex items-center gap-2 transition hover:opacity-80">
+          <a href={homeHref} className="flex items-center gap-2 transition hover:opacity-80">
             <Image
               src="/logo.png"
               alt="hfmonteiro.dev"

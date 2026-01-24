@@ -9,7 +9,7 @@ type FooterProps = {
 };
 
 export default function Footer({ lang, footer, nav }: FooterProps) {
-  const base = `/${lang}`;
+  const base = lang === "pt-br" ? "/pt-br" : "";
   return (
     <footer className="mt-16 border-t border-zinc-800/80">
       <Container>

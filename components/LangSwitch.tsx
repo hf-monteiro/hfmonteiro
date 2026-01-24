@@ -17,7 +17,10 @@ export default function LangSwitch({ lang }: { lang: Lang }) {
     ? segments.slice(1)
     : segments;
 
-  const nextPath = `/${[nextLang, ...rest].join("/")}`;
+  const restPath = rest.join("/");
+  const nextPath = nextLang === "en"
+    ? `/${restPath}`.replace(/\/$/, "") || "/"
+    : `/${[nextLang, ...rest].join("/")}`;
 
   return (
     <a

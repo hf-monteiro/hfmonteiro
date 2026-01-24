@@ -1,33 +1,19 @@
 import Container from "@/components/Container";
 import Card from "@/components/Card";
-import { LANGS, normalizeLang } from "@/lib/i18n";
 
 const copy = {
-  en: {
-    title: "Contact",
-    intro: "Best ways to reach me.",
-    emailTitle: "Email",
-    emailBody: "Fastest for proposals and introductions.",
-    phoneTitle: "Phone",
-    profilesTitle: "Profiles",
-    linkedin: "LinkedIn",
-    github: "GitHub"
-  },
-  "pt-br": {
-    title: "Contato",
-    intro: "Melhores formas de falar comigo.",
-    emailTitle: "Email",
-    emailBody: "Mais rapido para propostas e apresentacoes.",
-    phoneTitle: "Telefone",
-    profilesTitle: "Perfis",
-    linkedin: "LinkedIn",
-    github: "GitHub"
-  }
+  title: "Contact",
+  intro: "Best ways to reach me.",
+  emailTitle: "Email",
+  emailBody: "Fastest for proposals and introductions.",
+  phoneTitle: "Phone",
+  profilesTitle: "Profiles",
+  linkedin: "LinkedIn",
+  github: "GitHub"
 };
 
-export default function ContactPage({ params }: { params: { lang: string } }) {
-  const lang = normalizeLang(params.lang);
-  const t = copy[lang];
+export default function ContactPage() {
+  const t = copy;
 
   return (
     <main>
@@ -81,8 +67,4 @@ export default function ContactPage({ params }: { params: { lang: string } }) {
       </Container>
     </main>
   );
-}
-
-export function generateStaticParams() {
-  return LANGS.map((lang) => ({ lang }));
 }
