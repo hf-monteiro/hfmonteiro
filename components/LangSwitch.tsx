@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Lang, otherLang } from "@/lib/i18n";
 
 const labelMap: Record<Lang, string> = {
@@ -10,7 +10,6 @@ const labelMap: Record<Lang, string> = {
 
 export default function LangSwitch({ lang }: { lang: Lang }) {
   const pathname = usePathname() || "/";
-  const searchParams = useSearchParams();
   const nextLang = otherLang(lang);
 
   const segments = pathname.split("/").filter(Boolean);
@@ -19,12 +18,10 @@ export default function LangSwitch({ lang }: { lang: Lang }) {
     : segments;
 
   const nextPath = `/${[nextLang, ...rest].join("/")}`;
-  const qs = searchParams?.toString();
-  const href = qs ? `${nextPath}?${qs}` : nextPath;
 
   return (
     <a
-      href={href}
+      href={nextPath}
       className="rounded-full border border-zinc-800 px-3 py-1 text-xs text-zinc-300 hover:text-zinc-100"
     >
       {labelMap[lang]}
