@@ -3,7 +3,7 @@ import Card from "@/components/Card";
 import Pill from "@/components/Pill";
 import Button from "@/components/Button";
 import { getCaseStudies } from "@/lib/caseStudies";
-import { normalizeLang } from "@/lib/i18n";
+import { LANGS, normalizeLang } from "@/lib/i18n";
 
 const copy = {
   en: {
@@ -137,4 +137,8 @@ export default function Home({ params }: { params: { lang: string } }) {
       </Container>
     </main>
   );
+}
+
+export function generateStaticParams() {
+  return LANGS.map((lang) => ({ lang }));
 }

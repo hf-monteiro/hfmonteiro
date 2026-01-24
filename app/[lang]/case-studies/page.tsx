@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import Pill from "@/components/Pill";
 import { getCaseStudies } from "@/lib/caseStudies";
-import { normalizeLang } from "@/lib/i18n";
+import { LANGS, normalizeLang } from "@/lib/i18n";
 
 const copy = {
   en: {
@@ -60,4 +60,8 @@ export default function CaseStudiesPage({ params }: { params: { lang: string } }
       </Container>
     </main>
   );
+}
+
+export function generateStaticParams() {
+  return LANGS.map((lang) => ({ lang }));
 }

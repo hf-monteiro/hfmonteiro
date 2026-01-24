@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import Card from "@/components/Card";
 import Button from "@/components/Button";
-import { normalizeLang } from "@/lib/i18n";
+import { LANGS, normalizeLang } from "@/lib/i18n";
 
 const copy = {
   en: {
@@ -74,4 +74,8 @@ export default function ResumePage({ params }: { params: { lang: string } }) {
       </Container>
     </main>
   );
+}
+
+export function generateStaticParams() {
+  return LANGS.map((lang) => ({ lang }));
 }

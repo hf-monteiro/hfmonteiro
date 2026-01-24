@@ -1,5 +1,5 @@
 import Container from "@/components/Container";
-import { Lang, normalizeLang } from "@/lib/i18n";
+import { Lang, LANGS, normalizeLang } from "@/lib/i18n";
 
 type Solution = {
   title: string;
@@ -272,4 +272,8 @@ export default function SolutionsPage({ params }: { params: { lang: string } }) 
       </Container>
     </main>
   );
+}
+
+export function generateStaticParams() {
+  return LANGS.map((lang) => ({ lang }));
 }

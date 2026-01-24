@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import Card from "@/components/Card";
 import Pill from "@/components/Pill";
-import { Lang, normalizeLang } from "@/lib/i18n";
+import { Lang, LANGS, normalizeLang } from "@/lib/i18n";
 
 const copy = {
   en: {
@@ -59,4 +59,8 @@ export default function SkillsPage({ params }: { params: { lang: string } }) {
       </Container>
     </main>
   );
+}
+
+export function generateStaticParams() {
+  return LANGS.map((lang) => ({ lang }));
 }
