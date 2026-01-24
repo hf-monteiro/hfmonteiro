@@ -7,20 +7,20 @@ const copy = {
   intro: "Quick overview + downloadable PDF.",
   summaryTitle: "Summary",
   summaryBody:
-    "Senior DevOps Engineer with 10+ years in IT, specialized in AWS/GCP, Terraform, Kubernetes, GitLab CI/CD, and observability. Experienced standardizing pipelines across teams and accelerating release cadence (1/week to 2-6/day).",
+    "Senior DevOps Engineer with 10+ years in IT focused on AWS platform engineering and CI/CD transformation. I design multi-account foundations, reusable IaC modules, and delivery standards that reduce risk while speeding releases (1/week to 2-6/day). I build secure networking baselines, scalable Kubernetes platforms, and observability guardrails that improve reliability and developer productivity across teams.",
   download: "Download PDF",
   contact: "Contact",
   certsTitle: "Certifications",
   certs: [
-    "AWS Certified Advanced Networking – Specialty (2025–2028)",
-    "AWS Certified DevOps Engineer – Professional (2024–2027)",
-    "AWS Certified Developer – Associate (2023–2027)",
-    "AWS Certified SysOps Administrator – Associate (2021–2024)",
-    "AWS Certified Cloud Practitioner (2020–2027)",
-    "GCP Professional Cloud Architect (2024–2026)",
-    "GCP Professional Cloud Developer (2025–2027)",
-    "Certified SAFe 6 – Practitioner (2024–2025)",
-    "GitLab Certified Associate (2021)"
+    "AWS Certified Advanced Networking – Specialty",
+    "AWS Certified DevOps Engineer – Professional",
+    "AWS Certified Developer – Associate",
+    "AWS Certified SysOps Administrator – Associate",
+    "AWS Certified Cloud Practitioner",
+    "GCP Professional Cloud Architect",
+    "GCP Professional Cloud Developer",
+    "Certified SAFe 6 – Practitioner",
+    "GitLab Certified Associate"
   ]
 };
 
