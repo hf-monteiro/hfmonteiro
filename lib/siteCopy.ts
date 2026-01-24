@@ -22,7 +22,7 @@ const copy: Record<Lang, SiteCopy> = {
   en: {
     nav: {
       solutions: "Solutions",
-      caseStudies: "Case Studies",
+      caseStudies: "Projects",
       skills: "Skills",
       resume: "Resume",
       contact: "Contact"
@@ -35,7 +35,7 @@ const copy: Record<Lang, SiteCopy> = {
   "pt-br": {
     nav: {
       solutions: "Solucoes",
-      caseStudies: "Estudos de Caso",
+      caseStudies: "Projetos",
       skills: "Skills",
       resume: "Curriculo",
       contact: "Contato"

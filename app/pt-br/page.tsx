@@ -10,7 +10,7 @@ const copy = {
   summary:
     "Construo plataformas AWS confiaveis e pipelines de entrega — com automacao limpa, guardrails fortes e praticas SRE pragmaticas.",
   buttons: {
-    caseStudies: "Ver estudos de caso",
+    caseStudies: "Ver projetos",
     solutions: "Solucoes",
     resume: "Curriculo"
   },
@@ -30,7 +30,7 @@ const copy = {
     }
   ],
   featured: {
-    title: "Estudos de Caso em Destaque",
+    title: "Projetos em Destaque",
     link: "Ver todos →"
   }
 };

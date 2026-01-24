@@ -3,11 +3,11 @@ import Pill from "@/components/Pill";
 import { getCaseStudies } from "@/lib/caseStudies";
 
 const copy = {
-  title: "Estudos de Caso",
+  title: "Projetos",
   intro:
     "Uma selecao de projetos reais focados em velocidade de entrega, confiabilidade e engenharia de plataforma pragmatica.",
   back: "Voltar para o inicio",
-  read: "Ler estudo de caso →"
+  read: "Ver projeto →"
 };
 
 export default function CaseStudiesPage() {

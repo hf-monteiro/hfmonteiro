@@ -10,7 +10,7 @@ const copy = {
   summary:
     "I build reliable AWS platforms and delivery pipelines — with clean automation, strong guardrails, and pragmatic SRE practices.",
   buttons: {
-    caseStudies: "View Case Studies",
+    caseStudies: "View Projects",
     solutions: "Solutions",
     resume: "Resume"
   },
@@ -30,7 +30,7 @@ const copy = {
     }
   ],
   featured: {
-    title: "Featured Case Studies",
+    title: "Featured Projects",
     link: "See all →"
   }
 };

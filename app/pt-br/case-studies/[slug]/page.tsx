@@ -8,8 +8,8 @@ export function generateStaticParams() {
 }
 
 const copy = {
-  notFound: "Estudo de caso nao encontrado",
-  backToList: "Voltar para estudos de caso",
+  notFound: "Projeto nao encontrado",
+  backToList: "Voltar para projetos",
   back: "Voltar",
   context: "Contexto",
   whatIDid: "O que eu fiz",
