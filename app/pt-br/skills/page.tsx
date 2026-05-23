@@ -66,29 +66,10 @@ const capabilities = [
     desc:
       "Controles pragmaticos de seguranca cloud, hardening de IAM, gestao de segredos, baselines de WAF e padroes de infraestrutura sensiveis a compliance.",
     items: ["AWS IAM", "AWS WAFv2", "SSM Parameter Store", "Secrets Manager", "Least Privilege", "Security Hardening", "Ambientes Regulados"]
-  },
-  {
-    title: "Bancos, Mensageria e Servicos de Aplicacao",
-    level: "Hands-on",
-    desc:
-      "Servicos de plataforma para workloads de aplicacao, conectividade privada, bancos gerenciados e infraestrutura orientada a eventos.",
-    items: ["RDS", "Aurora PostgreSQL/MySQL", "MongoDB", "Kafka", "AWS MSK", "SQS", "ECS", "Conectividade Privada"]
-  },
-  {
-    title: "Lideranca e Entrega",
-    level: "Ownership senior / lead",
-    desc:
-      "Architecture reviews, consultoria tecnica, mentoria, coordenacao de times, ownership de plataforma e entrega pragmatica entre times de engenharia.",
-    items: ["Consultoria Tecnica", "Mentoria", "Platform Ownership", "Architecture Reviews", "Alinhamento com Stakeholders", "Planejamento de Entrega"]
-  },
-  {
-    title: "Fundacoes de Suporte / Legacy",
-    level: "Experiencia de suporte",
-    desc:
-      "Base anterior de infraestrutura que ainda informa decisoes de arquitetura cloud, especialmente em networking, virtualizacao, Windows e operacoes de data center.",
-    items: ["Bash", "Python", "Windows Infrastructure", "Virtualizacao On-prem", "Data Center", "Infraestrutura de Rede", "ITIL", "SDLC"]
   }
 ];
+
+const supporting = ["RDS", "Aurora", "MongoDB", "Kafka", "AWS MSK", "SQS", "ECS", "Bash", "Python", "Consultoria Tecnica", "Mentoria"];
 
 function LevelBadge({ children }: { children: string }) {
   return (
@@ -129,12 +110,21 @@ export default function SkillsPage() {
                 </div>
                 <p className="mt-3 text-sm text-zinc-400">{capability.desc}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {capability.items.map((item) => (
+                  {capability.items.slice(0, 6).map((item) => (
                     <Pill key={item}>{item}</Pill>
                   ))}
                 </div>
               </Card>
             ))}
+          </div>
+
+          <div className="mt-8">
+            <h2 className="text-base font-semibold">Experiencia de suporte</h2>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {supporting.map((item) => (
+                <Pill key={item}>{item}</Pill>
+              ))}
+            </div>
           </div>
         </section>
       </Container>

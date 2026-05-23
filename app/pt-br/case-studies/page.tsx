@@ -7,10 +7,7 @@ const copy = {
   intro:
     "Case studies focados em arquitetura: plataformas AWS corporativas, networking privado, Kubernetes em producao, CI/CD padronizado e confiabilidade.",
   back: "Voltar para o inicio",
-  read: "Ver projeto →",
-  role: "Papel",
-  scope: "Escopo",
-  impact: "Impacto"
+  read: "Ver projeto →"
 };
 
 export default function CaseStudiesPage() {
@@ -37,23 +34,10 @@ export default function CaseStudiesPage() {
               >
                 <p className="text-sm text-zinc-500">{c.subtitle}</p>
                 <h2 className="mt-2 text-lg font-semibold">{c.title}</h2>
-                <div className="mt-4 grid gap-2 text-sm text-zinc-400">
-                  <p><span className="text-zinc-200">{t.role}:</span> {c.role}</p>
-                  <p><span className="text-zinc-200">{t.scope}:</span> {c.scope}</p>
-                </div>
-                <div className="mt-4">
-                  <p className="text-xs uppercase tracking-wider text-zinc-500">{t.impact}</p>
-                  <ul className="mt-2 space-y-1 text-sm text-zinc-300">
-                    {c.impact.slice(0, 2).map((impact) => (
-                      <li key={impact} className="flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                        <span>{impact}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <p className="mt-3 text-sm text-zinc-300">{c.impact[0]}</p>
+                <p className="mt-3 text-xs uppercase tracking-wider text-zinc-500">{c.role}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {c.tags.slice(0, 6).map((tag) => (
+                  {c.tags.slice(0, 4).map((tag) => (
                     <Pill key={tag}>{tag}</Pill>
                   ))}
                 </div>

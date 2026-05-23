@@ -87,7 +87,7 @@ const copy = {
     "Senior DevOps, Platform Engineering, and Cloud Architecture solutions focused on enterprise AWS platforms, advanced networking, production Kubernetes, delivery velocity, reliability, and security.",
   problem: "Problem",
   outcome: "Outcome",
-  deliverables: "Deliverables",
+  deliverables: "Includes",
   ctaTitle: "Need help with enterprise AWS platform work?",
   ctaBody:
     "Send a short description of your current setup and what you want to improve. I will respond with a suggested approach and next steps.",
@@ -110,11 +110,6 @@ function Card({ s }: { s: Solution }) {
 
       <div className="mt-4 grid gap-3">
         <div>
-          <p className="text-xs uppercase tracking-wider text-zinc-400">{copy.problem}</p>
-          <p className="mt-1 text-sm text-zinc-200">{s.problem}</p>
-        </div>
-
-        <div>
           <p className="text-xs uppercase tracking-wider text-zinc-400">{copy.outcome}</p>
           <p className="mt-1 text-sm text-zinc-200">{s.outcome}</p>
         </div>
@@ -122,7 +117,7 @@ function Card({ s }: { s: Solution }) {
         <div>
           <p className="text-xs uppercase tracking-wider text-zinc-400">{copy.deliverables}</p>
           <ul className="mt-2 space-y-1 text-sm text-zinc-200">
-            {s.deliverables.map((d) => (
+            {s.deliverables.slice(0, 2).map((d) => (
               <li key={d} className="flex gap-2">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400" />
                 <span>{d}</span>
@@ -132,7 +127,7 @@ function Card({ s }: { s: Solution }) {
         </div>
 
         <div className="mt-2 flex flex-wrap gap-2">
-          {s.stack.map((t) => (
+          {s.stack.slice(0, 4).map((t) => (
             <Badge key={t}>{t}</Badge>
           ))}
         </div>

@@ -12,10 +12,9 @@ const copy = {
   buttons: {
     caseStudies: "Ver projetos",
     labs: "Infrastructure Labs",
-    solutions: "Solucoes",
     resume: "Curriculo"
   },
-  pills: ["AWS Architecture", "PrivateLink", "Transit Gateway", "Direct Connect", "Terraform", "EKS", "Istio", "GitLab CI/CD", "SRE"],
+  pills: ["AWS Architecture", "PrivateLink", "EKS", "Terraform", "GitLab CI/CD"],
   highlights: [
     {
       title: "Plataformas AWS Corporativas",
@@ -56,7 +55,6 @@ export default function Home() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href={`${base}/case-studies`} variant="primary">{t.buttons.caseStudies}</Button>
             <Button href={`${base}/labs`} variant="secondary">{t.buttons.labs}</Button>
-            <Button href={`${base}/solutions`} variant="secondary">{t.buttons.solutions}</Button>
             <Button href={`${base}/resume`} variant="secondary">{t.buttons.resume}</Button>
           </div>
 
@@ -93,8 +91,9 @@ export default function Home() {
               >
                 <p className="text-sm text-zinc-500">{c.subtitle}</p>
                 <h3 className="mt-2 text-lg font-semibold">{c.title}</h3>
+                <p className="mt-3 text-sm text-zinc-400">{c.impact[0]}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {c.tags.slice(0, 4).map((tag) => (
+                  {c.tags.slice(0, 3).map((tag) => (
                     <Pill key={tag}>{tag}</Pill>
                   ))}
                 </div>

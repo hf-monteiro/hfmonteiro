@@ -87,7 +87,7 @@ const copy = {
     "Solucoes senior de DevOps, Platform Engineering e Cloud Architecture focadas em plataformas AWS corporativas, networking avancado, Kubernetes em producao, velocidade de entrega, confiabilidade e seguranca.",
   problem: "Problema",
   outcome: "Resultado",
-  deliverables: "Entregaveis",
+  deliverables: "Inclui",
   ctaTitle: "Precisa de ajuda com plataforma AWS corporativa?",
   ctaBody:
     "Envie uma breve descricao do seu setup atual e do que deseja melhorar. Eu respondo com uma abordagem sugerida e proximos passos.",
@@ -110,11 +110,6 @@ function Card({ s }: { s: Solution }) {
 
       <div className="mt-4 grid gap-3">
         <div>
-          <p className="text-xs uppercase tracking-wider text-zinc-400">{copy.problem}</p>
-          <p className="mt-1 text-sm text-zinc-200">{s.problem}</p>
-        </div>
-
-        <div>
           <p className="text-xs uppercase tracking-wider text-zinc-400">{copy.outcome}</p>
           <p className="mt-1 text-sm text-zinc-200">{s.outcome}</p>
         </div>
@@ -122,7 +117,7 @@ function Card({ s }: { s: Solution }) {
         <div>
           <p className="text-xs uppercase tracking-wider text-zinc-400">{copy.deliverables}</p>
           <ul className="mt-2 space-y-1 text-sm text-zinc-200">
-            {s.deliverables.map((d) => (
+            {s.deliverables.slice(0, 2).map((d) => (
               <li key={d} className="flex gap-2">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400" />
                 <span>{d}</span>
@@ -132,7 +127,7 @@ function Card({ s }: { s: Solution }) {
         </div>
 
         <div className="mt-2 flex flex-wrap gap-2">
-          {s.stack.map((t) => (
+          {s.stack.slice(0, 4).map((t) => (
             <Badge key={t}>{t}</Badge>
           ))}
         </div>

@@ -66,29 +66,10 @@ const capabilities = [
     desc:
       "Pragmatic cloud security controls, IAM hardening, secrets management, WAF baselines, and compliance-aware infrastructure patterns.",
     items: ["AWS IAM", "AWS WAFv2", "SSM Parameter Store", "Secrets Manager", "Least Privilege", "Security Hardening", "Regulated Environments"]
-  },
-  {
-    title: "Databases, Messaging & Application Services",
-    level: "Hands-on",
-    desc:
-      "Supporting platform services for application workloads, private connectivity, managed databases, and event-driven infrastructure.",
-    items: ["RDS", "Aurora PostgreSQL/MySQL", "MongoDB", "Kafka", "AWS MSK", "SQS", "ECS", "Private Connectivity"]
-  },
-  {
-    title: "Leadership & Delivery",
-    level: "Lead / senior ownership",
-    desc:
-      "Architecture reviews, technical consulting, mentoring, team coordination, platform ownership, and pragmatic delivery across engineering teams.",
-    items: ["Technical Consulting", "Mentoring", "Platform Ownership", "Architecture Reviews", "Stakeholder Alignment", "Delivery Planning"]
-  },
-  {
-    title: "Supporting / Legacy Foundations",
-    level: "Supporting experience",
-    desc:
-      "Earlier infrastructure background that still informs cloud architecture decisions, especially around networking, virtualization, Windows, and data center operations.",
-    items: ["Bash", "Python", "Windows Infrastructure", "On-prem Virtualization", "Data Center", "Network Infrastructure", "ITIL", "SDLC"]
   }
 ];
+
+const supporting = ["RDS", "Aurora", "MongoDB", "Kafka", "AWS MSK", "SQS", "ECS", "Bash", "Python", "Technical Consulting", "Mentoring"];
 
 function LevelBadge({ children }: { children: string }) {
   return (
@@ -129,12 +110,21 @@ export default function SkillsPage() {
                 </div>
                 <p className="mt-3 text-sm text-zinc-400">{capability.desc}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {capability.items.map((item) => (
+                  {capability.items.slice(0, 6).map((item) => (
                     <Pill key={item}>{item}</Pill>
                   ))}
                 </div>
               </Card>
             ))}
+          </div>
+
+          <div className="mt-8">
+            <h2 className="text-base font-semibold">Supporting experience</h2>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {supporting.map((item) => (
+                <Pill key={item}>{item}</Pill>
+              ))}
+            </div>
           </div>
         </section>
       </Container>

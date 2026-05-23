@@ -31,13 +31,10 @@ const copy = {
   certs: [
     "AWS Certified Advanced Networking - Specialty",
     "AWS Certified DevOps Engineer - Professional",
-    "AWS Certified Developer - Associate",
-    "AWS Certified SysOps Administrator - Associate",
-    "AWS Certified Cloud Practitioner",
     "GCP Professional Cloud Architect",
     "GCP Professional Cloud Developer",
-    "Certified SAFe 6 - Practitioner",
-    "GitLab Certified Associate"
+    "AWS Certified Developer / SysOps / Cloud Practitioner",
+    "Certified SAFe 6 - Practitioner / GitLab Certified Associate"
   ],
   architectureTitle: "Experiencia Selecionada em Arquitetura",
   architectureGroups: [
@@ -167,7 +164,7 @@ function RoleCard({
         ))}
       </div>
       <ul className={`mt-4 list-disc space-y-2 pl-5 text-zinc-300 ${compact ? "text-sm" : ""}`}>
-        {role.items.map((item) => (
+        {role.items.slice(0, compact ? 2 : 3).map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
@@ -185,7 +182,7 @@ export default function ResumePage() {
           <h1 className="text-3xl font-semibold">{copy.title}</h1>
           <p className="mt-3 max-w-2xl text-zinc-400">{copy.intro}</p>
 
-          <div className="mt-8 grid gap-4">
+          <div className="mt-8 grid gap-5">
             <Card>
               <h2 className="text-lg font-semibold">{copy.summaryTitle}</h2>
               <p className="mt-2 text-zinc-300">{copy.summaryBody}</p>
@@ -208,7 +205,7 @@ export default function ResumePage() {
             <Card>
               <h2 className="text-lg font-semibold">{copy.outcomesTitle}</h2>
               <ul className="mt-3 grid gap-2 text-zinc-300 sm:grid-cols-2">
-                {copy.outcomes.map((item) => (
+                {copy.outcomes.slice(0, 4).map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
                     <span>{item}</span>
@@ -219,14 +216,11 @@ export default function ResumePage() {
 
             <Card>
               <h2 className="text-lg font-semibold">{copy.certsTitle}</h2>
-              <ul className="mt-3 grid gap-2 text-zinc-300 sm:grid-cols-2">
+              <div className="mt-3 flex flex-wrap gap-2">
                 {copy.certs.map((cert) => (
-                  <li key={cert} className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                    <span>{cert}</span>
-                  </li>
+                  <Pill key={cert}>{cert}</Pill>
                 ))}
-              </ul>
+              </div>
             </Card>
 
             <div>
@@ -236,7 +230,7 @@ export default function ResumePage() {
                   <Card key={group.title}>
                     <h3 className="text-lg font-semibold">{group.title}</h3>
                     <ul className="mt-3 space-y-2 text-sm text-zinc-300">
-                      {group.items.map((item) => (
+                      {group.items.slice(0, 3).map((item) => (
                         <li key={item} className="flex gap-2">
                           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
                           <span>{item}</span>

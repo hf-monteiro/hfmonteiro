@@ -5,7 +5,7 @@ import Pill from "@/components/Pill";
 const copy = {
   title: "Infrastructure Labs",
   intro:
-    "Curated infrastructure labs and reference implementations covering AWS networking, Terraform modules, Kubernetes, CI/CD automation, Packer image hardening, and operational scripting.",
+    "Curated labs and reference implementations across AWS, Terraform, Kubernetes, CI/CD, Packer, and automation.",
   note:
     "These projects are designed as learning, architecture, and implementation examples rather than drop-in production modules.",
   back: "Back to home",
@@ -105,9 +105,9 @@ export default function LabsPage() {
               <Card key={lab.title}>
                 <p className="text-xs uppercase tracking-wider text-zinc-500">{lab.repo}</p>
                 <h2 className="mt-2 text-lg font-semibold">{lab.title}</h2>
-                <p className="mt-3 text-sm text-zinc-300">{lab.desc}</p>
+                <p className="mt-3 line-clamp-2 text-sm text-zinc-300">{lab.desc}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {lab.tags.map((tag) => (
+                  {lab.tags.slice(0, 4).map((tag) => (
                     tag === "Legacy lab" ? (
                       <span
                         key={tag}
