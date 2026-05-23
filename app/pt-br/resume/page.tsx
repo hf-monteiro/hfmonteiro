@@ -58,6 +58,31 @@ const copy = {
         "Gerenciei servicos cloud mission-critical incluindo EKS, ECS, API Gateway, MSK, Lambda, RDS/Aurora, IAM, WAFv2, S3, ALB/NLB e ACM.",
         "Melhorei observabilidade, incident response, pipelines CI/CD e maturidade operacional para sistemas distribuidos em producao."
       ]
+    },
+    {
+      title: "KXC Tecnologia - Cloud Architect | Jun 2020 - Sep 2021",
+      items: [
+        "Arquiteturei solucoes AWS usando Terraform e servicos AWS de CI/CD, incluindo CodePipeline e CodeDeploy.",
+        "Automatizei workflows de deploy com AWS CodePipeline, GitHub e GitLab, reduzindo ciclos de release e melhorando a consistencia de entrega.",
+        "Executei projetos de migracao cloud em larga escala e otimizei workloads corporativos para confiabilidade, escalabilidade e eficiencia operacional."
+      ]
+    },
+    {
+      title: "Gtek Solucoes Tecnologicas - Tech Lead | Sep 2017 - Jun 2019",
+      items: [
+        "Liderei um time tecnico responsavel por gestao de incidentes, operacao de infraestrutura e projetos de virtualizacao on-premises.",
+        "Arquiteturei e executei projetos de infraestrutura de rede para clientes corporativos.",
+        "Prestei consultoria de TI e conduzi operacoes de equipe, planejamento de entregas e execucao tecnica."
+      ]
+    },
+    {
+      title: "Intranetworks - Tech Lead | Sep 2014 - Aug 2017",
+      items: [
+        "Direcionei operacoes de equipe e gestao de incidentes enquanto entregava projetos de virtualizacao on-premises.",
+        "Arquiteturei e gerenciei projetos de infraestrutura de rede em ambientes de clientes.",
+        "Desenhei e implementei projetos de infraestrutura de data center, incluindo fundacoes de networking e virtualizacao.",
+        "Prestei consultoria de TI e suporte a servicos enquanto gerenciava operacoes de infraestrutura de rede."
+      ]
     }
   ]
 };
