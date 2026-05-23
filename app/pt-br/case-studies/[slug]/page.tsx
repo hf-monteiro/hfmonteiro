@@ -11,10 +11,16 @@ const copy = {
   notFound: "Projeto nao encontrado",
   backToList: "Voltar para projetos",
   back: "Voltar",
+  role: "Papel",
+  scope: "Escopo",
+  focus: "Foco",
   context: "Contexto",
+  impact: "Impacto",
+  architecture: "Abordagem de arquitetura",
   whatIDid: "O que eu fiz",
   outcomes: "Resultados",
   stack: "Stack",
+  relatedLabs: "Labs relacionados",
   notes: "Notas"
 };
 
@@ -56,8 +62,47 @@ export default function CaseStudyDetail({ params }: { params: { slug: string } }
 
           <div className="mt-10 grid gap-4">
             <Card>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-zinc-500">{t.role}</p>
+                  <p className="mt-1 text-zinc-200">{cs.role}</p>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-zinc-500">{t.scope}</p>
+                  <p className="mt-1 text-zinc-200">{cs.scope}</p>
+                </div>
+              </div>
+              <div className="mt-4">
+                <p className="text-xs uppercase tracking-wider text-zinc-500">{t.focus}</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {cs.focus.map((item) => (
+                    <Pill key={item}>{item}</Pill>
+                  ))}
+                </div>
+              </div>
+            </Card>
+
+            <Card>
               <h2 className="text-lg font-semibold">{t.context}</h2>
               <p className="mt-2 text-zinc-300">{cs.context}</p>
+            </Card>
+
+            <Card>
+              <h2 className="text-lg font-semibold">{t.impact}</h2>
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-zinc-300">
+                {cs.impact.map((impact) => (
+                  <li key={impact}>{impact}</li>
+                ))}
+              </ul>
+            </Card>
+
+            <Card>
+              <h2 className="text-lg font-semibold">{t.architecture}</h2>
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-zinc-300">
+                {cs.architecture.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </Card>
 
             <Card>
@@ -86,6 +131,25 @@ export default function CaseStudyDetail({ params }: { params: { slug: string } }
                 ))}
               </div>
             </Card>
+
+            {cs.relatedLabs?.length ? (
+              <Card>
+                <h2 className="text-lg font-semibold">{t.relatedLabs}</h2>
+                <div className="mt-3 flex flex-wrap gap-3">
+                  {cs.relatedLabs.map((lab) => (
+                    <a
+                      key={lab.href}
+                      href={lab.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sm font-medium text-zinc-300 hover:text-zinc-100"
+                    >
+                      {lab.label} →
+                    </a>
+                  ))}
+                </div>
+              </Card>
+            ) : null}
 
             {cs.notes?.length ? (
               <Card>
