@@ -6,7 +6,7 @@ import Pill from "@/components/Pill";
 const copy = {
   title: "Contact",
   intro:
-    "Open to senior remote roles, consulting conversations, and platform architecture work focused on AWS, Kubernetes, Terraform, CI/CD, and reliability.",
+    "A direct way to reach me for professional conversations, introductions, and platform architecture topics.",
   emailTitle: "Start a conversation",
   emailBody:
     "Email is the best path for role conversations, consulting requests, architecture reviews, and introductions.",
@@ -23,13 +23,6 @@ const copy = {
     "AWS Networking & Private Connectivity",
     "Production EKS / Kubernetes Platforms",
     "Terraform and CI/CD Standardization"
-  ],
-  sendTitle: "Helpful context to include",
-  send: [
-    "What you are building or hiring for",
-    "Current AWS/Kubernetes/Terraform setup",
-    "Main reliability, delivery, or networking problem",
-    "Timeline, timezone expectations, and engagement model"
   ]
 };
 
@@ -92,7 +85,7 @@ export default function ContactPage() {
             </Card>
           </div>
 
-          <div className="mt-4 grid gap-4 lg:grid-cols-2">
+          <div className="mt-4">
             <Card>
               <h2 className="text-lg font-semibold">{t.fitTitle}</h2>
               <div className="mt-4 flex flex-wrap gap-2">
@@ -100,18 +93,6 @@ export default function ContactPage() {
                   <Pill key={item}>{item}</Pill>
                 ))}
               </div>
-            </Card>
-
-            <Card>
-              <h2 className="text-lg font-semibold">{t.sendTitle}</h2>
-              <ul className="mt-3 space-y-2 text-sm text-zinc-300">
-                {t.send.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
             </Card>
           </div>
         </section>
