@@ -1,47 +1,85 @@
 import Container from "@/components/Container";
 import Card from "@/components/Card";
 import Button from "@/components/Button";
+import Pill from "@/components/Pill";
 
 const copy = {
   title: "Resume",
-  intro: "Quick overview + downloadable PDF.",
+  intro: "Senior platform, cloud architecture, and infrastructure reliability overview.",
   summaryTitle: "Summary",
   summaryBody:
-    "Senior DevOps / Platform Engineer with 10+ years of experience designing and operating cloud-native infrastructure and enterprise platform architectures in AWS. Specialized in Kubernetes (EKS), Terraform, GitLab CI/CD, AWS networking, PrivateLink, Direct Connect, multi-account architectures, and platform engineering for regulated SaaS environments. Proven experience building scalable, secure, highly available infrastructure supporting enterprise applications and distributed engineering teams.",
+    "Senior DevOps / Platform Engineer with 10+ years of experience designing and operating cloud-native infrastructure and enterprise platform architectures in AWS. Specialized in Kubernetes (EKS), Terraform, GitLab CI/CD, AWS networking, PrivateLink, Direct Connect, multi-account architectures, and platform engineering for regulated SaaS environments.",
   download: "Download PDF",
   contact: "Contact",
+  positioning: [
+    "Senior Platform Engineer",
+    "Cloud Infrastructure Architect",
+    "AWS Networking Specialist",
+    "Kubernetes Platform Engineer",
+    "DevOps Lead"
+  ],
+  outcomesTitle: "Key Outcomes",
+  outcomes: [
+    "Designed multi-account AWS platform architectures for enterprise SaaS environments.",
+    "Built private connectivity patterns with PrivateLink, Transit Gateway, Direct Connect, and Route53 PHZ.",
+    "Operated production EKS platforms with GitLab CI/CD, Helm, Istio, and private ingress patterns.",
+    "Standardized GitLab CI/CD workflows, increasing releases from weekly to multiple deployments per day.",
+    "Supported large-scale AWS environments serving 16M+ users in regulated financial systems.",
+    "Improved platform reliability through observability, incident response, RCA, and operational runbooks."
+  ],
   certsTitle: "Certifications",
   certs: [
-    "AWS Certified Advanced Networking – Specialty",
-    "AWS Certified DevOps Engineer – Professional",
-    "AWS Certified Developer – Associate",
-    "AWS Certified SysOps Administrator – Associate",
+    "AWS Certified Advanced Networking - Specialty",
+    "AWS Certified DevOps Engineer - Professional",
+    "AWS Certified Developer - Associate",
+    "AWS Certified SysOps Administrator - Associate",
     "AWS Certified Cloud Practitioner",
     "GCP Professional Cloud Architect",
     "GCP Professional Cloud Developer",
-    "Certified SAFe 6 – Practitioner",
+    "Certified SAFe 6 - Practitioner",
     "GitLab Certified Associate"
   ],
   architectureTitle: "Selected Architecture Experience",
-  architecture: [
-    "Multi-account AWS SaaS platform architectures",
-    "AWS PrivateLink and VPC Endpoint Service architectures",
-    "Hybrid connectivity using AWS Direct Connect and Transit Gateway",
-    "Private Kubernetes/EKS environments with controlled cluster access",
-    "Cross-account IAM and STS federation patterns",
-    "Enterprise DNS architectures with Route53 Private Hosted Zones",
-    "Istio service mesh implementations and internal traffic routing",
-    "GitLab CI/CD platform engineering and GitLab runners on Kubernetes",
-    "Highly available ingress architectures using ALB/NLB",
-    "Terraform module standardization at scale",
-    "AWS WAF, DevSecOps controls, and security hardening",
-    "MSK/Kafka networking and private connectivity",
-    "Centralized observability, monitoring, incident response, and reliability improvements"
-  ],
-  rolesTitle: "Experience Focus",
-  roles: [
+  architectureGroups: [
     {
-      title: "BairesDev - DevOps / Platform Engineering",
+      title: "AWS Platform & Networking",
+      items: [
+        "Multi-account AWS SaaS platform architectures",
+        "AWS PrivateLink and VPC Endpoint Service architectures",
+        "Hybrid connectivity using AWS Direct Connect and Transit Gateway",
+        "Cross-account IAM and STS federation patterns",
+        "Enterprise DNS architectures with Route53 Private Hosted Zones"
+      ]
+    },
+    {
+      title: "Kubernetes & Delivery",
+      items: [
+        "Private Kubernetes/EKS environments with controlled cluster access",
+        "Istio service mesh implementations and internal traffic routing",
+        "GitLab CI/CD platform engineering and GitLab runners on Kubernetes",
+        "Highly available ingress architectures using ALB/NLB",
+        "Terraform module standardization at scale"
+      ]
+    },
+    {
+      title: "Reliability & Security",
+      items: [
+        "AWS WAF, DevSecOps controls, and security hardening",
+        "MSK/Kafka networking and private connectivity",
+        "Centralized observability and monitoring platforms",
+        "Production incident response and root cause analysis",
+        "Reliability improvements for distributed AWS systems"
+      ]
+    }
+  ],
+  recentTitle: "Recent Platform & Cloud Experience",
+  earlierTitle: "Earlier Infrastructure Leadership",
+  recentRoles: [
+    {
+      title: "DevOps / Platform Engineering",
+      company: "BairesDev",
+      period: "Feb 2022 - Present",
+      tags: ["AWS", "Terraform", "EKS", "PrivateLink", "Istio", "GitLab CI/CD", "Regulated SaaS"],
       items: [
         "Designed and implemented multi-account AWS platform architectures for enterprise SaaS environments using Terraform and Infrastructure as Code best practices.",
         "Architected secure cross-account networking with AWS PrivateLink, Transit Gateway, Direct Connect, Route53 Private Hosted Zones, Interface Endpoints, and VPC Endpoint Services.",
@@ -52,7 +90,10 @@ const copy = {
       ]
     },
     {
-      title: "Banco Inter - Cloud Reliability and DevOps",
+      title: "Cloud Reliability and DevOps",
+      company: "Banco Inter",
+      period: "Sep 2021 - Feb 2022",
+      tags: ["AWS", "Financial Services", "EKS", "ECS", "MSK", "Reliability", "16M+ users"],
       items: [
         "Supported large-scale AWS environments serving 16M+ users with high availability, security, and regulated financial requirements.",
         "Managed mission-critical cloud services including EKS, ECS, API Gateway, MSK, Lambda, RDS/Aurora, IAM, WAFv2, S3, ALB/NLB, and ACM.",
@@ -60,15 +101,23 @@ const copy = {
       ]
     },
     {
-      title: "KXC Tecnologia - Cloud Architect | Jun 2020 - Sep 2021",
+      title: "Cloud Architect",
+      company: "KXC Tecnologia",
+      period: "Jun 2020 - Sep 2021",
+      tags: ["AWS", "Terraform", "CodePipeline", "CodeDeploy", "Cloud Migration"],
       items: [
         "Architected AWS solutions using Terraform and AWS CI/CD services including CodePipeline and CodeDeploy.",
         "Automated deployment workflows with AWS CodePipeline, GitHub, and GitLab, reducing release cycles and improving delivery consistency.",
         "Executed large-scale cloud migration projects and optimized enterprise workloads for reliability, scalability, and operational efficiency."
       ]
-    },
+    }
+  ],
+  earlierRoles: [
     {
-      title: "Gtek Solucoes Tecnologicas - Tech Lead | Sep 2017 - Jun 2019",
+      title: "Tech Lead",
+      company: "Gtek Solucoes Tecnologicas",
+      period: "Sep 2017 - Jun 2019",
+      tags: ["Leadership", "Networking", "Virtualization", "Consulting"],
       items: [
         "Led a technical team responsible for incident management, infrastructure operations, and on-premises virtualization projects.",
         "Architected and executed network infrastructure projects for enterprise customers.",
@@ -76,7 +125,10 @@ const copy = {
       ]
     },
     {
-      title: "Intranetworks - Tech Lead | Sep 2014 - Aug 2017",
+      title: "Tech Lead",
+      company: "Intranetworks",
+      period: "Sep 2014 - Aug 2017",
+      tags: ["Leadership", "Data Center", "Networking", "Virtualization"],
       items: [
         "Directed team operations and incident management while delivering on-premises virtualization projects.",
         "Architected and managed network infrastructure projects across customer environments.",
@@ -86,6 +138,42 @@ const copy = {
     }
   ]
 };
+
+function RoleCard({
+  role,
+  compact = false
+}: {
+  role: {
+    title: string;
+    company: string;
+    period: string;
+    tags: string[];
+    items: string[];
+  };
+  compact?: boolean;
+}) {
+  return (
+    <Card>
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <h3 className="text-lg font-semibold">{role.title}</h3>
+          <p className="mt-1 text-sm text-zinc-400">{role.company}</p>
+        </div>
+        <p className="text-sm text-zinc-500">{role.period}</p>
+      </div>
+      <div className="mt-4 flex flex-wrap gap-2">
+        {role.tags.map((tag) => (
+          <Pill key={tag}>{tag}</Pill>
+        ))}
+      </div>
+      <ul className={`mt-4 list-disc space-y-2 pl-5 text-zinc-300 ${compact ? "text-sm" : ""}`}>
+        {role.items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </Card>
+  );
+}
 
 export default function ResumePage() {
   const base = "";
@@ -101,7 +189,16 @@ export default function ResumePage() {
             <Card>
               <h2 className="text-lg font-semibold">{copy.summaryTitle}</h2>
               <p className="mt-2 text-zinc-300">{copy.summaryBody}</p>
-
+              <div className="mt-5 flex flex-wrap gap-2">
+                {copy.positioning.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white bg-white px-3 py-1 text-xs font-medium text-zinc-950"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Button href="/resume.pdf" variant="primary">{copy.download}</Button>
                 <Button href={`${base}/contact`} variant="secondary">{copy.contact}</Button>
@@ -109,18 +206,9 @@ export default function ResumePage() {
             </Card>
 
             <Card>
-              <h2 className="text-lg font-semibold">{copy.certsTitle}</h2>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-zinc-300">
-                {copy.certs.map((c) => (
-                  <li key={c}>{c}</li>
-                ))}
-              </ul>
-            </Card>
-
-            <Card>
-              <h2 className="text-lg font-semibold">{copy.architectureTitle}</h2>
+              <h2 className="text-lg font-semibold">{copy.outcomesTitle}</h2>
               <ul className="mt-3 grid gap-2 text-zinc-300 sm:grid-cols-2">
-                {copy.architecture.map((item) => (
+                {copy.outcomes.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
                     <span>{item}</span>
@@ -129,16 +217,54 @@ export default function ResumePage() {
               </ul>
             </Card>
 
-            {copy.roles.map((role) => (
-              <Card key={role.title}>
-                <h2 className="text-lg font-semibold">{role.title}</h2>
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-zinc-300">
-                  {role.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
+            <Card>
+              <h2 className="text-lg font-semibold">{copy.certsTitle}</h2>
+              <ul className="mt-3 grid gap-2 text-zinc-300 sm:grid-cols-2">
+                {copy.certs.map((cert) => (
+                  <li key={cert} className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                    <span>{cert}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+
+            <div>
+              <h2 className="mb-4 text-xl font-semibold">{copy.architectureTitle}</h2>
+              <div className="grid gap-4 lg:grid-cols-3">
+                {copy.architectureGroups.map((group) => (
+                  <Card key={group.title}>
+                    <h3 className="text-lg font-semibold">{group.title}</h3>
+                    <ul className="mt-3 space-y-2 text-sm text-zinc-300">
+                      {group.items.map((item) => (
+                        <li key={item} className="flex gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 className="mb-4 text-xl font-semibold">{copy.recentTitle}</h2>
+              <div className="grid gap-4">
+                {copy.recentRoles.map((role) => (
+                  <RoleCard key={`${role.company}-${role.title}`} role={role} />
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 className="mb-4 text-xl font-semibold">{copy.earlierTitle}</h2>
+              <div className="grid gap-4">
+                {copy.earlierRoles.map((role) => (
+                  <RoleCard key={`${role.company}-${role.title}`} role={role} compact />
+                ))}
+              </div>
+            </div>
           </div>
         </section>
       </Container>
