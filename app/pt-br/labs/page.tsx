@@ -108,7 +108,16 @@ export default function LabsPage() {
                 <p className="mt-3 text-sm text-zinc-300">{lab.desc}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {lab.tags.map((tag) => (
-                    <Pill key={tag}>{tag}</Pill>
+                    tag === "Legacy lab" ? (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-white bg-white px-3 py-1 text-xs font-medium text-zinc-950"
+                      >
+                        {tag}
+                      </span>
+                    ) : (
+                      <Pill key={tag}>{tag}</Pill>
+                    )
                   ))}
                 </div>
                 <div className="mt-5 flex flex-wrap gap-3">
