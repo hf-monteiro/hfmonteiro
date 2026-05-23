@@ -1,9 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Higor Monteiro | DevOps / Cloud Engineer",
+  title: "Higor Monteiro | Senior DevOps / Platform Engineer",
   description:
-    "Case-study driven portfolio: AWS, Terraform, GitLab CI/CD, EKS, and platform engineering."
+    "Portfolio focused on enterprise AWS platform architecture, advanced cloud networking, EKS, Terraform, GitLab CI/CD, SRE, and regulated SaaS infrastructure."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

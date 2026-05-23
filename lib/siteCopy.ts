@@ -29,7 +29,7 @@ const copy: Record<Lang, SiteCopy> = {
     },
     footer: {
       name: "Higor Monteiro",
-      blurb: "Senior DevOps / Cloud Engineer — AWS, Terraform, GitLab CI/CD, EKS."
+      blurb: "Senior DevOps / Platform Engineer — AWS architecture, EKS, Terraform, GitLab CI/CD, and advanced cloud networking."
     }
   },
   "pt-br": {
@@ -42,7 +42,7 @@ const copy: Record<Lang, SiteCopy> = {
     },
     footer: {
       name: "Higor Monteiro",
-      blurb: "Senior DevOps / Cloud Engineer — AWS, Terraform, GitLab CI/CD, EKS."
+      blurb: "Senior DevOps / Platform Engineer — arquitetura AWS, EKS, Terraform, GitLab CI/CD e networking cloud avancado."
     }
   }
 };

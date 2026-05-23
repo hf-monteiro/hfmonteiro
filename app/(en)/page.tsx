@@ -6,27 +6,27 @@ import { getCaseStudies } from "@/lib/caseStudies";
 
 const copy = {
   intro: "Hi, I’m Higor",
-  title: "DevOps / Cloud Engineer",
+  title: "Senior DevOps / Platform Engineer",
   summary:
-    "I build reliable AWS platforms and delivery pipelines — with clean automation, strong guardrails, and pragmatic SRE practices.",
+    "I design enterprise AWS platforms, private networking architectures, production EKS environments, and delivery systems for regulated SaaS and distributed engineering teams.",
   buttons: {
     caseStudies: "View Projects",
     solutions: "Solutions",
     resume: "Resume"
   },
-  pills: ["AWS", "Terraform", "GitLab CI/CD", "EKS", "Networking", "Observability"],
+  pills: ["AWS Architecture", "PrivateLink", "Transit Gateway", "Direct Connect", "Terraform", "EKS", "Istio", "GitLab CI/CD", "SRE"],
   highlights: [
     {
-      title: "Platform Engineering",
-      desc: "Reusable infrastructure patterns (multi-account, environment strategy, guardrails)."
+      title: "Enterprise AWS Platforms",
+      desc: "Multi-account foundations, cross-account IAM/STS, private DNS, guardrails, and regulated SaaS infrastructure."
     },
     {
-      title: "CI/CD at Scale",
-      desc: "Standardized pipelines, safe deploy flows, and pragmatic governance."
+      title: "Advanced Cloud Networking",
+      desc: "PrivateLink, VPC Endpoint Services, Transit Gateway, Direct Connect, Route53 PHZ, hybrid connectivity, and private EKS access."
     },
     {
-      title: "SRE & Observability",
-      desc: "Alert hygiene, tracing/metrics foundations, and incident response practices."
+      title: "Production Kubernetes & Reliability",
+      desc: "EKS operations, Istio service mesh, GitLab runners on Kubernetes, observability, incident response, and MTTR reduction."
     }
   ],
   featured: {

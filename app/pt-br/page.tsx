@@ -6,27 +6,27 @@ import { getCaseStudies } from "@/lib/caseStudies";
 
 const copy = {
   intro: "Ola, sou o Higor",
-  title: "Engenheiro DevOps / Cloud",
+  title: "Senior DevOps / Platform Engineer",
   summary:
-    "Construo plataformas AWS confiaveis e pipelines de entrega — com automacao limpa, guardrails fortes e praticas SRE pragmaticas.",
+    "Desenho plataformas AWS corporativas, arquiteturas privadas de networking, ambientes EKS em producao e sistemas de entrega para SaaS regulado e times distribuidos.",
   buttons: {
     caseStudies: "Ver projetos",
     solutions: "Solucoes",
     resume: "Curriculo"
   },
-  pills: ["AWS", "Terraform", "GitLab CI/CD", "EKS", "Networking", "Observabilidade"],
+  pills: ["AWS Architecture", "PrivateLink", "Transit Gateway", "Direct Connect", "Terraform", "EKS", "Istio", "GitLab CI/CD", "SRE"],
   highlights: [
     {
-      title: "Engenharia de Plataforma",
-      desc: "Padroes reutilizaveis de infraestrutura (multi-conta, estrategia de ambientes, guardrails)."
+      title: "Plataformas AWS Corporativas",
+      desc: "Fundacoes multi-conta, IAM/STS cross-account, DNS privado, guardrails e infraestrutura SaaS regulada."
     },
     {
-      title: "CI/CD em Escala",
-      desc: "Pipelines padronizados, fluxos seguros de deploy e governanca pragmatica."
+      title: "Networking Cloud Avancado",
+      desc: "PrivateLink, VPC Endpoint Services, Transit Gateway, Direct Connect, Route53 PHZ, conectividade hibrida e acesso privado ao EKS."
     },
     {
-      title: "SRE e Observabilidade",
-      desc: "Higiene de alertas, fundamentos de tracing/metricas e resposta a incidentes."
+      title: "Kubernetes em Producao e Confiabilidade",
+      desc: "Operacao de EKS, Istio service mesh, GitLab runners em Kubernetes, observabilidade, incident response e reducao de MTTR."
     }
   ],
   featured: {

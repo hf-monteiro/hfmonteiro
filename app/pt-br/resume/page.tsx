@@ -7,7 +7,7 @@ const copy = {
   intro: "Visao rapida + PDF para download.",
   summaryTitle: "Resumo",
   summaryBody:
-    "Senior DevOps Engineer com 10+ anos em TI focado em engenharia de plataforma AWS e transformacao de CI/CD. Eu desenho fundacoes multi-conta, modulos reutilizaveis de IaC e padroes de entrega que reduzem risco e aceleram releases (1/semana para 2-6/dia). Também construo baselines de rede seguros, plataformas Kubernetes escalaveis e guardrails de observabilidade que elevam a confiabilidade e a produtividade dos times.",
+    "Senior DevOps / Platform Engineer com 10+ anos de experiencia desenhando e operando infraestrutura cloud-native e arquiteturas de plataforma corporativas em AWS. Especializado em Kubernetes (EKS), Terraform, GitLab CI/CD, AWS networking, PrivateLink, Direct Connect, arquiteturas multi-conta e engenharia de plataforma para ambientes SaaS regulados.",
   download: "Baixar PDF",
   contact: "Contato",
   certsTitle: "Certificacoes",
@@ -21,6 +21,44 @@ const copy = {
     "GCP Professional Cloud Developer",
     "Certified SAFe 6 – Practitioner",
     "GitLab Certified Associate"
+  ],
+  architectureTitle: "Experiencia Selecionada em Arquitetura",
+  architecture: [
+    "Arquiteturas SaaS AWS multi-conta",
+    "AWS PrivateLink e VPC Endpoint Services",
+    "Conectividade hibrida com AWS Direct Connect e Transit Gateway",
+    "Ambientes Kubernetes/EKS privados com acesso controlado",
+    "Padroes de IAM cross-account e federacao STS",
+    "Arquiteturas de DNS corporativo com Route53 Private Hosted Zones",
+    "Implementacoes de Istio service mesh e roteamento interno",
+    "Platform engineering com GitLab CI/CD e GitLab runners em Kubernetes",
+    "Arquiteturas de ingress altamente disponiveis com ALB/NLB",
+    "Padronizacao de modulos Terraform em escala",
+    "AWS WAF, DevSecOps e hardening de seguranca",
+    "Networking MSK/Kafka e conectividade privada",
+    "Observabilidade centralizada, incident response e melhorias de confiabilidade"
+  ],
+  rolesTitle: "Foco de Experiencia",
+  roles: [
+    {
+      title: "BairesDev - DevOps / Platform Engineering",
+      items: [
+        "Desenhei e implementei arquiteturas de plataforma AWS multi-conta para ambientes SaaS corporativos usando Terraform e boas praticas de Infrastructure as Code.",
+        "Arquiteturei networking seguro cross-account com AWS PrivateLink, Transit Gateway, Direct Connect, Route53 Private Hosted Zones, Interface Endpoints e VPC Endpoint Services.",
+        "Construi e mantive plataformas EKS em producao com GitLab CI/CD, Helm, Istio, ingress privado, observabilidade e pipelines automatizados.",
+        "Desenvolvi modulos Terraform reutilizaveis para networking, EKS, MSK, ingress, WAF, Route53, controles de seguranca cloud e fundacoes de plataforma.",
+        "Otimizei pipelines CI/CD entre times de engenharia, aumentando a frequencia de deploy de releases semanais para multiplos deploys por dia.",
+        "Atuei em incident response, root cause analysis, troubleshooting de plataforma e melhorias de confiabilidade em sistemas AWS distribuidos."
+      ]
+    },
+    {
+      title: "Banco Inter - Cloud Reliability e DevOps",
+      items: [
+        "Apoiei ambientes AWS de grande escala atendendo 16M+ usuarios com requisitos de alta disponibilidade, seguranca e regulacao financeira.",
+        "Gerenciei servicos cloud mission-critical incluindo EKS, ECS, API Gateway, MSK, Lambda, RDS/Aurora, IAM, WAFv2, S3, ALB/NLB e ACM.",
+        "Melhorei observabilidade, incident response, pipelines CI/CD e maturidade operacional para sistemas distribuidos em producao."
+      ]
+    }
   ]
 };
 
@@ -53,6 +91,29 @@ export default function ResumePage() {
                 ))}
               </ul>
             </Card>
+
+            <Card>
+              <h2 className="text-lg font-semibold">{copy.architectureTitle}</h2>
+              <ul className="mt-3 grid gap-2 text-zinc-300 sm:grid-cols-2">
+                {copy.architecture.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+
+            {copy.roles.map((role) => (
+              <Card key={role.title}>
+                <h2 className="text-lg font-semibold">{role.title}</h2>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-zinc-300">
+                  {role.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </Card>
+            ))}
           </div>
         </section>
       </Container>

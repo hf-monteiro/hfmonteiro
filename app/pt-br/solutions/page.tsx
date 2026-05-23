@@ -10,85 +10,85 @@ type Solution = {
 
 const solutions: Solution[] = [
   {
-    title: "Padronizacao de GitLab CI/CD (do caos a releases repetiveis)",
+    title: "Arquitetura de Plataforma AWS Corporativa",
+    problem:
+      "Ambientes cloud crescem entre contas, times e produtos sem fundacoes consistentes, guardrails, ownership ou padroes repetiveis de infraestrutura.",
+    outcome:
+      "Uma plataforma AWS multi-conta segura e escalavel, com modulos Terraform reutilizaveis e padroes operacionais claros.",
+    deliverables: [
+      "Arquitetura AWS multi-conta e estrategia de ambientes",
+      "Arquitetura de modulos Terraform para networking, EKS, Route53, WAF e servicos compartilhados",
+      "Padroes de acesso IAM/STS cross-account e guardrails de seguranca",
+      "Documentacao de plataforma, handover e modelo de onboarding"
+    ],
+    stack: ["AWS", "Terraform", "IAM/STS", "Organizations", "WAFv2", "Route53"]
+  },
+  {
+    title: "Networking AWS Avancado e Conectividade Privada",
+    problem:
+      "Sistemas corporativos precisam de acesso privado entre servicos, conectividade hibrida e roteamento cross-account sem expor workloads criticos publicamente.",
+    outcome:
+      "Uma arquitetura resiliente de networking privado usando conectividade, DNS e padroes de endpoints nativos da AWS.",
+    deliverables: [
+      "Designs com PrivateLink, Interface Endpoints e VPC Endpoint Services",
+      "Transit Gateway, Direct Connect, roteamento e padroes de conectividade hibrida",
+      "Arquitetura de Route53 Private Hosted Zones e estrategia de DNS privado",
+      "Private EKS, MSK/Kafka, ALB/NLB e conectividade interna entre servicos"
+    ],
+    stack: ["PrivateLink", "TGW", "Direct Connect", "Route53 PHZ", "ALB/NLB", "AWS IPAM"]
+  },
+  {
+    title: "Habilitacao de Plataforma Kubernetes em Producao",
+    problem:
+      "Os clusters existem, mas acesso privado, deploys, trafego, observabilidade e operacao day-2 sao dolorosos e sujeitos a erro.",
+    outcome:
+      "Uma plataforma Kubernetes pronta para producao com deploys previsiveis, acesso seguro e maior confiabilidade operacional.",
+    deliverables: [
+      "Padroes de EKS/GKE, Helm, namespaces e baseline de RBAC",
+      "Istio service mesh, ingress, TLS, EnvoyFilter, ALB/NLB e roteamento interno",
+      "GitLab runners em Kubernetes e workflows de promocao CI/CD",
+      "Troubleshooting de cluster, observabilidade e runbooks operacionais"
+    ],
+    stack: ["Kubernetes", "EKS/GKE", "Helm", "Istio", "GitLab CI", "Datadog"]
+  },
+  {
+    title: "Platform Engineering com GitLab CI/CD",
     problem:
       "Os times entregam de forma diferente entre projetos, pipelines sao inconsistentes e releases demoram para evoluir com seguranca.",
     outcome:
-      "Um blueprint de pipeline padronizado que melhora a velocidade de entrega e reduz risco operacional.",
+      "Uma plataforma de entrega padronizada que aumenta a frequencia de deploy e reduz risco operacional.",
     deliverables: [
-      "Templates reutilizaveis de CI (includes), convencoes e regras de pipeline",
-      "Estagios de Build/Test/Scan/Deploy com quality gates",
-      "Estrategia segura de variaveis/segredos e promocao de ambientes",
-      "Docs + onboarding para desenvolvedores"
+      "Templates CI reutilizaveis, convencoes, includes e regras de pipeline",
+      "Etapas de Build/Test/Scan/Deploy com quality gates",
+      "Variaveis seguras, estrategia de segredos, artefatos e promocao de ambientes",
+      "Onboarding de desenvolvedores e documentacao da plataforma"
     ],
-    stack: ["GitLab CI/CD", "Docker", "SonarQube/Checkov", "Artifacts", "Environments"]
+    stack: ["GitLab CI/CD", "Docker", "SonarQube", "Checkov", "Artifacts", "Environments"]
   },
   {
-    title: "Infraestrutura multi-conta AWS com Terraform (fundacoes seguras)",
+    title: "Confiabilidade, Observabilidade e Hardening",
     problem:
-      "Escalar ambientes em nuvem entre contas fica dificil sem padroes consistentes de IaC e guardrails.",
+      "Incidentes demoram para serem detectados e diagnosticados, alertas geram ruido e controles de servicos publicos/privados sao inconsistentes.",
     outcome:
-      "Modulos Terraform confiaveis, auditaveis e escalaveis com ambientes repetiveis.",
+      "Monitoramento acionavel, incident response mais rapido, controles de servico mais fortes e guardrails pragmaticos de seguranca.",
     deliverables: [
-      "Arquitetura de modulos Terraform e estrutura de ambientes",
-      "Baseline de rede e padroes de conta",
-      "Workflows de plan/apply via CI e estrategia de remote state",
-      "Runbooks operacionais + handover"
-    ],
-    stack: ["AWS", "Terraform", "Ansible", "GitLab CI", "EKS/ECS"]
-  },
-  {
-    title: "Habilitacao de plataforma Kubernetes (EKS/GKE) + fluxos de entrega",
-    problem:
-      "Os clusters existem, mas deployments, roteamento e operacao dia 2 sao dolorosos e sujeitos a erro.",
-    outcome:
-      "Um caminho de entrega limpo para Kubernetes com deploys previsiveis e operacao mais segura.",
-    deliverables: [
-      "Estrategia de deploy (helm/kustomize), namespaces, baseline de RBAC",
-      "Padroes de ingress/TLS e politicas de trafego",
-      "CI/CD para Kubernetes com promocao de ambientes",
-      "Observabilidade + runbooks operacionais"
-    ],
-    stack: ["Kubernetes", "EKS/GKE", "Nginx", "TLS", "GitLab CI"]
-  },
-  {
-    title: "Observabilidade e Confiabilidade (reduzir MTTR)",
-    problem:
-      "Incidentes demoram para serem detectados e diagnosticados; metricas/logs/traces estao fragmentados.",
-    outcome:
-      "Monitoramento e alertas acionaveis que reduzem ruido e melhoram a resposta.",
-    deliverables: [
-      "Checks de saude e abordagem de monitoramento estilo SLO",
-      "Dashboards para golden signals + alertas acionaveis",
-      "Recomendacoes de roteamento/escalacao de alertas",
-      "Playbooks de confiabilidade (incidente + RCA)"
-    ],
-    stack: ["Datadog", "CloudWatch", "New Relic/Dynatrace", "Mentalidade SLO/SLA"]
-  },
-  {
-    title: "Hardening de seguranca para servicos publicos (controles praticos)",
-    problem:
-      "Endpoints publicos ficam expostos sem controles consistentes e o manejo de segredos e arriscado.",
-    outcome:
-      "Controles de seguranca pragmaticos alinhados com velocidade de entrega e operacao real.",
-    deliverables: [
-      "Regras baseline de WAF e estrategia de rollout",
+      "Health checks, abordagem estilo SLO, dashboards e alertas acionaveis",
+      "Incident response, RCA, escalacao e playbooks de confiabilidade",
       "Recomendacoes de IAM com menor privilegio",
-      "Estrategia de segredos (SSM/Secrets Manager) + rotacao",
-      "Orientacao para integrar scanners de seguranca no CI"
+      "Baseline de WAF, estrategia de segredos e security scanning no CI"
     ],
-    stack: ["AWS WAFv2", "IAM", "SSM/Secrets Manager", "Checkov", "CI/CD"]
+    stack: ["Datadog", "CloudWatch", "New Relic/Dynatrace", "AWS WAFv2", "IAM", "Secrets Manager"]
   }
 ];
 
 const copy = {
   title: "Solucoes",
   intro:
-    "Solucoes praticas de DevOps e Cloud focadas em velocidade de entrega, confiabilidade e seguranca — desenhadas a partir de experiencia real com AWS/GCP, Terraform, Kubernetes e GitLab CI/CD.",
+    "Solucoes senior de DevOps, Platform Engineering e Cloud Architecture focadas em plataformas AWS corporativas, networking avancado, Kubernetes em producao, velocidade de entrega, confiabilidade e seguranca.",
   problem: "Problema",
   outcome: "Resultado",
   deliverables: "Entregaveis",
-  ctaTitle: "Quer ajuda com algum desses temas?",
+  ctaTitle: "Precisa de ajuda com plataforma AWS corporativa?",
   ctaBody:
     "Envie uma breve descricao do seu setup atual e do que deseja melhorar. Eu respondo com uma abordagem sugerida e proximos passos.",
   ctaContact: "Fale comigo",

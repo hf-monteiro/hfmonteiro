@@ -15,132 +15,132 @@ export type CaseStudy = {
 const caseStudiesByLang: Record<Lang, CaseStudy[]> = {
   en: [
     {
+      slug: "aws-platform-networking-architecture",
+      title: "Enterprise AWS Platform & Networking Architecture",
+      subtitle:
+        "Multi-account AWS foundations with private connectivity, secure service exposure, and reusable Terraform architecture.",
+      tags: ["AWS", "PrivateLink", "Transit Gateway", "Direct Connect", "Terraform"],
+      context:
+        "Enterprise SaaS environments needed secure, scalable, and repeatable cloud foundations across multiple AWS accounts, regulated workloads, private connectivity requirements, and distributed engineering teams.",
+      whatIDid: [
+        "Designed multi-account AWS platform patterns using Terraform and Infrastructure as Code best practices.",
+        "Architected cross-account networking with AWS PrivateLink, VPC Endpoint Services, Interface Endpoints, Transit Gateway, Direct Connect, and Route53 Private Hosted Zones.",
+        "Implemented private service access patterns using cross-account IAM role assumption, STS, private DNS routing, ALB/NLB integrations, and security controls.",
+        "Developed reusable Terraform modules for networking, EKS, MSK, ingress, WAF, Route53, endpoint services, and cloud security foundations."
+      ],
+      outcomes: [
+        "Improved consistency and auditability across enterprise AWS environments.",
+        "Enabled private, secure connectivity between services and accounts without exposing critical workloads publicly.",
+        "Reduced infrastructure drift through standardized Terraform modules and repeatable platform patterns."
+      ],
+      stack: ["AWS", "Terraform", "PrivateLink", "Transit Gateway", "Direct Connect", "Route53", "IAM", "WAFv2"]
+    },
+    {
+      slug: "production-eks-platform-gitlab-istio",
+      title: "Production EKS Platform with GitLab CI/CD and Istio",
+      subtitle:
+        "Private Kubernetes platform operations with service mesh, runners inside the cluster, and safe delivery workflows.",
+      tags: ["EKS", "Kubernetes", "Istio", "GitLab CI/CD", "Platform Engineering"],
+      context:
+        "Cloud-native workloads needed a reliable Kubernetes platform with private cluster access, standardized deployments, internal traffic routing, and CI/CD workflows that could support frequent releases.",
+      whatIDid: [
+        "Built and maintained EKS platform components for production workloads, including ingress, private access, observability, and deployment automation.",
+        "Implemented GitLab runners running inside Kubernetes environments with secure AWS access patterns.",
+        "Designed internal service communication with Istio Gateways, EnvoyFilters, ALB/NLB integrations, TLS, and private DNS strategies.",
+        "Supported zero-downtime deployment workflows, cluster troubleshooting, and platform reliability improvements."
+      ],
+      outcomes: [
+        "Improved developer delivery speed while keeping production access private and controlled.",
+        "Increased confidence in Kubernetes releases through standardized deployment and observability patterns.",
+        "Strengthened day-2 operations for production EKS workloads."
+      ],
+      stack: ["EKS", "Kubernetes", "Helm", "Istio", "GitLab CI/CD", "ALB", "NLB", "CloudWatch", "Datadog"]
+    },
+    {
       slug: "gitlab-cicd-standardization-at-scale",
       title: "GitLab CI/CD Standardization at Scale",
       subtitle:
         "From fragmented pipelines to a standardized, scalable CI/CD platform.",
-      tags: ["GitLab CI/CD", "DevOps", "Automation", "Governance"],
+      tags: ["GitLab CI/CD", "DevSecOps", "Automation", "Governance"],
       context:
-        "Multiple development teams were maintaining independent GitLab pipelines with inconsistent stages, naming conventions, and deployment rules. This led to slow delivery, fragile releases, and high operational overhead for DevOps support.",
+        "Multiple development teams were maintaining independent GitLab pipelines with inconsistent stages, naming conventions, deployment rules, and quality controls. This slowed releases and increased operational risk.",
       whatIDid: [
-        "Designed a standardized GitLab CI/CD pipeline model with clear stages, naming conventions, and reusable patterns.",
-        "Created shared pipeline templates to eliminate copy/paste across repositories.",
+        "Designed a standardized GitLab CI/CD pipeline model with reusable templates, secure variables strategy, environment promotion, and quality gates.",
+        "Integrated build, test, security scanning, artifact handling, and deployment stages across multiple repositories.",
         "Implemented safer deployment workflows with manual production gates and environment-specific rules.",
-        "Worked closely with development teams to onboard repositories incrementally without breaking existing delivery."
+        "Worked with engineering teams to onboard repositories incrementally without disrupting delivery."
       ],
       outcomes: [
-        "Reduced release cycle time by ~800%, moving from weekly releases to multiple releases per day.",
-        "Significantly decreased pipeline maintenance effort and configuration drift.",
-        "Improved developer experience by providing a clear, documented CI/CD standard."
+        "Increased deployment frequency from weekly releases to multiple deployments per day.",
+        "Reduced pipeline maintenance effort, copy/paste configuration, and release inconsistency.",
+        "Improved developer experience with a clear CI/CD platform standard."
       ],
-      stack: ["GitLab CI", "Docker", "Terraform", "Kubernetes"]
-    },
-    {
-      slug: "aws-multi-account-platform-terraform",
-      title: "AWS Multi-Account Platform with Terraform",
-      subtitle:
-        "Reusable infrastructure patterns for consistent environments at scale.",
-      tags: ["AWS", "Terraform", "Platform Engineering", "IaC"],
-      context:
-        "The organization required a reliable way to provision and manage multiple AWS environments while enforcing security, networking, and operational standards across accounts.",
-      whatIDid: [
-        "Designed modular Terraform architecture for networking, compute, and shared services.",
-        "Implemented environment separation (DEV, INT, STG, PROD) using consistent patterns.",
-        "Applied least-privilege IAM practices and standardized networking components.",
-        "Enabled repeatable infrastructure provisioning with minimal manual intervention."
-      ],
-      outcomes: [
-        "Faster and more predictable environment provisioning.",
-        "Reduced configuration drift through Infrastructure as Code.",
-        "Improved security posture and operational consistency across AWS accounts."
-      ],
-      stack: ["AWS", "Terraform", "VPC", "IAM", "EKS"]
-    },
-    {
-      slug: "observability-alerting-noise-reduction",
-      title: "Observability & Alerting Noise Reduction",
-      subtitle:
-        "Improving signal-to-noise ratio and operational response.",
-      tags: ["Observability", "SRE", "Monitoring", "Alerting"],
-      context:
-        "Teams were experiencing alert fatigue due to excessive and poorly classified alerts, impacting on-call effectiveness and incident response quality.",
-      whatIDid: [
-        "Reviewed existing monitors and alerts to identify duplication and low-value signals.",
-        "Defined severity levels aligned with real business and operational impact.",
-        "Implemented clearer escalation paths and on-call expectations.",
-        "Documented operational playbooks to standardize incident response."
-      ],
-      outcomes: [
-        "Significant reduction in alert noise and false positives.",
-        "Faster incident triage and improved on-call experience.",
-        "More consistent communication during incidents."
-      ],
-      stack: ["Datadog", "CloudWatch", "Dynatrace", "Runbooks"]
+      stack: ["GitLab CI", "Docker", "Terraform", "Checkov", "SonarQube", "Kubernetes"]
     }
   ],
   "pt-br": [
+    {
+      slug: "aws-platform-networking-architecture",
+      title: "Arquitetura de Plataforma AWS e Networking Corporativo",
+      subtitle:
+        "Fundacoes AWS multi-conta com conectividade privada, exposicao segura de servicos e arquitetura Terraform reutilizavel.",
+      tags: ["AWS", "PrivateLink", "Transit Gateway", "Direct Connect", "Terraform"],
+      context:
+        "Ambientes SaaS corporativos precisavam de fundacoes cloud seguras, escalaveis e repetiveis entre multiplas contas AWS, workloads regulados, conectividade privada e times de engenharia distribuidos.",
+      whatIDid: [
+        "Desenhei padroes de plataforma AWS multi-conta usando Terraform e boas praticas de Infrastructure as Code.",
+        "Arquiteturei networking cross-account com AWS PrivateLink, VPC Endpoint Services, Interface Endpoints, Transit Gateway, Direct Connect e Route53 Private Hosted Zones.",
+        "Implementei padroes de acesso privado a servicos usando IAM/STS cross-account, DNS privado, ALB/NLB e controles de seguranca.",
+        "Desenvolvi modulos Terraform reutilizaveis para networking, EKS, MSK, ingress, WAF, Route53, endpoint services e fundacoes de seguranca cloud."
+      ],
+      outcomes: [
+        "Melhorei consistencia e auditabilidade entre ambientes AWS corporativos.",
+        "Habilitei conectividade privada e segura entre servicos e contas sem expor workloads criticos publicamente.",
+        "Reduzi drift de infraestrutura com modulos Terraform padronizados e padroes de plataforma repetiveis."
+      ],
+      stack: ["AWS", "Terraform", "PrivateLink", "Transit Gateway", "Direct Connect", "Route53", "IAM", "WAFv2"]
+    },
+    {
+      slug: "production-eks-platform-gitlab-istio",
+      title: "Plataforma EKS em Producao com GitLab CI/CD e Istio",
+      subtitle:
+        "Operacao de Kubernetes privado com service mesh, runners dentro do cluster e fluxos seguros de entrega.",
+      tags: ["EKS", "Kubernetes", "Istio", "GitLab CI/CD", "Engenharia de Plataforma"],
+      context:
+        "Workloads cloud-native precisavam de uma plataforma Kubernetes confiavel com acesso privado ao cluster, deploys padronizados, roteamento interno e CI/CD para releases frequentes.",
+      whatIDid: [
+        "Construi e mantive componentes de plataforma EKS para workloads em producao, incluindo ingress, acesso privado, observabilidade e automacao de deploy.",
+        "Implementei GitLab runners dentro de ambientes Kubernetes com padroes seguros de acesso a AWS.",
+        "Desenhei comunicacao interna entre servicos com Istio Gateways, EnvoyFilters, ALB/NLB, TLS e estrategias de DNS privado.",
+        "Apoiei deploys zero-downtime, troubleshooting de clusters e melhorias de confiabilidade da plataforma."
+      ],
+      outcomes: [
+        "Melhorei a velocidade de entrega dos desenvolvedores mantendo acesso de producao privado e controlado.",
+        "Aumentei a confianca em releases Kubernetes com padroes de deploy e observabilidade.",
+        "Fortaleci operacao day-2 para workloads EKS em producao."
+      ],
+      stack: ["EKS", "Kubernetes", "Helm", "Istio", "GitLab CI/CD", "ALB", "NLB", "CloudWatch", "Datadog"]
+    },
     {
       slug: "gitlab-cicd-standardization-at-scale",
       title: "Padronizacao de CI/CD no GitLab em escala",
       subtitle:
         "De pipelines fragmentados para uma plataforma CI/CD padronizada e escalavel.",
-      tags: ["GitLab CI/CD", "DevOps", "Automacao", "Governanca"],
+      tags: ["GitLab CI/CD", "DevSecOps", "Automacao", "Governanca"],
       context:
-        "Varios times de desenvolvimento mantinham pipelines independentes no GitLab com estagios, convencoes de nomes e regras de deploy inconsistentes. Isso gerava entregas lentas, releases frageis e alto custo operacional para o suporte de DevOps.",
+        "Varios times mantinham pipelines independentes no GitLab com estagios, convencoes, regras de deploy e controles de qualidade inconsistentes. Isso desacelerava releases e aumentava risco operacional.",
       whatIDid: [
-        "Desenhei um modelo padronizado de pipeline do GitLab CI/CD com estagios claros, convencoes de nomes e padroes reutilizaveis.",
-        "Criei templates compartilhados para eliminar copy/paste entre repositorios.",
+        "Desenhei um modelo padronizado de GitLab CI/CD com templates reutilizaveis, estrategia segura de variaveis, promocao de ambientes e quality gates.",
+        "Integrei etapas de build, teste, security scanning, artefatos e deploy entre multiplos repositorios.",
         "Implementei fluxos de deploy mais seguros com gates manuais em producao e regras por ambiente.",
-        "Trabalhei de perto com os times de desenvolvimento para migrar repositorios de forma incremental, sem quebrar a entrega existente."
+        "Trabalhei com times de engenharia para migrar repositorios de forma incremental sem interromper a entrega."
       ],
       outcomes: [
-        "Reduzi o ciclo de release em ~800%, saindo de releases semanais para multiplos por dia.",
-        "Diminui significativamente o esforco de manutencao de pipelines e o drift de configuracao.",
-        "Melhorei a experiencia do desenvolvedor com um padrao de CI/CD claro e documentado."
+        "Aumentei a frequencia de deploy de releases semanais para multiplos deploys por dia.",
+        "Reduzi esforco de manutencao, copy/paste de configuracao e inconsistencias de release.",
+        "Melhorei a experiencia de desenvolvimento com um padrao claro de plataforma CI/CD."
       ],
-      stack: ["GitLab CI", "Docker", "Terraform", "Kubernetes"]
-    },
-    {
-      slug: "aws-multi-account-platform-terraform",
-      title: "Plataforma multi-conta AWS com Terraform",
-      subtitle:
-        "Padroes de infraestrutura reutilizaveis para ambientes consistentes em escala.",
-      tags: ["AWS", "Terraform", "Engenharia de Plataforma", "IaC"],
-      context:
-        "A organizacao precisava de uma forma confiavel de provisionar e gerenciar multiplos ambientes AWS, garantindo padroes de seguranca, rede e operacao entre contas.",
-      whatIDid: [
-        "Desenhei uma arquitetura modular em Terraform para rede, computacao e servicos compartilhados.",
-        "Implementei separacao de ambientes (DEV, INT, STG, PROD) com padroes consistentes.",
-        "Apliquei praticas de IAM com menor privilegio e padronizei componentes de rede.",
-        "Habilitei provisionamento repetivel com minima intervencao manual."
-      ],
-      outcomes: [
-        "Provisionamento de ambientes mais rapido e previsivel.",
-        "Reducao de drift de configuracao por meio de Infrastructure as Code.",
-        "Melhoria da postura de seguranca e da consistencia operacional entre contas AWS."
-      ],
-      stack: ["AWS", "Terraform", "VPC", "IAM", "EKS"]
-    },
-    {
-      slug: "observability-alerting-noise-reduction",
-      title: "Observabilidade e reducao de ruido de alertas",
-      subtitle:
-        "Melhorando a relacao sinal-ruido e a resposta operacional.",
-      tags: ["Observabilidade", "SRE", "Monitoramento", "Alertas"],
-      context:
-        "Os times sofriam com fadiga de alertas por excesso de notificacoes mal classificadas, prejudicando a eficacia do plantao e a qualidade da resposta a incidentes.",
-      whatIDid: [
-        "Revisei monitores e alertas existentes para identificar duplicidade e sinais de baixo valor.",
-        "Defini niveis de severidade alinhados ao impacto real do negocio e da operacao.",
-        "Implementei caminhos de escalacao mais claros e expectativas para o plantao.",
-        "Documentei playbooks operacionais para padronizar a resposta a incidentes."
-      ],
-      outcomes: [
-        "Reducao significativa de ruido e falsos positivos.",
-        "Triagem de incidentes mais rapida e melhor experiencia de plantao.",
-        "Comunicacao mais consistente durante incidentes."
-      ],
-      stack: ["Datadog", "CloudWatch", "Dynatrace", "Runbooks"]
+      stack: ["GitLab CI", "Docker", "Terraform", "Checkov", "SonarQube", "Kubernetes"]
     }
   ]
 };
