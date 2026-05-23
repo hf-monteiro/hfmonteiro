@@ -3,6 +3,7 @@ import { Lang } from "@/lib/i18n";
 export type NavCopy = {
   solutions: string;
   caseStudies: string;
+  labs: string;
   skills: string;
   resume: string;
   contact: string;
@@ -23,6 +24,7 @@ const copy: Record<Lang, SiteCopy> = {
     nav: {
       solutions: "Solutions",
       caseStudies: "Projects",
+      labs: "Labs",
       skills: "Skills",
       resume: "Resume",
       contact: "Contact"
@@ -36,6 +38,7 @@ const copy: Record<Lang, SiteCopy> = {
     nav: {
       solutions: "Solucoes",
       caseStudies: "Projetos",
+      labs: "Labs",
       skills: "Skills",
       resume: "Curriculo",
       contact: "Contato"

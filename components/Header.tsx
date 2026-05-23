@@ -21,7 +21,7 @@ export default function Header({ lang, nav }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/70 backdrop-blur">
       <Container>
-        <div className="flex h-24 items-center justify-between">
+        <div className="flex min-h-24 flex-col items-start justify-center gap-4 py-4 sm:flex-row sm:items-center sm:justify-between">
           {/* Logo */}
           <a href={homeHref} className="flex items-center gap-2 transition hover:opacity-80">
             <Image
@@ -35,9 +35,10 @@ export default function Header({ lang, nav }: HeaderProps) {
           </a>
 
           {/* Navigation */}
-          <nav className="flex items-center gap-6">
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-3">
             <NavLink href={`${base}/solutions`} label={nav.solutions} />
             <NavLink href={`${base}/case-studies`} label={nav.caseStudies} />
+            <NavLink href={`${base}/labs`} label={nav.labs} />
             <NavLink href={`${base}/skills`} label={nav.skills} />
             <NavLink href={`${base}/resume`} label={nav.resume} />
             <NavLink href={`${base}/contact`} label={nav.contact} />

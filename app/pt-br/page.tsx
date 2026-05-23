@@ -11,6 +11,7 @@ const copy = {
     "Desenho plataformas AWS corporativas, arquiteturas privadas de networking, ambientes EKS em producao e sistemas de entrega para SaaS regulado e times distribuidos.",
   buttons: {
     caseStudies: "Ver projetos",
+    labs: "Infrastructure Labs",
     solutions: "Solucoes",
     resume: "Curriculo"
   },
@@ -54,6 +55,7 @@ export default function Home() {
 
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href={`${base}/case-studies`} variant="primary">{t.buttons.caseStudies}</Button>
+            <Button href={`${base}/labs`} variant="secondary">{t.buttons.labs}</Button>
             <Button href={`${base}/solutions`} variant="secondary">{t.buttons.solutions}</Button>
             <Button href={`${base}/resume`} variant="secondary">{t.buttons.resume}</Button>
           </div>
