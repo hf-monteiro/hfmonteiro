@@ -4,26 +4,99 @@ import Pill from "@/components/Pill";
 
 const copy = {
   title: "Skills",
-  intro: "A practical view of the architecture, platform, networking, Kubernetes, automation, and reliability skills I use to deliver enterprise cloud systems."
+  intro:
+    "A capability map of the architecture, platform, networking, Kubernetes, automation, and reliability work I can own across enterprise cloud environments.",
+  strengthsTitle: "Core strengths",
+  strengths: [
+    "Enterprise AWS Platforms",
+    "Advanced AWS Networking",
+    "Production EKS",
+    "Terraform at Scale",
+    "CI/CD Platform Engineering",
+    "SRE / Reliability"
+  ]
 };
 
-const groups = [
-  { title: "Platform Engineering", items: ["Enterprise Infrastructure", "SaaS Platforms", "Regulated Environments", "Infrastructure Reliability", "DevSecOps", "GitOps"] },
-  { title: "AWS Architecture", items: ["Multi-account AWS", "Cross-account IAM/STS", "AWS Organizations", "API Gateway", "Lambda", "S3", "ACM"] },
-  { title: "Advanced AWS Networking", items: ["PrivateLink", "VPC Endpoint Services", "Interface Endpoints", "Transit Gateway", "Direct Connect", "AWS IPAM", "Hybrid Cloud", "Private EKS"] },
-  { title: "DNS & Traffic Architecture", items: ["Route53", "Private Hosted Zones", "ALB", "NLB", "Ingress Controllers", "Nginx", "TLS termination"] },
-  { title: "Kubernetes & Service Mesh", items: ["Production Kubernetes", "EKS", "GKE", "Helm", "Istio", "Rancher", "Cluster Troubleshooting", "Zero-downtime Deployments"] },
-  { title: "DevOps & CI/CD", items: ["GitLab CI/CD", "GitLab Runners on Kubernetes", "AWS CodePipeline", "AWS CodeBuild", "GitHub Actions", "Quality Gates"] },
-  { title: "IaC & Automation", items: ["Terraform", "Terraform Modules", "Ansible", "CloudFormation", "Infrastructure Automation"] },
-  { title: "Monitoring & Observability", items: ["Datadog", "CloudWatch", "New Relic", "Dynatrace", "Centralized Logging", "Incident Response", "RCA"] },
-  { title: "Security & Secrets", items: ["AWS IAM", "AWS WAFv2", "SSM Parameter Store", "Secrets Manager", "Least Privilege", "Security Hardening"] },
-  { title: "Code Quality & Security", items: ["Checkov", "SonarQube", "CI/CD Security Scanning"] },
-  { title: "Scripting & Languages", items: ["Bash", "Python"] },
-  { title: "Databases", items: ["RDS", "Aurora (PostgreSQL/MySQL)", "MongoDB"] },
-  { title: "Streaming & Messaging", items: ["Kafka", "AWS MSK", "Private Connectivity"] },
-  { title: "Cloud Platforms", items: ["AWS", "GCP"] },
-  { title: "Leadership", items: ["Technical Consulting", "Mentoring", "Platform Ownership", "Architecture Reviews"] }
+const capabilities = [
+  {
+    title: "AWS Platform Architecture",
+    level: "Primary focus",
+    desc:
+      "Multi-account foundations, environment strategy, platform guardrails, shared services, regulated SaaS infrastructure, and enterprise cloud operating models.",
+    items: ["Multi-account AWS", "AWS Organizations", "Cross-account IAM/STS", "API Gateway", "Lambda", "S3", "ACM", "Enterprise Infrastructure"]
+  },
+  {
+    title: "Advanced Cloud Networking",
+    level: "Primary focus",
+    desc:
+      "Private connectivity, DNS, cross-account routing, hybrid networking, and secure service exposure for AWS workloads.",
+    items: ["PrivateLink", "VPC Endpoint Services", "Interface Endpoints", "Transit Gateway", "Direct Connect", "Route53 PHZ", "AWS IPAM", "Hybrid Cloud"]
+  },
+  {
+    title: "Kubernetes Platform Engineering",
+    level: "Production experience",
+    desc:
+      "Private EKS/GKE platforms, service mesh, ingress, cluster troubleshooting, deployment standards, and day-2 operations.",
+    items: ["EKS", "GKE", "Helm", "Istio", "Rancher", "Ingress Controllers", "ALB/NLB", "Zero-downtime Deployments", "Private EKS"]
+  },
+  {
+    title: "Terraform / IaC Architecture",
+    level: "Primary focus",
+    desc:
+      "Reusable module design, environment composition, infrastructure automation, remote-state patterns, and consistent provisioning workflows.",
+    items: ["Terraform", "Terraform Modules", "Infrastructure Automation", "CloudFormation", "Ansible", "Remote State", "Module Standards"]
+  },
+  {
+    title: "CI/CD & DevSecOps",
+    level: "Production experience",
+    desc:
+      "Delivery platforms, reusable pipeline templates, quality gates, security scanning, environment promotion, and developer onboarding.",
+    items: ["GitLab CI/CD", "GitLab Runners on Kubernetes", "GitHub Actions", "AWS CodePipeline", "AWS CodeBuild", "Checkov", "SonarQube", "Quality Gates"]
+  },
+  {
+    title: "Observability & Reliability",
+    level: "Production experience",
+    desc:
+      "Monitoring, alert hygiene, incident response, root cause analysis, operational runbooks, and reliability improvements for distributed systems.",
+    items: ["Datadog", "CloudWatch", "New Relic", "Dynatrace", "Centralized Logging", "Incident Response", "RCA", "Runbooks"]
+  },
+  {
+    title: "Security & Compliance",
+    level: "Hands-on",
+    desc:
+      "Pragmatic cloud security controls, IAM hardening, secrets management, WAF baselines, and compliance-aware infrastructure patterns.",
+    items: ["AWS IAM", "AWS WAFv2", "SSM Parameter Store", "Secrets Manager", "Least Privilege", "Security Hardening", "Regulated Environments"]
+  },
+  {
+    title: "Databases, Messaging & Application Services",
+    level: "Hands-on",
+    desc:
+      "Supporting platform services for application workloads, private connectivity, managed databases, and event-driven infrastructure.",
+    items: ["RDS", "Aurora PostgreSQL/MySQL", "MongoDB", "Kafka", "AWS MSK", "SQS", "ECS", "Private Connectivity"]
+  },
+  {
+    title: "Leadership & Delivery",
+    level: "Lead / senior ownership",
+    desc:
+      "Architecture reviews, technical consulting, mentoring, team coordination, platform ownership, and pragmatic delivery across engineering teams.",
+    items: ["Technical Consulting", "Mentoring", "Platform Ownership", "Architecture Reviews", "Stakeholder Alignment", "Delivery Planning"]
+  },
+  {
+    title: "Supporting / Legacy Foundations",
+    level: "Supporting experience",
+    desc:
+      "Earlier infrastructure background that still informs cloud architecture decisions, especially around networking, virtualization, Windows, and data center operations.",
+    items: ["Bash", "Python", "Windows Infrastructure", "On-prem Virtualization", "Data Center", "Network Infrastructure", "ITIL", "SDLC"]
+  }
 ];
+
+function LevelBadge({ children }: { children: string }) {
+  return (
+    <span className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1 text-xs font-medium text-zinc-300">
+      {children}
+    </span>
+  );
+}
 
 export default function SkillsPage() {
   return (
@@ -31,15 +104,33 @@ export default function SkillsPage() {
       <Container>
         <section className="py-14">
           <h1 className="text-3xl font-semibold">{copy.title}</h1>
-          <p className="mt-3 max-w-2xl text-zinc-400">{copy.intro}</p>
+          <p className="mt-3 max-w-3xl text-zinc-400">{copy.intro}</p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {groups.map((g) => (
-              <Card key={g.title}>
-                <h2 className="text-lg font-semibold">{g.title}</h2>
+          <div className="mt-8">
+            <h2 className="text-base font-semibold">{copy.strengthsTitle}</h2>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {copy.strengths.map((strength) => (
+                <span
+                  key={strength}
+                  className="rounded-full border border-white bg-white px-3 py-1 text-xs font-medium text-zinc-950"
+                >
+                  {strength}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-4 lg:grid-cols-2">
+            {capabilities.map((capability) => (
+              <Card key={capability.title}>
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <h2 className="text-lg font-semibold">{capability.title}</h2>
+                  <LevelBadge>{capability.level}</LevelBadge>
+                </div>
+                <p className="mt-3 text-sm text-zinc-400">{capability.desc}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {g.items.map((i) => (
-                    <Pill key={i}>{i}</Pill>
+                  {capability.items.map((item) => (
+                    <Pill key={item}>{item}</Pill>
                   ))}
                 </div>
               </Card>
