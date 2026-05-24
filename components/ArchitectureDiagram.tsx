@@ -44,8 +44,8 @@ export default function ArchitectureDiagram({ slug }: { slug: string }) {
             </div>
             {index < nodes.length - 1 ? (
               <div className="hidden md:block">
-                <div className="absolute right-[-0.85rem] top-1/2 h-px w-4 bg-cyan-300/60" />
-                <div className="absolute right-[-0.95rem] top-[calc(50%-0.2rem)] h-2 w-2 rotate-45 border-r border-t border-cyan-300/60" />
+                <div className="absolute right-[-0.85rem] top-1/2 h-px w-4 bg-emerald-200/60" />
+                <div className="absolute right-[-0.95rem] top-[calc(50%-0.2rem)] h-2 w-2 rotate-45 border-r border-t border-emerald-200/60" />
               </div>
             ) : null}
           </div>
