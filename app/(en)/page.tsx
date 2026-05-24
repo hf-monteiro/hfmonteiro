@@ -74,7 +74,7 @@ export default function Home() {
           <div className="mt-10 grid gap-3 border-y border-zinc-800 py-5 sm:grid-cols-5">
             {t.proof.map((item) => (
               <div key={item.value}>
-                <p className="text-sm font-semibold text-emerald-200">{item.value}</p>
+                <p className="text-sm font-semibold text-emerald-300/80">{item.value}</p>
                 <p className="mt-1 text-xs text-zinc-500">{item.label}</p>
               </div>
             ))}
