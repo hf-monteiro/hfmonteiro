@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import Card from "@/components/Card";
 import Pill from "@/components/Pill";
+import ArchitectureDiagram from "@/components/ArchitectureDiagram";
 import { getCaseStudies, getCaseStudy } from "@/lib/caseStudies";
 
 export function generateStaticParams() {
@@ -16,6 +17,7 @@ const copy = {
   focus: "Foco",
   context: "Contexto",
   impact: "Impacto",
+  diagram: "Diagrama de arquitetura",
   architecture: "Abordagem de arquitetura",
   whatIDid: "O que eu fiz",
   outcomes: "Resultados",
@@ -95,6 +97,11 @@ export default function CaseStudyDetail({ params }: { params: { slug: string } }
                 ))}
               </ul>
             </Card>
+
+            <div>
+              <h2 className="mb-3 text-lg font-semibold">{t.diagram}</h2>
+              <ArchitectureDiagram slug={cs.slug} />
+            </div>
 
             <Card>
               <h2 className="text-lg font-semibold">{t.architecture}</h2>

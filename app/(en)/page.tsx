@@ -15,6 +15,13 @@ const copy = {
     resume: "Resume"
   },
   pills: ["AWS Architecture", "PrivateLink", "EKS", "Terraform", "GitLab CI/CD"],
+  proof: [
+    { value: "16M+", label: "users supported" },
+    { value: "Multi-account", label: "AWS platforms" },
+    { value: "Private EKS", label: "production operations" },
+    { value: "Weekly → daily", label: "release acceleration" },
+    { value: "AWS ANS", label: "advanced networking certified" }
+  ],
   highlights: [
     {
       title: "Enterprise AWS Platforms",
@@ -61,6 +68,15 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap gap-2">
             {t.pills.map((tag) => (
               <Pill key={tag}>{tag}</Pill>
+            ))}
+          </div>
+
+          <div className="mt-10 grid gap-3 border-y border-zinc-800 py-5 sm:grid-cols-5">
+            {t.proof.map((item) => (
+              <div key={item.value}>
+                <p className="text-sm font-semibold text-cyan-300">{item.value}</p>
+                <p className="mt-1 text-xs text-zinc-500">{item.label}</p>
+              </div>
             ))}
           </div>
         </section>

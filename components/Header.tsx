@@ -20,8 +20,8 @@ const NavLink = ({
     aria-current={active ? "page" : undefined}
     className={`border-b py-1 text-sm transition ${
       active
-        ? "border-zinc-100 text-zinc-100"
-        : "border-transparent text-zinc-400 hover:border-zinc-600 hover:text-zinc-100"
+        ? "border-cyan-300 text-zinc-100"
+        : "border-transparent text-zinc-400 hover:border-cyan-300/50 hover:text-zinc-100"
     }`}
     href={href}
   >

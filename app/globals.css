@@ -7,6 +7,10 @@ body {
   background: #09090b;
 }
 
+:root {
+  --accent: #67e8f9;
+}
+
 a,
 button {
   outline-offset: 3px;

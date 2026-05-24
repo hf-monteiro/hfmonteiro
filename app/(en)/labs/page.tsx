@@ -2,6 +2,12 @@ import Container from "@/components/Container";
 import Card from "@/components/Card";
 import Pill from "@/components/Pill";
 
+export const metadata = {
+  title: "Infrastructure Labs | Higor Monteiro",
+  description:
+    "Infrastructure labs and reference implementations for AWS, Terraform, Kubernetes, CI/CD, Packer, and automation."
+};
+
 const copy = {
   title: "Infrastructure Labs",
   intro:

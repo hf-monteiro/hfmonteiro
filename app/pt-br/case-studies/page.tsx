@@ -2,6 +2,12 @@ import Container from "@/components/Container";
 import Pill from "@/components/Pill";
 import { getCaseStudies } from "@/lib/caseStudies";
 
+export const metadata = {
+  title: "Projetos | Higor Monteiro",
+  description:
+    "Case studies de arquitetura cobrindo plataformas AWS, networking privado, EKS, GitLab CI/CD e confiabilidade."
+};
+
 const copy = {
   title: "Projetos",
   intro:

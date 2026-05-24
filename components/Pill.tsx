@@ -1,6 +1,6 @@
 export default function Pill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-full border border-zinc-800 bg-zinc-950 px-3 py-1 text-xs text-zinc-200">
+    <span className="rounded-full border border-zinc-800 bg-zinc-950 px-3 py-1 text-xs text-zinc-300">
       {children}
     </span>
   );

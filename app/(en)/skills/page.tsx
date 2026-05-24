@@ -2,6 +2,12 @@ import Container from "@/components/Container";
 import Card from "@/components/Card";
 import Pill from "@/components/Pill";
 
+export const metadata = {
+  title: "Skills | Higor Monteiro",
+  description:
+    "Capability map for AWS platform architecture, advanced cloud networking, Kubernetes, Terraform, CI/CD, and reliability."
+};
+
 const copy = {
   title: "Skills",
   intro:

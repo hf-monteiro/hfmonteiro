@@ -3,6 +3,12 @@ import Card from "@/components/Card";
 import Button from "@/components/Button";
 import Pill from "@/components/Pill";
 
+export const metadata = {
+  title: "Contato | Higor Monteiro",
+  description:
+    "Contato profissional para conversas e temas de arquitetura de plataforma."
+};
+
 const copy = {
   title: "Contato",
   intro:

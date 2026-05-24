@@ -3,6 +3,12 @@ import Card from "@/components/Card";
 import Button from "@/components/Button";
 import Pill from "@/components/Pill";
 
+export const metadata = {
+  title: "Resume | Higor Monteiro",
+  description:
+    "Senior DevOps and Platform Engineering resume focused on AWS architecture, EKS, Terraform, GitLab CI/CD, and cloud networking."
+};
+
 const copy = {
   title: "Resume",
   intro: "Senior platform, cloud architecture, and infrastructure reliability overview.",

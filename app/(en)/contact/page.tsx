@@ -3,6 +3,12 @@ import Card from "@/components/Card";
 import Button from "@/components/Button";
 import Pill from "@/components/Pill";
 
+export const metadata = {
+  title: "Contact | Higor Monteiro",
+  description:
+    "Contact Higor Monteiro for professional conversations and platform architecture topics."
+};
+
 const copy = {
   title: "Contact",
   intro:

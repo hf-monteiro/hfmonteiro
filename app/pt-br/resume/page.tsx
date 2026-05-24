@@ -3,6 +3,12 @@ import Card from "@/components/Card";
 import Button from "@/components/Button";
 import Pill from "@/components/Pill";
 
+export const metadata = {
+  title: "Currículo | Higor Monteiro",
+  description:
+    "Currículo de Senior DevOps e Platform Engineer com foco em arquitetura AWS, EKS, Terraform, GitLab CI/CD e networking cloud."
+};
+
 const copy = {
   title: "Currículo",
   intro: "Resumo sênior de plataforma, arquitetura cloud e confiabilidade de infraestrutura.",
