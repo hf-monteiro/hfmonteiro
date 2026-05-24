@@ -62,6 +62,7 @@ export default function Header({ lang, nav }: HeaderProps) {
             <NavLink href={`${base}/solutions`} label={nav.solutions} active={isActive(`${base}/solutions`)} />
             <NavLink href={`${base}/case-studies`} label={nav.caseStudies} active={isActive(`${base}/case-studies`)} />
             <NavLink href={`${base}/labs`} label={nav.labs} active={isActive(`${base}/labs`)} />
+            <NavLink href={`${base}/notes`} label={nav.notes} active={isActive(`${base}/notes`)} />
             <NavLink href={`${base}/skills`} label={nav.skills} active={isActive(`${base}/skills`)} />
             <NavLink href={`${base}/resume`} label={nav.resume} active={isActive(`${base}/resume`)} />
             <NavLink href={`${base}/contact`} label={nav.contact} active={isActive(`${base}/contact`)} />

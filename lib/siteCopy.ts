@@ -4,6 +4,7 @@ export type NavCopy = {
   solutions: string;
   caseStudies: string;
   labs: string;
+  notes: string;
   skills: string;
   resume: string;
   contact: string;
@@ -25,6 +26,7 @@ const copy: Record<Lang, SiteCopy> = {
       solutions: "Solutions",
       caseStudies: "Projects",
       labs: "Labs",
+      notes: "Notes",
       skills: "Skills",
       resume: "Resume",
       contact: "Contact"
@@ -39,6 +41,7 @@ const copy: Record<Lang, SiteCopy> = {
       solutions: "Soluções",
       caseStudies: "Projetos",
       labs: "Labs",
+      notes: "Notes",
       skills: "Skills",
       resume: "Currículo",
       contact: "Contato"

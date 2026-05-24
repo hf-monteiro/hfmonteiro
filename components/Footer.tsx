@@ -22,6 +22,7 @@ export default function Footer({ lang, footer, nav }: FooterProps) {
             <div className="flex flex-col gap-2">
               <a className="hover:text-zinc-200" href={`${base}/case-studies`}>{nav.caseStudies}</a>
               <a className="hover:text-zinc-200" href={`${base}/labs`}>{nav.labs}</a>
+              <a className="hover:text-zinc-200" href={`${base}/notes`}>{nav.notes}</a>
               <a className="hover:text-zinc-200" href={`${base}/skills`}>{nav.skills}</a>
               <a className="hover:text-zinc-200" href={`${base}/resume`}>{nav.resume}</a>
               <a className="hover:text-zinc-200" href={`${base}/contact`}>{nav.contact}</a>

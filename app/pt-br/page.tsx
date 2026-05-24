@@ -3,6 +3,7 @@ import Card from "@/components/Card";
 import Pill from "@/components/Pill";
 import Button from "@/components/Button";
 import { getCaseStudies } from "@/lib/caseStudies";
+import { getNotes } from "@/lib/notes";
 
 const copy = {
   intro: "Olá, sou o Higor",
@@ -39,11 +40,16 @@ const copy = {
   featured: {
     title: "Projetos em Destaque",
     link: "Ver todos →"
+  },
+  notes: {
+    title: "Notas Recentes",
+    link: "Ler todos →"
   }
 };
 
 export default function Home() {
   const cases = getCaseStudies("pt-br").slice(0, 2);
+  const notes = getNotes("pt-br").slice(0, 2);
   const t = copy;
   const base = "/pt-br";
 
@@ -113,6 +119,29 @@ export default function Home() {
                     <Pill key={tag}>{tag}</Pill>
                   ))}
                 </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="pb-14">
+          <div className="flex items-baseline justify-between gap-4">
+            <h2 className="text-base font-semibold">{t.notes.title}</h2>
+            <a className="text-sm text-zinc-400 hover:text-zinc-200" href={`${base}/notes`}>
+              {t.notes.link}
+            </a>
+          </div>
+
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            {notes.map((note) => (
+              <a
+                key={note.slug}
+                href={`${base}/notes/${note.slug}`}
+                className="rounded-lg border border-zinc-800 bg-zinc-900/25 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/45"
+              >
+                <p className="text-xs text-zinc-500">{note.date} · {note.readingTime}</p>
+                <h3 className="mt-2 text-lg font-semibold">{note.title}</h3>
+                <p className="mt-3 text-sm text-zinc-400">{note.excerpt}</p>
               </a>
             ))}
           </div>
