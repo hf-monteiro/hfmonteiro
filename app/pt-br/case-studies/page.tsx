@@ -30,7 +30,7 @@ export default function CaseStudiesPage() {
               <a
                 key={c.slug}
                 href={`${base}/case-studies/${c.slug}`}
-                className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 hover:bg-zinc-900/50"
+                className="rounded-lg border border-zinc-800 bg-zinc-900/25 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/45"
               >
                 <p className="text-sm text-zinc-500">{c.subtitle}</p>
                 <h2 className="mt-2 text-lg font-semibold">{c.title}</h2>

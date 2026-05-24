@@ -105,7 +105,7 @@ function Badge({ children }: { children: string }) {
 
 function Card({ s }: { s: Solution }) {
   return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-950/40 p-6 shadow-sm">
+    <div className="rounded-lg border border-zinc-800 bg-zinc-950/40 p-5 shadow-sm">
       <h3 className="text-lg font-semibold text-zinc-100">{s.title}</h3>
 
       <div className="mt-4 grid gap-3">
@@ -153,19 +153,19 @@ export default function SolutionsPage() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-2xl border border-zinc-800 bg-zinc-950/40 p-8">
+        <div className="mt-12 rounded-lg border border-zinc-800 bg-zinc-950/40 p-6">
           <h2 className="text-xl font-semibold text-zinc-100">{copy.ctaTitle}</h2>
           <p className="mt-2 text-zinc-300">{copy.ctaBody}</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
               href={`${base}/contact`}
-              className="rounded-xl bg-white px-5 py-2.5 text-sm font-medium text-zinc-950 hover:opacity-90 transition"
+              className="rounded-lg bg-white px-5 py-2.5 text-sm font-medium text-zinc-950 transition hover:opacity-90"
             >
               {copy.ctaContact}
             </a>
             <a
               href={`${base}/resume`}
-              className="rounded-xl border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100 hover:bg-zinc-900/40 transition"
+              className="rounded-lg border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:bg-zinc-900/40"
             >
               {copy.ctaResume}
             </a>

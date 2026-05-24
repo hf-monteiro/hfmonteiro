@@ -8,7 +8,9 @@ export default function PtBrLayout({ children }: { children: React.ReactNode }) 
   return (
     <>
       <Header lang="pt-br" nav={copy.nav} />
-      {children}
+      <div id="main-content" lang="pt-BR" tabIndex={-1}>
+        {children}
+      </div>
       <Footer lang="pt-br" nav={copy.nav} footer={copy.footer} />
     </>
   );

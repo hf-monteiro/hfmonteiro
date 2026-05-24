@@ -8,7 +8,9 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header lang="en" nav={copy.nav} />
-      {children}
+      <div id="main-content" lang="en" tabIndex={-1}>
+        {children}
+      </div>
       <Footer lang="en" nav={copy.nav} footer={copy.footer} />
     </>
   );
