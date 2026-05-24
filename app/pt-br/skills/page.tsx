@@ -5,12 +5,12 @@ import Pill from "@/components/Pill";
 const copy = {
   title: "Skills",
   intro:
-    "Um mapa de capacidades de arquitetura, plataforma, networking, Kubernetes, automacao e confiabilidade que posso liderar em ambientes cloud corporativos.",
-  strengthsTitle: "Forcas principais",
+    "Um mapa de capacidades de arquitetura, plataforma, networking, Kubernetes, automação e confiabilidade que posso liderar em ambientes cloud corporativos.",
+  strengthsTitle: "Forças principais",
   strengths: [
     "Plataformas AWS Corporativas",
-    "Networking AWS Avancado",
-    "EKS em Producao",
+    "Networking AWS Avançado",
+    "EKS em Produção",
     "Terraform em Escala",
     "Platform Engineering de CI/CD",
     "SRE / Confiabilidade"
@@ -22,54 +22,54 @@ const capabilities = [
     title: "Arquitetura de Plataforma AWS",
     level: "Foco principal",
     desc:
-      "Fundacoes multi-conta, estrategia de ambientes, guardrails de plataforma, servicos compartilhados, infraestrutura SaaS regulada e modelos operacionais cloud.",
+      "Fundações multi-conta, estratégia de ambientes, guardrails de plataforma, serviços compartilhados, infraestrutura SaaS regulada e modelos operacionais cloud.",
     items: ["AWS multi-conta", "AWS Organizations", "IAM/STS cross-account", "API Gateway", "Lambda", "S3", "ACM", "Enterprise Infrastructure"]
   },
   {
-    title: "Networking Cloud Avancado",
+    title: "Networking Cloud Avançado",
     level: "Foco principal",
     desc:
-      "Conectividade privada, DNS, roteamento cross-account, networking hibrido e exposicao segura de servicos para workloads AWS.",
+      "Conectividade privada, DNS, roteamento cross-account, networking híbrido e exposição segura de serviços para workloads AWS.",
     items: ["PrivateLink", "VPC Endpoint Services", "Interface Endpoints", "Transit Gateway", "Direct Connect", "Route53 PHZ", "AWS IPAM", "Hybrid Cloud"]
   },
   {
     title: "Platform Engineering com Kubernetes",
-    level: "Experiencia em producao",
+    level: "Experiência em produção",
     desc:
-      "Plataformas EKS/GKE privadas, service mesh, ingress, troubleshooting de cluster, padroes de deploy e operacao day-2.",
+      "Plataformas EKS/GKE privadas, service mesh, ingress, troubleshooting de cluster, padrões de deploy e operação day-2.",
     items: ["EKS", "GKE", "Helm", "Istio", "Rancher", "Ingress Controllers", "ALB/NLB", "Zero-downtime Deployments", "Private EKS"]
   },
   {
     title: "Arquitetura Terraform / IaC",
     level: "Foco principal",
     desc:
-      "Design de modulos reutilizaveis, composicao por ambiente, automacao de infraestrutura, remote state e workflows consistentes de provisionamento.",
-    items: ["Terraform", "Modulos Terraform", "Infrastructure Automation", "CloudFormation", "Ansible", "Remote State", "Padroes de Modulos"]
+      "Design de módulos reutilizáveis, composição por ambiente, automação de infraestrutura, remote state e workflows consistentes de provisionamento.",
+    items: ["Terraform", "Módulos Terraform", "Infrastructure Automation", "CloudFormation", "Ansible", "Remote State", "Padrões de Módulos"]
   },
   {
     title: "CI/CD e DevSecOps",
-    level: "Experiencia em producao",
+    level: "Experiência em produção",
     desc:
-      "Plataformas de entrega, templates reutilizaveis, quality gates, security scanning, promocao de ambientes e onboarding de desenvolvedores.",
+      "Plataformas de entrega, templates reutilizáveis, quality gates, security scanning, promoção de ambientes e onboarding de desenvolvedores.",
     items: ["GitLab CI/CD", "GitLab Runners em Kubernetes", "GitHub Actions", "AWS CodePipeline", "AWS CodeBuild", "Checkov", "SonarQube", "Quality Gates"]
   },
   {
     title: "Observabilidade e Confiabilidade",
-    level: "Experiencia em producao",
+    level: "Experiência em produção",
     desc:
-      "Monitoramento, higiene de alertas, incident response, root cause analysis, runbooks operacionais e melhorias de confiabilidade para sistemas distribuidos.",
+      "Monitoramento, higiene de alertas, incident response, root cause analysis, runbooks operacionais e melhorias de confiabilidade para sistemas distribuídos.",
     items: ["Datadog", "CloudWatch", "New Relic", "Dynatrace", "Logs Centralizados", "Incident Response", "RCA", "Runbooks"]
   },
   {
-    title: "Seguranca e Compliance",
+    title: "Segurança e Compliance",
     level: "Hands-on",
     desc:
-      "Controles pragmaticos de seguranca cloud, hardening de IAM, gestao de segredos, baselines de WAF e padroes de infraestrutura sensiveis a compliance.",
+      "Controles pragmáticos de segurança cloud, hardening de IAM, gestão de segredos, baselines de WAF e padrões de infraestrutura sensíveis a compliance.",
     items: ["AWS IAM", "AWS WAFv2", "SSM Parameter Store", "Secrets Manager", "Least Privilege", "Security Hardening", "Ambientes Regulados"]
   }
 ];
 
-const supporting = ["RDS", "Aurora", "MongoDB", "Kafka", "AWS MSK", "SQS", "ECS", "Bash", "Python", "Consultoria Tecnica", "Mentoria"];
+const supporting = ["RDS", "Aurora", "MongoDB", "Kafka", "AWS MSK", "SQS", "ECS", "Bash", "Python", "Consultoria Técnica", "Mentoria"];
 
 function LevelBadge({ children }: { children: string }) {
   return (
@@ -119,7 +119,7 @@ export default function SkillsPage() {
           </div>
 
           <div className="mt-8">
-            <h2 className="text-base font-semibold">Experiencia de suporte</h2>
+            <h2 className="text-base font-semibold">Experiência de suporte</h2>
             <div className="mt-3 flex flex-wrap gap-2">
               {supporting.map((item) => (
                 <Pill key={item}>{item}</Pill>

@@ -4,11 +4,11 @@ import Button from "@/components/Button";
 import Pill from "@/components/Pill";
 
 const copy = {
-  title: "Curriculo",
-  intro: "Resumo senior de plataforma, arquitetura cloud e confiabilidade de infraestrutura.",
+  title: "Currículo",
+  intro: "Resumo sênior de plataforma, arquitetura cloud e confiabilidade de infraestrutura.",
   summaryTitle: "Resumo",
   summaryBody:
-    "Senior DevOps / Platform Engineer com 10+ anos de experiencia desenhando e operando infraestrutura cloud-native e arquiteturas de plataforma corporativas em AWS. Especializado em Kubernetes (EKS), Terraform, GitLab CI/CD, AWS networking, PrivateLink, Direct Connect, arquiteturas multi-conta e engenharia de plataforma para ambientes SaaS regulados.",
+    "Senior DevOps / Platform Engineer com 10+ anos de experiência desenhando e operando infraestrutura cloud-native e arquiteturas de plataforma corporativas em AWS. Especializado em Kubernetes (EKS), Terraform, GitLab CI/CD, AWS networking, PrivateLink, Direct Connect, arquiteturas multi-conta e engenharia de plataforma para ambientes SaaS regulados.",
   download: "Baixar PDF",
   contact: "Contato",
   positioning: [
@@ -21,13 +21,13 @@ const copy = {
   outcomesTitle: "Principais Resultados",
   outcomes: [
     "Desenhei arquiteturas AWS multi-conta para ambientes SaaS corporativos.",
-    "Construí padroes de conectividade privada com PrivateLink, Transit Gateway, Direct Connect e Route53 PHZ.",
-    "Operei plataformas EKS em producao com GitLab CI/CD, Helm, Istio e ingress privado.",
-    "Padronizei workflows GitLab CI/CD, aumentando releases de semanais para multiplos deploys por dia.",
-    "Apoiei ambientes AWS de grande escala atendendo 16M+ usuarios em sistemas financeiros regulados.",
+    "Construí padrões de conectividade privada com PrivateLink, Transit Gateway, Direct Connect e Route53 PHZ.",
+    "Operei plataformas EKS em produção com GitLab CI/CD, Helm, Istio e ingress privado.",
+    "Padronizei workflows GitLab CI/CD, aumentando releases de semanais para múltiplos deploys por dia.",
+    "Apoiei ambientes AWS de grande escala atendendo 16M+ usuários em sistemas financeiros regulados.",
     "Melhorei confiabilidade de plataforma com observabilidade, incident response, RCA e runbooks."
   ],
-  certsTitle: "Certificacoes",
+  certsTitle: "Certificações",
   certs: [
     "AWS Certified Advanced Networking - Specialty",
     "AWS Certified DevOps Engineer - Professional",
@@ -36,15 +36,15 @@ const copy = {
     "AWS Certified Developer / SysOps / Cloud Practitioner",
     "Certified SAFe 6 - Practitioner / GitLab Certified Associate"
   ],
-  architectureTitle: "Experiencia Selecionada em Arquitetura",
+  architectureTitle: "Experiência Selecionada em Arquitetura",
   architectureGroups: [
     {
       title: "Plataforma AWS e Networking",
       items: [
         "Arquiteturas SaaS AWS multi-conta",
         "AWS PrivateLink e VPC Endpoint Services",
-        "Conectividade hibrida com AWS Direct Connect e Transit Gateway",
-        "Padroes de IAM cross-account e federacao STS",
+        "Conectividade híbrida com AWS Direct Connect e Transit Gateway",
+        "Padrões de IAM cross-account e federação STS",
         "Arquiteturas de DNS corporativo com Route53 Private Hosted Zones"
       ]
     },
@@ -52,25 +52,25 @@ const copy = {
       title: "Kubernetes e Entrega",
       items: [
         "Ambientes Kubernetes/EKS privados com acesso controlado",
-        "Implementacoes de Istio service mesh e roteamento interno",
+        "Implementações de Istio service mesh e roteamento interno",
         "Platform engineering com GitLab CI/CD e GitLab runners em Kubernetes",
-        "Arquiteturas de ingress altamente disponiveis com ALB/NLB",
-        "Padronizacao de modulos Terraform em escala"
+        "Arquiteturas de ingress altamente disponíveis com ALB/NLB",
+        "Padronização de módulos Terraform em escala"
       ]
     },
     {
-      title: "Confiabilidade e Seguranca",
+      title: "Confiabilidade e Segurança",
       items: [
-        "AWS WAF, DevSecOps e hardening de seguranca",
+        "AWS WAF, DevSecOps e hardening de segurança",
         "Networking MSK/Kafka e conectividade privada",
         "Plataformas centralizadas de observabilidade e monitoramento",
-        "Incident response em producao e root cause analysis",
-        "Melhorias de confiabilidade para sistemas AWS distribuidos"
+        "Incident response em produção e root cause analysis",
+        "Melhorias de confiabilidade para sistemas AWS distribuídos"
       ]
     }
   ],
-  recentTitle: "Experiencia Recente em Plataforma e Cloud",
-  earlierTitle: "Lideranca Anterior em Infraestrutura",
+  recentTitle: "Experiência Recente em Plataforma e Cloud",
+  earlierTitle: "Liderança Anterior em Infraestrutura",
   recentRoles: [
     {
       title: "DevOps / Platform Engineering",
@@ -78,23 +78,23 @@ const copy = {
       period: "Feb 2022 - Presente",
       tags: ["AWS", "Terraform", "EKS", "PrivateLink", "Istio", "GitLab CI/CD", "SaaS regulado"],
       items: [
-        "Desenhei e implementei arquiteturas de plataforma AWS multi-conta para ambientes SaaS corporativos usando Terraform e boas praticas de Infrastructure as Code.",
+        "Desenhei e implementei arquiteturas de plataforma AWS multi-conta para ambientes SaaS corporativos usando Terraform e boas práticas de Infrastructure as Code.",
         "Arquiteturei networking seguro cross-account com AWS PrivateLink, Transit Gateway, Direct Connect, Route53 Private Hosted Zones, Interface Endpoints e VPC Endpoint Services.",
-        "Construi e mantive plataformas EKS em producao com GitLab CI/CD, Helm, Istio, ingress privado, observabilidade e pipelines automatizados.",
-        "Desenvolvi modulos Terraform reutilizaveis para networking, EKS, MSK, ingress, WAF, Route53, controles de seguranca cloud e fundacoes de plataforma.",
-        "Otimizei pipelines CI/CD entre times de engenharia, aumentando a frequencia de deploy de releases semanais para multiplos deploys por dia.",
-        "Atuei em incident response, root cause analysis, troubleshooting de plataforma e melhorias de confiabilidade em sistemas AWS distribuidos."
+        "Construí e mantive plataformas EKS em produção com GitLab CI/CD, Helm, Istio, ingress privado, observabilidade e pipelines automatizados.",
+        "Desenvolvi módulos Terraform reutilizáveis para networking, EKS, MSK, ingress, WAF, Route53, controles de segurança cloud e fundações de plataforma.",
+        "Otimizei pipelines CI/CD entre times de engenharia, aumentando a frequência de deploy de releases semanais para múltiplos deploys por dia.",
+        "Atuei em incident response, root cause analysis, troubleshooting de plataforma e melhorias de confiabilidade em sistemas AWS distribuídos."
       ]
     },
     {
       title: "Cloud Reliability e DevOps",
       company: "Banco Inter",
       period: "Sep 2021 - Feb 2022",
-      tags: ["AWS", "Financial Services", "EKS", "ECS", "MSK", "Confiabilidade", "16M+ usuarios"],
+      tags: ["AWS", "Financial Services", "EKS", "ECS", "MSK", "Confiabilidade", "16M+ usuários"],
       items: [
-        "Apoiei ambientes AWS de grande escala atendendo 16M+ usuarios com requisitos de alta disponibilidade, seguranca e regulacao financeira.",
-        "Gerenciei servicos cloud mission-critical incluindo EKS, ECS, API Gateway, MSK, Lambda, RDS/Aurora, IAM, WAFv2, S3, ALB/NLB e ACM.",
-        "Melhorei observabilidade, incident response, pipelines CI/CD e maturidade operacional para sistemas distribuidos em producao."
+        "Apoiei ambientes AWS de grande escala atendendo 16M+ usuários com requisitos de alta disponibilidade, segurança e regulação financeira.",
+        "Gerenciei serviços cloud mission-critical incluindo EKS, ECS, API Gateway, MSK, Lambda, RDS/Aurora, IAM, WAFv2, S3, ALB/NLB e ACM.",
+        "Melhorei observabilidade, incident response, pipelines CI/CD e maturidade operacional para sistemas distribuídos em produção."
       ]
     },
     {
@@ -103,34 +103,34 @@ const copy = {
       period: "Jun 2020 - Sep 2021",
       tags: ["AWS", "Terraform", "CodePipeline", "CodeDeploy", "Cloud Migration"],
       items: [
-        "Arquiteturei solucoes AWS usando Terraform e servicos AWS de CI/CD, incluindo CodePipeline e CodeDeploy.",
-        "Automatizei workflows de deploy com AWS CodePipeline, GitHub e GitLab, reduzindo ciclos de release e melhorando a consistencia de entrega.",
-        "Executei projetos de migracao cloud em larga escala e otimizei workloads corporativos para confiabilidade, escalabilidade e eficiencia operacional."
+        "Arquiteturei soluções AWS usando Terraform e serviços AWS de CI/CD, incluindo CodePipeline e CodeDeploy.",
+        "Automatizei workflows de deploy com AWS CodePipeline, GitHub e GitLab, reduzindo ciclos de release e melhorando a consistência de entrega.",
+        "Executei projetos de migração cloud em larga escala e otimizei workloads corporativos para confiabilidade, escalabilidade e eficiência operacional."
       ]
     }
   ],
   earlierRoles: [
     {
       title: "Tech Lead",
-      company: "Gtek Solucoes Tecnologicas",
+      company: "Gtek Soluções Tecnológicas",
       period: "Sep 2017 - Jun 2019",
-      tags: ["Lideranca", "Networking", "Virtualizacao", "Consultoria"],
+      tags: ["Liderança", "Networking", "Virtualização", "Consultoria"],
       items: [
-        "Liderei um time tecnico responsavel por gestao de incidentes, operacao de infraestrutura e projetos de virtualizacao on-premises.",
+        "Liderei um time técnico responsável por gestão de incidentes, operação de infraestrutura e projetos de virtualização on-premises.",
         "Arquiteturei e executei projetos de infraestrutura de rede para clientes corporativos.",
-        "Prestei consultoria de TI e conduzi operacoes de equipe, planejamento de entregas e execucao tecnica."
+        "Prestei consultoria de TI e conduzi operações de equipe, planejamento de entregas e execução técnica."
       ]
     },
     {
       title: "Tech Lead",
       company: "Intranetworks",
       period: "Sep 2014 - Aug 2017",
-      tags: ["Lideranca", "Data Center", "Networking", "Virtualizacao"],
+      tags: ["Liderança", "Data Center", "Networking", "Virtualização"],
       items: [
-        "Direcionei operacoes de equipe e gestao de incidentes enquanto entregava projetos de virtualizacao on-premises.",
+        "Direcionei operações de equipe e gestão de incidentes enquanto entregava projetos de virtualização on-premises.",
         "Arquiteturei e gerenciei projetos de infraestrutura de rede em ambientes de clientes.",
-        "Desenhei e implementei projetos de infraestrutura de data center, incluindo fundacoes de networking e virtualizacao.",
-        "Prestei consultoria de TI e suporte a servicos enquanto gerenciava operacoes de infraestrutura de rede."
+        "Desenhei e implementei projetos de infraestrutura de data center, incluindo fundações de networking e virtualização.",
+        "Prestei consultoria de TI e suporte a serviços enquanto gerenciava operações de infraestrutura de rede."
       ]
     }
   ]

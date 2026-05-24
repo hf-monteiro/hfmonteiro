@@ -5,28 +5,28 @@ import Button from "@/components/Button";
 import { getCaseStudies } from "@/lib/caseStudies";
 
 const copy = {
-  intro: "Ola, sou o Higor",
+  intro: "Olá, sou o Higor",
   title: "Senior DevOps / Platform Engineer",
   summary:
-    "Desenho plataformas AWS corporativas, arquiteturas privadas de networking, ambientes EKS em producao e sistemas de entrega para SaaS regulado e times distribuidos.",
+    "Desenho plataformas AWS corporativas, arquiteturas privadas de networking, ambientes EKS em produção e sistemas de entrega para SaaS regulado e times distribuídos.",
   buttons: {
     caseStudies: "Ver projetos",
     labs: "Infrastructure Labs",
-    resume: "Curriculo"
+    resume: "Currículo"
   },
   pills: ["AWS Architecture", "PrivateLink", "EKS", "Terraform", "GitLab CI/CD"],
   highlights: [
     {
       title: "Plataformas AWS Corporativas",
-      desc: "Fundacoes multi-conta, IAM/STS cross-account, DNS privado, guardrails e infraestrutura SaaS regulada."
+      desc: "Fundações multi-conta, IAM/STS cross-account, DNS privado, guardrails e infraestrutura SaaS regulada."
     },
     {
-      title: "Networking Cloud Avancado",
-      desc: "PrivateLink, VPC Endpoint Services, Transit Gateway, Direct Connect, Route53 PHZ, conectividade hibrida e acesso privado ao EKS."
+      title: "Networking Cloud Avançado",
+      desc: "PrivateLink, VPC Endpoint Services, Transit Gateway, Direct Connect, Route53 PHZ, conectividade híbrida e acesso privado ao EKS."
     },
     {
-      title: "Kubernetes em Producao e Confiabilidade",
-      desc: "Operacao de EKS, Istio service mesh, GitLab runners em Kubernetes, observabilidade, incident response e reducao de MTTR."
+      title: "Kubernetes em Produção e Confiabilidade",
+      desc: "Operação de EKS, Istio service mesh, GitLab runners em Kubernetes, observabilidade, incident response e redução de MTTR."
     }
   ],
   featured: {

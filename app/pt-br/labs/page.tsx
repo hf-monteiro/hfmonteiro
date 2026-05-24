@@ -5,25 +5,25 @@ import Pill from "@/components/Pill";
 const copy = {
   title: "Infrastructure Labs",
   intro:
-    "Labs e implementacoes de referencia em AWS, Terraform, Kubernetes, CI/CD, Packer e automacao.",
+    "Labs e implementações de referência em AWS, Terraform, Kubernetes, CI/CD, Packer e automação.",
   note:
-    "Esses projetos sao exemplos de aprendizado, arquitetura e implementacao, nao modulos prontos para uso direto em producao.",
-  back: "Voltar para o inicio",
+    "Esses projetos são exemplos de aprendizado, arquitetura e implementação, não módulos prontos para uso direto em produção.",
+  back: "Voltar para o início",
   sections: [
     {
-      title: "Fundacao AWS Multi-Conta",
+      title: "Fundação AWS Multi-Conta",
       repo: "tf-multi-acc",
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/tf-multi-acc" }],
       desc:
-        "Padroes Terraform para AWS Organizations, separacao de contas, networking compartilhado, contas de seguranca, roles cross-account, remote state e blocos reutilizaveis de VPC/subnets.",
-      tags: ["AWS Organizations", "Terraform", "IAM cross-account", "VPC", "Seguranca"]
+        "Padrões Terraform para AWS Organizations, separação de contas, networking compartilhado, contas de segurança, roles cross-account, remote state e blocos reutilizáveis de VPC/subnets.",
+      tags: ["AWS Organizations", "Terraform", "IAM cross-account", "VPC", "Segurança"]
     },
     {
-      title: "Modulos Reutilizaveis de Infraestrutura",
+      title: "Módulos Reutilizáveis de Infraestrutura",
       repo: "infra-modules",
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/infra-modules" }],
       desc:
-        "Modulos e exemplos Terraform para EKS, VPC, RDS, DocumentDB, S3, SQS FIFO, Directory Service e padroes de infraestrutura por ambiente.",
+        "Módulos e exemplos Terraform para EKS, VPC, RDS, DocumentDB, S3, SQS FIFO, Directory Service e padrões de infraestrutura por ambiente.",
       tags: ["Terraform Modules", "EKS", "RDS", "S3", "SQS", "Directory Service"]
     },
     {
@@ -31,7 +31,7 @@ const copy = {
       repo: "simple-ecs-env",
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/simple-ecs-env" }],
       desc:
-        "Ambiente lab com ECS, RDS, ECR, S3, SQS, roteamento VPC, security groups e integracao com Secrets Manager para infraestrutura de aplicacoes.",
+        "Ambiente lab com ECS, RDS, ECR, S3, SQS, roteamento VPC, security groups e integração com Secrets Manager para infraestrutura de aplicações.",
       tags: ["ECS", "RDS", "Secrets Manager", "ECR", "VPC"]
     },
     {
@@ -42,7 +42,7 @@ const copy = {
         { label: "Repo Windows", href: "https://github.com/hf-monteiro/packer-win-stigs" }
       ],
       desc:
-        "Exemplos com Packer e Ansible para criar imagens Linux e Windows hardenizadas, incluindo configuracao orientada a STIG e bootstrap de automacao remota.",
+        "Exemplos com Packer e Ansible para criar imagens Linux e Windows hardenizadas, incluindo configuração orientada a STIG e bootstrap de automação remota.",
       tags: ["Packer", "Ansible", "STIG", "Windows", "RHEL"]
     },
     {
@@ -50,15 +50,15 @@ const copy = {
       repo: "cicd-examples",
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/cicd-examples" }],
       desc:
-        "Exemplos de pipelines para fluxos GitLab CI/CD single-env e multi-env, automacao Terraform e padroes reutilizaveis de entrega.",
-      tags: ["GitLab CI/CD", "Terraform", "Multi-env", "Automacao"]
+        "Exemplos de pipelines para fluxos GitLab CI/CD single-env e multi-env, automação Terraform e padrões reutilizáveis de entrega.",
+      tags: ["GitLab CI/CD", "Terraform", "Multi-env", "Automação"]
     },
     {
-      title: "Scripts de Automacao AWS",
+      title: "Scripts de Automação AWS",
       repo: "aws-scripts",
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-scripts" }],
       desc:
-        "Scripts operacionais pequenos para automacao de contas AWS, checks de deploy ECS, leitura de Secrets Manager, monitoramento SSL, inspecao IAM e criacao de roles.",
+        "Scripts operacionais pequenos para automação de contas AWS, checks de deploy ECS, leitura de Secrets Manager, monitoramento SSL, inspeção IAM e criação de roles.",
       tags: ["Python", "Bash", "Boto3", "ECS", "IAM", "Secrets Manager"]
     },
     {
@@ -66,15 +66,15 @@ const copy = {
       repo: "tf-ansible-tower",
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/tf-ansible-tower" }],
       desc:
-        "Exemplos Terraform e bootstrap para deploy de uma plataforma de automacao lab com EC2, IAM, security groups, user data e scripts operacionais.",
-      tags: ["Legacy lab", "Terraform", "Ansible Tower", "EC2", "IAM", "Automacao"]
+        "Exemplos Terraform e bootstrap para deploy de uma plataforma de automação lab com EC2, IAM, security groups, user data e scripts operacionais.",
+      tags: ["Legacy lab", "Terraform", "Ansible Tower", "EC2", "IAM", "Automação"]
     },
     {
-      title: "Lab de Repositorio de Pacotes Windows",
+      title: "Lab de Repositório de Pacotes Windows",
       repo: "tf-chocolatey",
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/tf-chocolatey" }],
       desc:
-        "Lab Terraform para criar infraestrutura em torno de um repositorio estilo Chocolatey, incluindo EC2, IAM roles e padroes de security groups.",
+        "Lab Terraform para criar infraestrutura em torno de um repositório estilo Chocolatey, incluindo EC2, IAM roles e padrões de security groups.",
       tags: ["Legacy lab", "Windows", "Chocolatey", "EC2", "IAM", "Terraform"]
     },
     {
@@ -82,7 +82,7 @@ const copy = {
       repo: "aws-ec2-simple",
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-ec2-simple" }],
       desc:
-        "Exemplos Terraform anteriores para EC2, ALB, padroes RDS master/replica, IAM roles, security groups e composicao basica de infraestrutura AWS.",
+        "Exemplos Terraform anteriores para EC2, ALB, padrões RDS master/replica, IAM roles, security groups e composição básica de infraestrutura AWS.",
       tags: ["Legacy lab", "EC2", "ALB", "RDS", "IAM", "Terraform"]
     }
   ]

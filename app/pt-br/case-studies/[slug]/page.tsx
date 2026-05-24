@@ -8,7 +8,7 @@ export function generateStaticParams() {
 }
 
 const copy = {
-  notFound: "Projeto nao encontrado",
+  notFound: "Projeto não encontrado",
   backToList: "Voltar para projetos",
   back: "Voltar",
   role: "Papel",

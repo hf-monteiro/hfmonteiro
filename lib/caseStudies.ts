@@ -149,35 +149,35 @@ const caseStudiesByLang: Record<Lang, CaseStudy[]> = {
       slug: "aws-platform-networking-architecture",
       title: "Arquitetura de Plataforma AWS e Networking Corporativo",
       subtitle:
-        "Fundacoes AWS multi-conta com conectividade privada, exposicao segura de servicos e arquitetura Terraform reutilizavel.",
+        "Fundações AWS multi-conta com conectividade privada, exposição segura de serviços e arquitetura Terraform reutilizável.",
       role: "Cloud Infrastructure Architect / Senior Platform Engineer",
       scope: "SaaS corporativo, workloads regulados, AWS multi-conta",
-      focus: ["Networking", "Arquitetura de Plataforma", "Terraform", "Seguranca"],
+      focus: ["Networking", "Arquitetura de Plataforma", "Terraform", "Segurança"],
       impact: [
-        "Padronizei fundacoes AWS multi-conta entre ambientes.",
-        "Habilitei conectividade privada cross-account sem exposicao publica.",
-        "Reduzi drift de infraestrutura com modulos Terraform reutilizaveis."
+        "Padronizei fundações AWS multi-conta entre ambientes.",
+        "Habilitei conectividade privada cross-account sem exposição pública.",
+        "Reduzi drift de infraestrutura com módulos Terraform reutilizáveis."
       ],
       tags: ["AWS", "PrivateLink", "Transit Gateway", "Direct Connect", "Terraform"],
       context:
-        "Ambientes SaaS corporativos precisavam de fundacoes cloud seguras, escalaveis e repetiveis entre multiplas contas AWS, workloads regulados, conectividade privada e times de engenharia distribuidos.",
+        "Ambientes SaaS corporativos precisavam de fundações cloud seguras, escaláveis e repetíveis entre múltiplas contas AWS, workloads regulados, conectividade privada e times de engenharia distribuídos.",
       architecture: [
-        "Desenhei uma fundacao AWS multi-conta com separacao clara entre ambientes e servicos compartilhados de plataforma.",
-        "Usei PrivateLink, Interface Endpoints e VPC Endpoint Services para acesso privado entre produtores e consumidores de servicos.",
-        "Apliquei padroes com Transit Gateway e Direct Connect para conectividade cross-account e hibrida.",
-        "Construi padroes de Route53 Private Hosted Zones para DNS interno e descoberta privada de servicos.",
+        "Desenhei uma fundação AWS multi-conta com separação clara entre ambientes e serviços compartilhados de plataforma.",
+        "Usei PrivateLink, Interface Endpoints e VPC Endpoint Services para acesso privado entre produtores e consumidores de serviços.",
+        "Apliquei padrões com Transit Gateway e Direct Connect para conectividade cross-account e híbrida.",
+        "Construí padrões de Route53 Private Hosted Zones para DNS interno e descoberta privada de serviços.",
         "Usei IAM/STS cross-account para acesso controlado de plataforma."
       ],
       whatIDid: [
-        "Desenhei padroes de plataforma AWS multi-conta usando Terraform e boas praticas de Infrastructure as Code.",
+        "Desenhei padrões de plataforma AWS multi-conta usando Terraform e boas práticas de Infrastructure as Code.",
         "Arquiteturei networking cross-account com AWS PrivateLink, VPC Endpoint Services, Interface Endpoints, Transit Gateway, Direct Connect e Route53 Private Hosted Zones.",
-        "Implementei padroes de acesso privado a servicos usando IAM/STS cross-account, DNS privado, ALB/NLB e controles de seguranca.",
-        "Desenvolvi modulos Terraform reutilizaveis para networking, EKS, MSK, ingress, WAF, Route53, endpoint services e fundacoes de seguranca cloud."
+        "Implementei padrões de acesso privado a serviços usando IAM/STS cross-account, DNS privado, ALB/NLB e controles de segurança.",
+        "Desenvolvi módulos Terraform reutilizáveis para networking, EKS, MSK, ingress, WAF, Route53, endpoint services e fundações de segurança cloud."
       ],
       outcomes: [
-        "Melhorei consistencia e auditabilidade entre ambientes AWS corporativos.",
-        "Habilitei conectividade privada e segura entre servicos e contas sem expor workloads criticos publicamente.",
-        "Reduzi drift de infraestrutura com modulos Terraform padronizados e padroes de plataforma repetiveis."
+        "Melhorei consistência e auditabilidade entre ambientes AWS corporativos.",
+        "Habilitei conectividade privada e segura entre serviços e contas sem expor workloads críticos publicamente.",
+        "Reduzi drift de infraestrutura com módulos Terraform padronizados e padrões de plataforma repetíveis."
       ],
       stack: ["AWS", "Terraform", "PrivateLink", "Transit Gateway", "Direct Connect", "Route53", "IAM", "WAFv2"],
       relatedLabs: [
@@ -187,37 +187,37 @@ const caseStudiesByLang: Record<Lang, CaseStudy[]> = {
     },
     {
       slug: "production-eks-platform-gitlab-istio",
-      title: "Plataforma EKS em Producao com GitLab CI/CD e Istio",
+      title: "Plataforma EKS em Produção com GitLab CI/CD e Istio",
       subtitle:
-        "Operacao de Kubernetes privado com service mesh, runners dentro do cluster e fluxos seguros de entrega.",
+        "Operação de Kubernetes privado com service mesh, runners dentro do cluster e fluxos seguros de entrega.",
       role: "Senior Platform Engineer / Kubernetes Platform Engineer",
-      scope: "Kubernetes em producao, EKS privado, plataforma de entrega multi-time",
+      scope: "Kubernetes em produção, EKS privado, plataforma de entrega multi-time",
       focus: ["Kubernetes", "GitLab CI/CD", "Istio", "Confiabilidade"],
       impact: [
-        "Melhorei a velocidade de entrega mantendo acesso de producao privado.",
+        "Melhorei a velocidade de entrega mantendo acesso de produção privado.",
         "Padronizei deploy, ingress e observabilidade para Kubernetes.",
-        "Fortaleci a operacao day-2 de workloads EKS em producao."
+        "Fortaleci a operação day-2 de workloads EKS em produção."
       ],
       tags: ["EKS", "Kubernetes", "Istio", "GitLab CI/CD", "Engenharia de Plataforma"],
       context:
-        "Workloads cloud-native precisavam de uma plataforma Kubernetes confiavel com acesso privado ao cluster, deploys padronizados, roteamento interno e CI/CD para releases frequentes.",
+        "Workloads cloud-native precisavam de uma plataforma Kubernetes confiável com acesso privado ao cluster, deploys padronizados, roteamento interno e CI/CD para releases frequentes.",
       architecture: [
-        "Operei componentes de plataforma EKS privada para workloads de producao e fluxos internos de entrega.",
+        "Operei componentes de plataforma EKS privada para workloads de produção e fluxos internos de entrega.",
         "Executei GitLab runners dentro do Kubernetes para suportar deploys privados e acesso AWS controlado.",
-        "Usei Istio Gateways e EnvoyFilters para gerenciamento de trafego interno e comunicacao entre servicos.",
-        "Integrei ALB/NLB, TLS, ingress e DNS privado para exposicao de servicos.",
-        "Estabeleci padroes de observabilidade e troubleshooting para confiabilidade de cluster e workloads."
+        "Usei Istio Gateways e EnvoyFilters para gerenciamento de tráfego interno e comunicação entre serviços.",
+        "Integrei ALB/NLB, TLS, ingress e DNS privado para exposição de serviços.",
+        "Estabeleci padrões de observabilidade e troubleshooting para confiabilidade de cluster e workloads."
       ],
       whatIDid: [
-        "Construi e mantive componentes de plataforma EKS para workloads em producao, incluindo ingress, acesso privado, observabilidade e automacao de deploy.",
-        "Implementei GitLab runners dentro de ambientes Kubernetes com padroes seguros de acesso a AWS.",
-        "Desenhei comunicacao interna entre servicos com Istio Gateways, EnvoyFilters, ALB/NLB, TLS e estrategias de DNS privado.",
+        "Construí e mantive componentes de plataforma EKS para workloads em produção, incluindo ingress, acesso privado, observabilidade e automação de deploy.",
+        "Implementei GitLab runners dentro de ambientes Kubernetes com padrões seguros de acesso à AWS.",
+        "Desenhei comunicação interna entre serviços com Istio Gateways, EnvoyFilters, ALB/NLB, TLS e estratégias de DNS privado.",
         "Apoiei deploys zero-downtime, troubleshooting de clusters e melhorias de confiabilidade da plataforma."
       ],
       outcomes: [
-        "Melhorei a velocidade de entrega dos desenvolvedores mantendo acesso de producao privado e controlado.",
-        "Aumentei a confianca em releases Kubernetes com padroes de deploy e observabilidade.",
-        "Fortaleci operacao day-2 para workloads EKS em producao."
+        "Melhorei a velocidade de entrega dos desenvolvedores mantendo acesso de produção privado e controlado.",
+        "Aumentei a confiança em releases Kubernetes com padrões de deploy e observabilidade.",
+        "Fortaleci operação day-2 para workloads EKS em produção."
       ],
       stack: ["EKS", "Kubernetes", "Helm", "Istio", "GitLab CI/CD", "ALB", "NLB", "CloudWatch", "Datadog"],
       relatedLabs: [
@@ -227,37 +227,37 @@ const caseStudiesByLang: Record<Lang, CaseStudy[]> = {
     },
     {
       slug: "gitlab-cicd-standardization-at-scale",
-      title: "Padronizacao de CI/CD no GitLab em escala",
+      title: "Padronização de CI/CD no GitLab em Escala",
       subtitle:
-        "De pipelines fragmentados para uma plataforma CI/CD padronizada e escalavel.",
+        "De pipelines fragmentados para uma plataforma CI/CD padronizada e escalável.",
       role: "DevOps Lead / CI/CD Platform Engineer",
-      scope: "Multiplos times de engenharia, plataforma reutilizavel de entrega",
-      focus: ["CI/CD", "DevSecOps", "Governanca", "Developer Experience"],
+      scope: "Múltiplos times de engenharia, plataforma reutilizável de entrega",
+      focus: ["CI/CD", "DevSecOps", "Governança", "Developer Experience"],
       impact: [
-        "Aumentei a frequencia de deploy de releases semanais para multiplos deploys por dia.",
-        "Reduzi copy/paste em CI e inconsistencias de release.",
-        "Melhorei onboarding de desenvolvedores com padroes claros de entrega."
+        "Aumentei a frequência de deploy de releases semanais para múltiplos deploys por dia.",
+        "Reduzi copy/paste em CI e inconsistências de release.",
+        "Melhorei onboarding de desenvolvedores com padrões claros de entrega."
       ],
-      tags: ["GitLab CI/CD", "DevSecOps", "Automacao", "Governanca"],
+      tags: ["GitLab CI/CD", "DevSecOps", "Automação", "Governança"],
       context:
-        "Varios times mantinham pipelines independentes no GitLab com estagios, convencoes, regras de deploy e controles de qualidade inconsistentes. Isso desacelerava releases e aumentava risco operacional.",
+        "Vários times mantinham pipelines independentes no GitLab com estágios, convenções, regras de deploy e controles de qualidade inconsistentes. Isso desacelerava releases e aumentava risco operacional.",
       architecture: [
-        "Criei templates reutilizaveis de GitLab CI para build, teste, scan, artefatos e deploy.",
-        "Defini padroes de promocao de ambientes com gates de producao e regras por branch/tag.",
-        "Integrei verificacoes de seguranca e qualidade aos workflows padrao de entrega.",
-        "Desenhei caminhos incrementais de migracao para os times adotarem a plataforma sem quebrar releases.",
-        "Documentei convencoes, estrategia de variaveis e onboarding para os times de desenvolvimento."
+        "Criei templates reutilizáveis de GitLab CI para build, teste, scan, artefatos e deploy.",
+        "Defini padrões de promoção de ambientes com gates de produção e regras por branch/tag.",
+        "Integrei verificações de segurança e qualidade aos workflows padrão de entrega.",
+        "Desenhei caminhos incrementais de migração para os times adotarem a plataforma sem quebrar releases.",
+        "Documentei convenções, estratégia de variáveis e onboarding para os times de desenvolvimento."
       ],
       whatIDid: [
-        "Desenhei um modelo padronizado de GitLab CI/CD com templates reutilizaveis, estrategia segura de variaveis, promocao de ambientes e quality gates.",
-        "Integrei etapas de build, teste, security scanning, artefatos e deploy entre multiplos repositorios.",
-        "Implementei fluxos de deploy mais seguros com gates manuais em producao e regras por ambiente.",
-        "Trabalhei com times de engenharia para migrar repositorios de forma incremental sem interromper a entrega."
+        "Desenhei um modelo padronizado de GitLab CI/CD com templates reutilizáveis, estratégia segura de variáveis, promoção de ambientes e quality gates.",
+        "Integrei etapas de build, teste, security scanning, artefatos e deploy entre múltiplos repositórios.",
+        "Implementei fluxos de deploy mais seguros com gates manuais em produção e regras por ambiente.",
+        "Trabalhei com times de engenharia para migrar repositórios de forma incremental sem interromper a entrega."
       ],
       outcomes: [
-        "Aumentei a frequencia de deploy de releases semanais para multiplos deploys por dia.",
-        "Reduzi esforco de manutencao, copy/paste de configuracao e inconsistencias de release.",
-        "Melhorei a experiencia de desenvolvimento com um padrao claro de plataforma CI/CD."
+        "Aumentei a frequência de deploy de releases semanais para múltiplos deploys por dia.",
+        "Reduzi esforço de manutenção, copy/paste de configuração e inconsistências de release.",
+        "Melhorei a experiência de desenvolvimento com um padrão claro de plataforma CI/CD."
       ],
       stack: ["GitLab CI", "Docker", "Terraform", "Checkov", "SonarQube", "Kubernetes"],
       relatedLabs: [

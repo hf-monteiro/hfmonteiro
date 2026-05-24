@@ -5,8 +5,8 @@ import { getCaseStudies } from "@/lib/caseStudies";
 const copy = {
   title: "Projetos",
   intro:
-    "Case studies focados em arquitetura: plataformas AWS corporativas, networking privado, Kubernetes em producao, CI/CD padronizado e confiabilidade.",
-  back: "Voltar para o inicio",
+    "Case studies focados em arquitetura: plataformas AWS corporativas, networking privado, Kubernetes em produção, CI/CD padronizado e confiabilidade.",
+  back: "Voltar para o início",
   read: "Ver projeto →"
 };
 

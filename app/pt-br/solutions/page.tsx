@@ -12,41 +12,41 @@ const solutions: Solution[] = [
   {
     title: "Arquitetura de Plataforma AWS Corporativa",
     problem:
-      "Ambientes cloud crescem entre contas, times e produtos sem fundacoes consistentes, guardrails, ownership ou padroes repetiveis de infraestrutura.",
+      "Ambientes cloud crescem entre contas, times e produtos sem fundações consistentes, guardrails, ownership ou padrões repetíveis de infraestrutura.",
     outcome:
-      "Uma plataforma AWS multi-conta segura e escalavel, com modulos Terraform reutilizaveis e padroes operacionais claros.",
+      "Uma plataforma AWS multi-conta segura e escalável, com módulos Terraform reutilizáveis e padrões operacionais claros.",
     deliverables: [
-      "Arquitetura AWS multi-conta e estrategia de ambientes",
-      "Arquitetura de modulos Terraform para networking, EKS, Route53, WAF e servicos compartilhados",
-      "Padroes de acesso IAM/STS cross-account e guardrails de seguranca",
-      "Documentacao de plataforma, handover e modelo de onboarding"
+      "Arquitetura AWS multi-conta e estratégia de ambientes",
+      "Arquitetura de módulos Terraform para networking, EKS, Route53, WAF e serviços compartilhados",
+      "Padrões de acesso IAM/STS cross-account e guardrails de segurança",
+      "Documentação de plataforma, handover e modelo de onboarding"
     ],
     stack: ["AWS", "Terraform", "IAM/STS", "Organizations", "WAFv2", "Route53"]
   },
   {
-    title: "Networking AWS Avancado e Conectividade Privada",
+    title: "Networking AWS Avançado e Conectividade Privada",
     problem:
-      "Sistemas corporativos precisam de acesso privado entre servicos, conectividade hibrida e roteamento cross-account sem expor workloads criticos publicamente.",
+      "Sistemas corporativos precisam de acesso privado entre serviços, conectividade híbrida e roteamento cross-account sem expor workloads críticos publicamente.",
     outcome:
-      "Uma arquitetura resiliente de networking privado usando conectividade, DNS e padroes de endpoints nativos da AWS.",
+      "Uma arquitetura resiliente de networking privado usando conectividade, DNS e padrões de endpoints nativos da AWS.",
     deliverables: [
       "Designs com PrivateLink, Interface Endpoints e VPC Endpoint Services",
-      "Transit Gateway, Direct Connect, roteamento e padroes de conectividade hibrida",
-      "Arquitetura de Route53 Private Hosted Zones e estrategia de DNS privado",
-      "Private EKS, MSK/Kafka, ALB/NLB e conectividade interna entre servicos"
+      "Transit Gateway, Direct Connect, roteamento e padrões de conectividade híbrida",
+      "Arquitetura de Route53 Private Hosted Zones e estratégia de DNS privado",
+      "Private EKS, MSK/Kafka, ALB/NLB e conectividade interna entre serviços"
     ],
     stack: ["PrivateLink", "TGW", "Direct Connect", "Route53 PHZ", "ALB/NLB", "AWS IPAM"]
   },
   {
-    title: "Habilitacao de Plataforma Kubernetes em Producao",
+    title: "Habilitação de Plataforma Kubernetes em Produção",
     problem:
-      "Os clusters existem, mas acesso privado, deploys, trafego, observabilidade e operacao day-2 sao dolorosos e sujeitos a erro.",
+      "Os clusters existem, mas acesso privado, deploys, tráfego, observabilidade e operação day-2 são dolorosos e sujeitos a erro.",
     outcome:
-      "Uma plataforma Kubernetes pronta para producao com deploys previsiveis, acesso seguro e maior confiabilidade operacional.",
+      "Uma plataforma Kubernetes pronta para produção com deploys previsíveis, acesso seguro e maior confiabilidade operacional.",
     deliverables: [
-      "Padroes de EKS/GKE, Helm, namespaces e baseline de RBAC",
+      "Padrões de EKS/GKE, Helm, namespaces e baseline de RBAC",
       "Istio service mesh, ingress, TLS, EnvoyFilter, ALB/NLB e roteamento interno",
-      "GitLab runners em Kubernetes e workflows de promocao CI/CD",
+      "GitLab runners em Kubernetes e workflows de promoção CI/CD",
       "Troubleshooting de cluster, observabilidade e runbooks operacionais"
     ],
     stack: ["Kubernetes", "EKS/GKE", "Helm", "Istio", "GitLab CI", "Datadog"]
@@ -54,45 +54,45 @@ const solutions: Solution[] = [
   {
     title: "Platform Engineering com GitLab CI/CD",
     problem:
-      "Os times entregam de forma diferente entre projetos, pipelines sao inconsistentes e releases demoram para evoluir com seguranca.",
+      "Os times entregam de forma diferente entre projetos, pipelines são inconsistentes e releases demoram para evoluir com segurança.",
     outcome:
-      "Uma plataforma de entrega padronizada que aumenta a frequencia de deploy e reduz risco operacional.",
+      "Uma plataforma de entrega padronizada que aumenta a frequência de deploy e reduz risco operacional.",
     deliverables: [
-      "Templates CI reutilizaveis, convencoes, includes e regras de pipeline",
+      "Templates CI reutilizáveis, convenções, includes e regras de pipeline",
       "Etapas de Build/Test/Scan/Deploy com quality gates",
-      "Variaveis seguras, estrategia de segredos, artefatos e promocao de ambientes",
-      "Onboarding de desenvolvedores e documentacao da plataforma"
+      "Variáveis seguras, estratégia de segredos, artefatos e promoção de ambientes",
+      "Onboarding de desenvolvedores e documentação da plataforma"
     ],
     stack: ["GitLab CI/CD", "Docker", "SonarQube", "Checkov", "Artifacts", "Environments"]
   },
   {
     title: "Confiabilidade, Observabilidade e Hardening",
     problem:
-      "Incidentes demoram para serem detectados e diagnosticados, alertas geram ruido e controles de servicos publicos/privados sao inconsistentes.",
+      "Incidentes demoram para serem detectados e diagnosticados, alertas geram ruído e controles de serviços públicos/privados são inconsistentes.",
     outcome:
-      "Monitoramento acionavel, incident response mais rapido, controles de servico mais fortes e guardrails pragmaticos de seguranca.",
+      "Monitoramento acionável, incident response mais rápido, controles de serviço mais fortes e guardrails pragmáticos de segurança.",
     deliverables: [
-      "Health checks, abordagem estilo SLO, dashboards e alertas acionaveis",
-      "Incident response, RCA, escalacao e playbooks de confiabilidade",
-      "Recomendacoes de IAM com menor privilegio",
-      "Baseline de WAF, estrategia de segredos e security scanning no CI"
+      "Health checks, abordagem estilo SLO, dashboards e alertas acionáveis",
+      "Incident response, RCA, escalação e playbooks de confiabilidade",
+      "Recomendações de IAM com menor privilégio",
+      "Baseline de WAF, estratégia de segredos e security scanning no CI"
     ],
     stack: ["Datadog", "CloudWatch", "New Relic/Dynatrace", "AWS WAFv2", "IAM", "Secrets Manager"]
   }
 ];
 
 const copy = {
-  title: "Solucoes",
+  title: "Soluções",
   intro:
-    "Solucoes senior de DevOps, Platform Engineering e Cloud Architecture focadas em plataformas AWS corporativas, networking avancado, Kubernetes em producao, velocidade de entrega, confiabilidade e seguranca.",
+    "Soluções sênior de DevOps, Platform Engineering e Cloud Architecture focadas em plataformas AWS corporativas, networking avançado, Kubernetes em produção, velocidade de entrega, confiabilidade e segurança.",
   problem: "Problema",
   outcome: "Resultado",
   deliverables: "Inclui",
   ctaTitle: "Precisa de ajuda com plataforma AWS corporativa?",
   ctaBody:
-    "Envie uma breve descricao do seu setup atual e do que deseja melhorar. Eu respondo com uma abordagem sugerida e proximos passos.",
+    "Envie uma breve descrição do seu setup atual e do que deseja melhorar. Eu respondo com uma abordagem sugerida e próximos passos.",
   ctaContact: "Fale comigo",
-  ctaResume: "Ver curriculo"
+  ctaResume: "Ver currículo"
 };
 
 function Badge({ children }: { children: string }) {

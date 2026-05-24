@@ -6,10 +6,10 @@ import Pill from "@/components/Pill";
 const copy = {
   title: "Contato",
   intro:
-    "Um canal direto para conversas profissionais, apresentacoes e temas de arquitetura de plataforma.",
+    "Um canal direto para conversas profissionais, apresentações e temas de arquitetura de plataforma.",
   emailTitle: "Comece uma conversa",
   emailBody:
-    "Email e o melhor caminho para conversas sobre vagas, consultoria, architecture reviews e apresentacoes.",
+    "Email é o melhor caminho para conversas sobre vagas, consultoria, architecture reviews e apresentações.",
   email: "higor.fmonteiro@gmail.com",
   phoneTitle: "Telefone",
   phone: "+55 51 98107-8364",
@@ -21,8 +21,8 @@ const copy = {
     "Senior DevOps / Platform Engineering",
     "Cloud Infrastructure Architecture",
     "AWS Networking e Conectividade Privada",
-    "EKS / Kubernetes em Producao",
-    "Padronizacao de Terraform e CI/CD"
+    "EKS / Kubernetes em Produção",
+    "Padronização de Terraform e CI/CD"
   ]
 };
 
@@ -43,7 +43,7 @@ export default function ContactPage() {
                 <p className="mt-2 text-zinc-400">{t.emailBody}</p>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Button href={`mailto:${t.email}`} variant="primary">Enviar email</Button>
-                  <Button href="/resume.pdf" variant="secondary">PDF do curriculo</Button>
+                  <Button href="/resume.pdf" variant="secondary">PDF do currículo</Button>
                 </div>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
                   <div>

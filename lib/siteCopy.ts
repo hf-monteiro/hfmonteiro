@@ -36,16 +36,16 @@ const copy: Record<Lang, SiteCopy> = {
   },
   "pt-br": {
     nav: {
-      solutions: "Solucoes",
+      solutions: "Soluções",
       caseStudies: "Projetos",
       labs: "Labs",
       skills: "Skills",
-      resume: "Curriculo",
+      resume: "Currículo",
       contact: "Contato"
     },
     footer: {
       name: "Higor Monteiro",
-      blurb: "Senior DevOps / Platform Engineer — arquitetura AWS, EKS, Terraform, GitLab CI/CD e networking cloud avancado."
+      blurb: "Senior DevOps / Platform Engineer — arquitetura AWS, EKS, Terraform, GitLab CI/CD e networking cloud avançado."
     }
   }
 };
