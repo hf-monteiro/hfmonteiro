@@ -51,7 +51,7 @@ export default function Home() {
     <main>
       <Container>
         <section className="py-14">
-          <p className="text-sm accent-text">{t.intro}</p>
+          <p className="text-sm text-zinc-400">{t.intro}</p>
           <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
             {t.title}
           </h1>
@@ -71,10 +71,10 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-10 grid gap-3 border-y border-[var(--border)] py-5 sm:grid-cols-5">
+          <div className="mt-10 grid gap-3 border-y border-zinc-800 py-5 sm:grid-cols-5">
             {t.proof.map((item) => (
               <div key={item.value}>
-                <p className="text-sm font-semibold terminal-text">{item.value}</p>
+                <p className="text-sm font-semibold text-zinc-200">{item.value}</p>
                 <p className="mt-1 text-xs text-zinc-500">{item.label}</p>
               </div>
             ))}
@@ -93,7 +93,7 @@ export default function Home() {
         <section className="pb-14">
           <div className="flex items-baseline justify-between gap-4">
             <h2 className="text-base font-semibold">{t.featured.title}</h2>
-            <a className="text-sm text-zinc-400 hover:text-[var(--signal)]" href={`${base}/case-studies`}>
+            <a className="text-sm text-zinc-400 hover:text-zinc-200" href={`${base}/case-studies`}>
               {t.featured.link}
             </a>
           </div>
@@ -103,7 +103,7 @@ export default function Home() {
               <a
                 key={c.slug}
                 href={`${base}/case-studies/${c.slug}`}
-                className="surface surface-hover rounded-lg border p-5"
+                className="rounded-lg border border-zinc-800 bg-zinc-900/25 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/45"
               >
                 <p className="text-sm text-zinc-500">{c.subtitle}</p>
                 <h3 className="mt-2 text-lg font-semibold">{c.title}</h3>

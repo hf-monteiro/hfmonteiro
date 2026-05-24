@@ -6,11 +6,11 @@ type Props = {
 
 export default function Button({ href, children, variant = "primary" }: Props) {
   const base =
-    "inline-flex items-center justify-center rounded-lg border px-5 py-2.5 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-strong)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]";
+    "inline-flex items-center justify-center rounded-lg border px-5 py-2.5 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-100 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950";
   const styles =
     variant === "primary"
-      ? "border-[var(--accent)] bg-[var(--accent)] text-[#15121d] hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]"
-      : "border-[var(--border)] bg-[rgb(18_16_26_/_0.45)] text-zinc-100 hover:border-[var(--border-strong)] hover:bg-[rgb(23_20_33_/_0.78)]";
+      ? "border-zinc-200 bg-zinc-100 text-zinc-950 hover:bg-white"
+      : "border-zinc-800 bg-zinc-900/30 text-zinc-100 hover:border-zinc-600 hover:bg-zinc-900/60";
 
   return (
     <a className={`${base} ${styles}`} href={href}>

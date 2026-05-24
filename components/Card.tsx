@@ -1,6 +1,6 @@
 export default function Card({ children }: { children: React.ReactNode }) {
   return (
-    <div className="surface rounded-lg border p-5">
+    <div className="rounded-lg border border-zinc-800 bg-zinc-900/25 p-5">
       {children}
     </div>
   );

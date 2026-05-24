@@ -20,8 +20,8 @@ const NavLink = ({
     aria-current={active ? "page" : undefined}
     className={`border-b py-1 text-sm transition ${
       active
-        ? "border-[var(--accent)] text-zinc-100"
-        : "border-transparent text-zinc-400 hover:border-[var(--border-strong)] hover:text-zinc-100"
+        ? "border-zinc-100 text-zinc-100"
+        : "border-transparent text-zinc-400 hover:border-zinc-600 hover:text-zinc-100"
     }`}
     href={href}
   >
@@ -44,7 +44,7 @@ export default function Header({ lang, nav }: HeaderProps) {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[rgb(8_7_12_/_0.78)] backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/70 backdrop-blur">
       <Container>
         <div className="flex min-h-20 flex-col items-start justify-center gap-3 py-3 sm:flex-row sm:items-center sm:justify-between">
           <a href={homeHref} className="flex items-center gap-2 transition hover:opacity-80">

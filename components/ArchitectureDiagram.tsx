@@ -32,11 +32,11 @@ export default function ArchitectureDiagram({ slug }: { slug: string }) {
   if (!nodes) return null;
 
   return (
-    <div className="surface overflow-hidden rounded-lg border p-4">
+    <div className="overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950/40 p-4">
       <div className="grid gap-3 md:grid-cols-5">
         {nodes.map((node, index) => (
           <div key={node.label} className="relative">
-            <div className="min-h-24 rounded-lg border border-[var(--border)] bg-[rgb(23_20_33_/_0.72)] p-4">
+            <div className="min-h-24 rounded-lg border border-zinc-800 bg-zinc-900/40 p-4">
               <p className="text-sm font-semibold text-zinc-100">{node.label}</p>
               {node.detail ? (
                 <p className="mt-2 text-xs text-zinc-500">{node.detail}</p>
@@ -44,8 +44,8 @@ export default function ArchitectureDiagram({ slug }: { slug: string }) {
             </div>
             {index < nodes.length - 1 ? (
               <div className="hidden md:block">
-                <div className="absolute right-[-0.85rem] top-1/2 h-px w-4 bg-[rgb(139_233_253_/_0.58)]" />
-                <div className="absolute right-[-0.95rem] top-[calc(50%-0.2rem)] h-2 w-2 rotate-45 border-r border-t border-[rgb(139_233_253_/_0.58)]" />
+                <div className="absolute right-[-0.85rem] top-1/2 h-px w-4 bg-zinc-500/60" />
+                <div className="absolute right-[-0.95rem] top-[calc(50%-0.2rem)] h-2 w-2 rotate-45 border-r border-t border-zinc-500/60" />
               </div>
             ) : null}
           </div>
