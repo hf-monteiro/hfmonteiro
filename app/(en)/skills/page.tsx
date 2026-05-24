@@ -99,7 +99,7 @@ export default function SkillsPage() {
               {copy.strengths.map((strength) => (
                 <span
                   key={strength}
-                  className="rounded-full border border-white bg-white px-3 py-1 text-xs font-medium text-zinc-950"
+                  className="rounded-full border border-[var(--accent)] bg-[var(--accent)] px-3 py-1 text-xs font-medium text-[#15121d]"
                 >
                   {strength}
                 </span>

@@ -97,7 +97,7 @@ const copy = {
 
 function Badge({ children }: { children: string }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-2.5 py-1 text-xs text-zinc-700">
+    <span className="inline-flex items-center rounded-full border border-[var(--accent)] bg-[rgb(189_147_249_/_0.14)] px-2.5 py-1 text-xs text-[var(--accent-strong)]">
       {children}
     </span>
   );
@@ -105,7 +105,7 @@ function Badge({ children }: { children: string }) {
 
 function Card({ s }: { s: Solution }) {
   return (
-    <div className="rounded-lg border border-zinc-800 bg-zinc-950/40 p-5 shadow-sm">
+    <div className="surface rounded-lg border p-5 shadow-sm">
       <h3 className="text-lg font-semibold text-zinc-100">{s.title}</h3>
 
       <div className="mt-4 grid gap-3">
@@ -119,7 +119,7 @@ function Card({ s }: { s: Solution }) {
           <ul className="mt-2 space-y-1 text-sm text-zinc-200">
             {s.deliverables.slice(0, 2).map((d) => (
               <li key={d} className="flex gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400" />
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--signal)]" />
                 <span>{d}</span>
               </li>
             ))}
@@ -153,19 +153,19 @@ export default function SolutionsPage() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-lg border border-zinc-800 bg-zinc-950/40 p-6">
+        <div className="surface mt-12 rounded-lg border p-6">
           <h2 className="text-xl font-semibold text-zinc-100">{copy.ctaTitle}</h2>
           <p className="mt-2 text-zinc-300">{copy.ctaBody}</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
               href={`${base}/contact`}
-              className="rounded-lg bg-white px-5 py-2.5 text-sm font-medium text-zinc-950 transition hover:opacity-90"
+              className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-[#15121d] transition hover:bg-[var(--accent-strong)]"
             >
               {copy.ctaContact}
             </a>
             <a
               href={`${base}/resume`}
-              className="rounded-lg border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:bg-zinc-900/40"
+              className="rounded-lg border border-[var(--border)] px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-[var(--border-strong)] hover:bg-[rgb(23_20_33_/_0.78)]"
             >
               {copy.ctaResume}
             </a>

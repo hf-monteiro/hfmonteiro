@@ -99,7 +99,7 @@ export default function LabsPage() {
     <main>
       <Container>
         <section className="py-14">
-          <a className="text-sm text-zinc-400 hover:text-zinc-200" href="/pt-br">
+          <a className="text-sm text-zinc-400 hover:text-[var(--signal)]" href="/pt-br">
             ← {copy.back}
           </a>
           <h1 className="mt-4 text-3xl font-semibold">{copy.title}</h1>
@@ -117,7 +117,7 @@ export default function LabsPage() {
                     tag === "Legacy lab" ? (
                       <span
                         key={tag}
-                        className="rounded-full border border-white bg-white px-3 py-1 text-xs font-medium text-zinc-950"
+                        className="rounded-full border border-[var(--accent)] bg-[var(--accent)] px-3 py-1 text-xs font-medium text-[#15121d]"
                       >
                         {tag}
                       </span>
@@ -133,7 +133,7 @@ export default function LabsPage() {
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-sm font-medium text-zinc-300 hover:text-zinc-100"
+                      className="text-sm font-medium text-zinc-300 hover:text-[var(--signal)]"
                     >
                       {link.label} →
                     </a>

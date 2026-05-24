@@ -25,7 +25,7 @@ export default function CaseStudiesPage() {
     <main>
       <Container>
         <section className="py-14">
-          <a className="text-sm text-zinc-400 hover:text-zinc-200" href={base}>
+          <a className="text-sm text-zinc-400 hover:text-[var(--signal)]" href={base}>
             ← {t.back}
           </a>
           <h1 className="mt-4 text-3xl font-semibold">{t.title}</h1>
@@ -36,7 +36,7 @@ export default function CaseStudiesPage() {
               <a
                 key={c.slug}
                 href={`${base}/case-studies/${c.slug}`}
-                className="rounded-lg border border-zinc-800 bg-zinc-900/25 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/45"
+                className="surface surface-hover rounded-lg border p-5"
               >
                 <p className="text-sm text-zinc-500">{c.subtitle}</p>
                 <h2 className="mt-2 text-lg font-semibold">{c.title}</h2>
@@ -47,7 +47,7 @@ export default function CaseStudiesPage() {
                     <Pill key={tag}>{tag}</Pill>
                   ))}
                 </div>
-                <span className="mt-4 inline-block text-sm text-zinc-400 hover:text-zinc-200">
+                <span className="mt-4 inline-block text-sm text-zinc-400 hover:text-[var(--signal)]">
                   {t.read}
                 </span>
               </a>
