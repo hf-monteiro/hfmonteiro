@@ -4,6 +4,7 @@ import Pill from "@/components/Pill";
 import Button from "@/components/Button";
 import { getCaseStudies } from "@/lib/caseStudies";
 import { getNotes } from "@/lib/notes";
+import { formatDate } from "@/lib/utils";
 
 export const metadata = {
   title: "Higor Monteiro | Senior DevOps / Platform Engineer",
@@ -93,7 +94,7 @@ export default function Home() {
           <div className="mt-10 grid gap-3 border-y border-zinc-800 py-5 sm:grid-cols-5">
             {t.proof.map((item) => (
               <div key={item.value}>
-                <p className="text-sm font-semibold text-zinc-200">{item.value}</p>
+                <p className="text-base font-semibold text-white">{item.value}</p>
                 <p className="mt-1 text-xs text-zinc-500">{item.label}</p>
               </div>
             ))}
@@ -111,7 +112,7 @@ export default function Home() {
 
         <section className="pb-14">
           <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-base font-semibold">{t.featured.title}</h2>
+            <h2 className="text-xl font-semibold">{t.featured.title}</h2>
             <a className="text-sm text-zinc-400 hover:text-zinc-200" href="/case-studies">
               {t.featured.link}
             </a>
@@ -139,7 +140,7 @@ export default function Home() {
 
         <section className="pb-14">
           <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-base font-semibold">{t.notes.title}</h2>
+            <h2 className="text-xl font-semibold">{t.notes.title}</h2>
             <a className="text-sm text-zinc-400 hover:text-zinc-200" href="/notes">
               {t.notes.link}
             </a>
@@ -152,7 +153,7 @@ export default function Home() {
                 href={`/notes/${note.slug}`}
                 className="rounded-lg border border-zinc-800 bg-zinc-900/25 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/45"
               >
-                <p className="text-xs text-zinc-500">{note.date} · {note.readingTime}</p>
+                <p className="text-xs text-zinc-500">{formatDate(note.date)} · {note.readingTime}</p>
                 <h3 className="mt-2 text-lg font-semibold">{note.title}</h3>
                 <p className="mt-3 text-sm text-zinc-400">{note.excerpt}</p>
               </a>

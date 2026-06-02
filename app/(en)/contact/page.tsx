@@ -37,6 +37,12 @@ const copy = {
     "AWS Networking & Private Connectivity",
     "Production EKS / Kubernetes Platforms",
     "Terraform and CI/CD Standardization"
+  ],
+  openTitle: "Currently open to",
+  open: [
+    "Senior platform / DevOps engineering roles — remote, Brazil or global",
+    "Cloud architecture consulting and short-term advisory work",
+    "Architecture reviews for AWS platforms and networking"
   ]
 };
 
@@ -99,7 +105,7 @@ export default function ContactPage() {
             </Card>
           </div>
 
-          <div className="mt-4">
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <Card>
               <h2 className="text-lg font-semibold">{t.fitTitle}</h2>
               <div className="mt-4 flex flex-wrap gap-2">
@@ -107,6 +113,18 @@ export default function ContactPage() {
                   <Pill key={item}>{item}</Pill>
                 ))}
               </div>
+            </Card>
+
+            <Card>
+              <h2 className="text-lg font-semibold">{t.openTitle}</h2>
+              <ul className="mt-3 space-y-3 text-sm text-zinc-300">
+                {t.open.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </Card>
           </div>
         </section>

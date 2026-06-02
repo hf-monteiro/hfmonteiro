@@ -1,15 +1,24 @@
 import Container from "@/components/Container";
 import Pill from "@/components/Pill";
 import { getNotes } from "@/lib/notes";
+import { formatDate } from "@/lib/utils";
 
 export const metadata = {
-  title: "Engineering Notes | Higor Monteiro",
+  title: "Notes | Higor Monteiro",
   description:
-    "Technical notes on AWS networking, Kubernetes, platform engineering, Terraform, CI/CD, and reliability."
+    "Technical notes on AWS networking, Kubernetes, platform engineering, Terraform, CI/CD, and reliability.",
+  openGraph: {
+    title: "Notes | Higor Monteiro",
+    description:
+      "Technical notes on AWS networking, Kubernetes, platform engineering, Terraform, CI/CD, and reliability.",
+    url: "https://hfmonteiro.dev/notes",
+    siteName: "hfmonteiro.dev",
+    type: "website"
+  }
 };
 
 const copy = {
-  title: "Engineering Notes",
+  title: "Notes",
   intro:
     "Short technical notes on AWS networking, Kubernetes, platform engineering, Terraform, CI/CD, and reliability.",
   back: "Back to home",
@@ -37,7 +46,7 @@ export default function NotesPage() {
                 className="rounded-lg border border-zinc-800 bg-zinc-900/25 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/45"
               >
                 <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-zinc-500">
-                  <span>{note.date}</span>
+                  <span>{formatDate(note.date)}</span>
                   <span>{note.readingTime}</span>
                 </div>
                 <h2 className="mt-3 text-xl font-semibold">{note.title}</h2>

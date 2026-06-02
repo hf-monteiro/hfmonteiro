@@ -47,16 +47,21 @@ export default function Header({ lang, nav }: HeaderProps) {
     <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/70 backdrop-blur">
       <Container>
         <div className="flex min-h-20 flex-col items-start justify-center gap-3 py-3 sm:flex-row sm:items-center sm:justify-between">
-          <a href={homeHref} className="flex items-center gap-2 transition hover:opacity-80">
-            <Image
-              src="/logo.png"
-              alt="hfmonteiro.dev"
-              width={64}
-              height={64}
-              priority
-            />
-            <span className="sr-only">hfmonteiro.dev</span>
-          </a>
+          <div className="flex w-full items-center justify-between sm:w-auto">
+            <a href={homeHref} className="flex items-center gap-2 transition hover:opacity-80">
+              <Image
+                src="/logo.png"
+                alt="hfmonteiro.dev"
+                width={64}
+                height={64}
+                priority
+              />
+              <span className="sr-only">hfmonteiro.dev</span>
+            </a>
+            <div className="sm:hidden">
+              <LangSwitch lang={lang} />
+            </div>
+          </div>
 
           <nav className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <NavLink href={`${base}/solutions`} label={nav.solutions} active={isActive(`${base}/solutions`)} />
@@ -66,7 +71,9 @@ export default function Header({ lang, nav }: HeaderProps) {
             <NavLink href={`${base}/skills`} label={nav.skills} active={isActive(`${base}/skills`)} />
             <NavLink href={`${base}/resume`} label={nav.resume} active={isActive(`${base}/resume`)} />
             <NavLink href={`${base}/contact`} label={nav.contact} active={isActive(`${base}/contact`)} />
-            <LangSwitch lang={lang} />
+            <div className="hidden sm:block">
+              <LangSwitch lang={lang} />
+            </div>
           </nav>
         </div>
       </Container>

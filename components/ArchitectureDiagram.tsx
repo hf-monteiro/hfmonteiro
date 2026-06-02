@@ -37,16 +37,22 @@ export default function ArchitectureDiagram({ slug }: { slug: string }) {
         {nodes.map((node, index) => (
           <div key={node.label} className="relative">
             <div className="min-h-24 rounded-lg border border-zinc-800 bg-zinc-900/40 p-4">
+              <p className="mb-1 text-xs font-medium text-zinc-600">{index + 1}</p>
               <p className="text-sm font-semibold text-zinc-100">{node.label}</p>
               {node.detail ? (
                 <p className="mt-2 text-xs text-zinc-500">{node.detail}</p>
               ) : null}
             </div>
             {index < nodes.length - 1 ? (
-              <div className="hidden md:block">
-                <div className="absolute right-[-0.85rem] top-1/2 h-px w-4 bg-zinc-500/60" />
-                <div className="absolute right-[-0.95rem] top-[calc(50%-0.2rem)] h-2 w-2 rotate-45 border-r border-t border-zinc-500/60" />
-              </div>
+              <>
+                <div className="hidden md:block">
+                  <div className="absolute right-[-0.85rem] top-1/2 h-px w-4 bg-zinc-500/60" />
+                  <div className="absolute right-[-0.95rem] top-[calc(50%-0.2rem)] h-2 w-2 rotate-45 border-r border-t border-zinc-500/60" />
+                </div>
+                <div className="flex justify-center py-2 md:hidden">
+                  <div className="h-5 w-px bg-zinc-600" />
+                </div>
+              </>
             ) : null}
           </div>
         ))}

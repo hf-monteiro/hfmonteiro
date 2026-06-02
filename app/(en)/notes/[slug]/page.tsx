@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import Pill from "@/components/Pill";
 import { getNote, getNotes } from "@/lib/notes";
+import { formatDate } from "@/lib/utils";
 
 export function generateStaticParams() {
   return getNotes("en").map((note) => ({ slug: note.slug }));
@@ -40,7 +41,7 @@ export default function NoteDetail({ params }: { params: { slug: string } }) {
 
           <header className="mt-4 max-w-3xl">
             <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-zinc-500">
-              <span>{note.date}</span>
+              <span>{formatDate(note.date)}</span>
               <span>{note.readingTime}</span>
             </div>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight">{note.title}</h1>

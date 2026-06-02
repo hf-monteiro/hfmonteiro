@@ -119,7 +119,7 @@ export default function LabsPage() {
               <Card key={lab.title}>
                 <p className="text-xs uppercase tracking-wider text-zinc-500">{lab.repo}</p>
                 <h2 className="mt-2 text-lg font-semibold">{lab.title}</h2>
-                <p className="mt-3 line-clamp-2 text-sm text-zinc-300">{lab.desc}</p>
+                <p className="mt-3 line-clamp-3 text-sm text-zinc-300">{lab.desc}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {lab.tags.slice(0, 4).map((tag) => (
                     tag === "Legacy lab" ? (

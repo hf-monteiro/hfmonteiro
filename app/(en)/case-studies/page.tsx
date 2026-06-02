@@ -38,12 +38,16 @@ export default function CaseStudiesPage() {
           <h1 className="mt-4 text-3xl font-semibold">{t.title}</h1>
           <p className="mt-3 max-w-2xl text-zinc-300">{t.intro}</p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {cases.map((c) => (
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {cases.map((c, i) => (
               <a
                 key={c.slug}
                 href={`/case-studies/${c.slug}`}
-                className="rounded-lg border border-zinc-800 bg-zinc-900/25 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/45"
+                className={`rounded-lg border border-zinc-800 bg-zinc-900/25 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/45${
+                  cases.length % 2 !== 0 && i === cases.length - 1
+                    ? " sm:col-span-2 lg:col-span-1"
+                    : ""
+                }`}
               >
                 <p className="text-sm text-zinc-500">{c.subtitle}</p>
                 <h2 className="mt-2 text-lg font-semibold">{c.title}</h2>
