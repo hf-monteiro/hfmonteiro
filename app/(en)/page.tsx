@@ -52,6 +52,11 @@ const copy = {
       desc: "EKS operations, Istio service mesh, GitLab runners on Kubernetes, observability, incident response, and MTTR reduction."
     }
   ],
+  about: {
+    work: "I like infrastructure that is boring in production and clear in code. The best platform work gives teams strong defaults without hiding the architecture — a good Terraform module, DNS pattern, or deployment workflow should reduce cognitive load while keeping the important boundaries visible.",
+    personal: "Away from the terminal: fishing, hiking, and camping. The same mindset applies in both places — read the environment, prepare well, respect constraints, and stay calm when conditions change.",
+    link: "More about me →"
+  },
   featured: {
     title: "Featured Projects",
     link: "See all →"
@@ -108,6 +113,14 @@ export default function Home() {
               <p className="mt-2 text-zinc-400">{b.desc}</p>
             </Card>
           ))}
+        </section>
+
+        <section className="pb-14 max-w-2xl">
+          <p className="leading-7 text-zinc-300">{t.about.work}</p>
+          <p className="mt-4 leading-7 text-zinc-400">{t.about.personal}</p>
+          <a className="mt-4 inline-block text-sm text-zinc-400 hover:text-zinc-200" href="/notes/about-me">
+            {t.about.link}
+          </a>
         </section>
 
         <section className="pb-14">

@@ -1,11 +1,9 @@
 import { Lang } from "@/lib/i18n";
 
 export type NavCopy = {
-  solutions: string;
   caseStudies: string;
   labs: string;
   notes: string;
-  skills: string;
   resume: string;
   contact: string;
 };
@@ -23,11 +21,9 @@ type SiteCopy = {
 const copy: Record<Lang, SiteCopy> = {
   en: {
     nav: {
-      solutions: "Solutions",
       caseStudies: "Projects",
       labs: "Labs",
       notes: "Notes",
-      skills: "Skills",
       resume: "Resume",
       contact: "Contact"
     },
@@ -38,11 +34,9 @@ const copy: Record<Lang, SiteCopy> = {
   },
   "pt-br": {
     nav: {
-      solutions: "Soluções",
       caseStudies: "Projetos",
       labs: "Labs",
       notes: "Notes",
-      skills: "Skills",
       resume: "Currículo",
       contact: "Contato"
     },

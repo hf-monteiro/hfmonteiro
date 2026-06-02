@@ -64,11 +64,9 @@ export default function Header({ lang, nav }: HeaderProps) {
           </div>
 
           <nav className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <NavLink href={`${base}/solutions`} label={nav.solutions} active={isActive(`${base}/solutions`)} />
             <NavLink href={`${base}/case-studies`} label={nav.caseStudies} active={isActive(`${base}/case-studies`)} />
             <NavLink href={`${base}/labs`} label={nav.labs} active={isActive(`${base}/labs`)} />
             <NavLink href={`${base}/notes`} label={nav.notes} active={isActive(`${base}/notes`)} />
-            <NavLink href={`${base}/skills`} label={nav.skills} active={isActive(`${base}/skills`)} />
             <NavLink href={`${base}/resume`} label={nav.resume} active={isActive(`${base}/resume`)} />
             <NavLink href={`${base}/contact`} label={nav.contact} active={isActive(`${base}/contact`)} />
             <div className="hidden sm:block">
