@@ -5,7 +5,15 @@ import Pill from "@/components/Pill";
 export const metadata = {
   title: "Skills | Higor Monteiro",
   description:
-    "Capability map for AWS platform architecture, advanced cloud networking, Kubernetes, Terraform, CI/CD, and reliability."
+    "Capability map for AWS platform architecture, advanced cloud networking, Kubernetes, Terraform, CI/CD, and reliability.",
+  openGraph: {
+    title: "Skills | Higor Monteiro",
+    description:
+      "Capability map: AWS platform architecture, advanced cloud networking, Kubernetes, Terraform, CI/CD, and reliability.",
+    url: "https://hfmonteiro.dev/skills",
+    siteName: "hfmonteiro.dev",
+    type: "website"
+  }
 };
 
 const copy = {
@@ -116,7 +124,7 @@ export default function SkillsPage() {
                 </div>
                 <p className="mt-3 text-sm text-zinc-400">{capability.desc}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {capability.items.slice(0, 6).map((item) => (
+                  {capability.items.map((item) => (
                     <Pill key={item}>{item}</Pill>
                   ))}
                 </div>

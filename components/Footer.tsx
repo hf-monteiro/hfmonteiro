@@ -20,6 +20,7 @@ export default function Footer({ lang, footer, nav }: FooterProps) {
               <p className="mt-2 max-w-md">{footer.blurb}</p>
             </div>
             <div className="flex flex-col gap-2">
+              <a className="hover:text-zinc-200" href={`${base}/solutions`}>{nav.solutions}</a>
               <a className="hover:text-zinc-200" href={`${base}/case-studies`}>{nav.caseStudies}</a>
               <a className="hover:text-zinc-200" href={`${base}/labs`}>{nav.labs}</a>
               <a className="hover:text-zinc-200" href={`${base}/notes`}>{nav.notes}</a>

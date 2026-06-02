@@ -6,7 +6,15 @@ import Pill from "@/components/Pill";
 export const metadata = {
   title: "Resume | Higor Monteiro",
   description:
-    "Senior DevOps and Platform Engineering resume focused on AWS architecture, EKS, Terraform, GitLab CI/CD, and cloud networking."
+    "Senior DevOps and Platform Engineering resume focused on AWS architecture, EKS, Terraform, GitLab CI/CD, and cloud networking.",
+  openGraph: {
+    title: "Resume | Higor Monteiro",
+    description:
+      "Senior DevOps and Platform Engineering resume: AWS architecture, EKS, Terraform, GitLab CI/CD, cloud networking.",
+    url: "https://hfmonteiro.dev/resume",
+    siteName: "hfmonteiro.dev",
+    type: "website"
+  }
 };
 
 const copy = {
@@ -170,7 +178,7 @@ function RoleCard({
         ))}
       </div>
       <ul className={`mt-4 list-disc space-y-2 pl-5 text-zinc-300 ${compact ? "text-sm" : ""}`}>
-        {role.items.slice(0, compact ? 2 : 3).map((item) => (
+        {role.items.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
@@ -179,8 +187,6 @@ function RoleCard({
 }
 
 export default function ResumePage() {
-  const base = "";
-
   return (
     <main>
       <Container>
@@ -204,14 +210,14 @@ export default function ResumePage() {
               </div>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Button href="/resume.pdf" variant="primary">{copy.download}</Button>
-                <Button href={`${base}/contact`} variant="secondary">{copy.contact}</Button>
+                <Button href="/contact" variant="secondary">{copy.contact}</Button>
               </div>
             </Card>
 
             <Card>
               <h2 className="text-lg font-semibold">{copy.outcomesTitle}</h2>
               <ul className="mt-3 grid gap-2 text-zinc-300 sm:grid-cols-2">
-                {copy.outcomes.slice(0, 4).map((item) => (
+                {copy.outcomes.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
                     <span>{item}</span>
@@ -236,7 +242,7 @@ export default function ResumePage() {
                   <Card key={group.title}>
                     <h3 className="text-lg font-semibold">{group.title}</h3>
                     <ul className="mt-3 space-y-2 text-sm text-zinc-300">
-                      {group.items.slice(0, 3).map((item) => (
+                      {group.items.map((item) => (
                         <li key={item} className="flex gap-2">
                           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
                           <span>{item}</span>

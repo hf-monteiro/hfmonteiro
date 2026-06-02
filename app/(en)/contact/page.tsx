@@ -6,7 +6,15 @@ import Pill from "@/components/Pill";
 export const metadata = {
   title: "Contact | Higor Monteiro",
   description:
-    "Contact Higor Monteiro for professional conversations and platform architecture topics."
+    "Contact Higor Monteiro for professional conversations and platform architecture topics.",
+  openGraph: {
+    title: "Contact | Higor Monteiro",
+    description:
+      "Reach out for professional conversations, consulting requests, and platform architecture topics.",
+    url: "https://hfmonteiro.dev/contact",
+    siteName: "hfmonteiro.dev",
+    type: "website"
+  }
 };
 
 const copy = {

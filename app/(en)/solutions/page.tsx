@@ -81,6 +81,20 @@ const solutions: Solution[] = [
   }
 ];
 
+export const metadata = {
+  title: "Solutions | Higor Monteiro",
+  description:
+    "Senior DevOps, platform engineering, and cloud architecture solutions: enterprise AWS platforms, advanced networking, Kubernetes, CI/CD, and reliability.",
+  openGraph: {
+    title: "Solutions | Higor Monteiro",
+    description:
+      "Senior DevOps, platform engineering, and cloud architecture solutions for enterprise AWS environments.",
+    url: "https://hfmonteiro.dev/solutions",
+    siteName: "hfmonteiro.dev",
+    type: "website"
+  }
+};
+
 const copy = {
   title: "Solutions",
   intro:
@@ -110,6 +124,11 @@ function Card({ s }: { s: Solution }) {
 
       <div className="mt-4 grid gap-3">
         <div>
+          <p className="text-xs uppercase tracking-wider text-zinc-400">{copy.problem}</p>
+          <p className="mt-1 text-sm text-zinc-400">{s.problem}</p>
+        </div>
+
+        <div>
           <p className="text-xs uppercase tracking-wider text-zinc-400">{copy.outcome}</p>
           <p className="mt-1 text-sm text-zinc-200">{s.outcome}</p>
         </div>
@@ -117,7 +136,7 @@ function Card({ s }: { s: Solution }) {
         <div>
           <p className="text-xs uppercase tracking-wider text-zinc-400">{copy.deliverables}</p>
           <ul className="mt-2 space-y-1 text-sm text-zinc-200">
-            {s.deliverables.slice(0, 2).map((d) => (
+            {s.deliverables.map((d) => (
               <li key={d} className="flex gap-2">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400" />
                 <span>{d}</span>
@@ -137,8 +156,6 @@ function Card({ s }: { s: Solution }) {
 }
 
 export default function SolutionsPage() {
-  const base = "";
-
   return (
     <main className="py-14">
       <Container>
@@ -158,13 +175,13 @@ export default function SolutionsPage() {
           <p className="mt-2 text-zinc-300">{copy.ctaBody}</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href={`${base}/contact`}
+              href="/contact"
               className="rounded-lg bg-white px-5 py-2.5 text-sm font-medium text-zinc-950 transition hover:opacity-90"
             >
               {copy.ctaContact}
             </a>
             <a
-              href={`${base}/resume`}
+              href="/resume"
               className="rounded-lg border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:bg-zinc-900/40"
             >
               {copy.ctaResume}

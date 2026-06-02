@@ -5,7 +5,15 @@ import { getCaseStudies } from "@/lib/caseStudies";
 export const metadata = {
   title: "Projects | Higor Monteiro",
   description:
-    "Architecture-focused case studies covering AWS platforms, private networking, EKS, GitLab CI/CD, and reliability."
+    "Architecture-focused case studies covering AWS platforms, private networking, EKS, GitLab CI/CD, and reliability.",
+  openGraph: {
+    title: "Projects | Higor Monteiro",
+    description:
+      "Architecture-focused case studies: AWS platforms, private networking, EKS, GitLab CI/CD, and reliability.",
+    url: "https://hfmonteiro.dev/case-studies",
+    siteName: "hfmonteiro.dev",
+    type: "website"
+  }
 };
 
 const copy = {
@@ -18,14 +26,13 @@ const copy = {
 
 export default function CaseStudiesPage() {
   const t = copy;
-  const base = "";
   const cases = getCaseStudies("en");
 
   return (
     <main>
       <Container>
         <section className="py-14">
-          <a className="text-sm text-zinc-400 hover:text-zinc-200" href={`${base}/`}>
+          <a className="text-sm text-zinc-400 hover:text-zinc-200" href="/">
             ← {t.back}
           </a>
           <h1 className="mt-4 text-3xl font-semibold">{t.title}</h1>
@@ -35,7 +42,7 @@ export default function CaseStudiesPage() {
             {cases.map((c) => (
               <a
                 key={c.slug}
-                href={`${base}/case-studies/${c.slug}`}
+                href={`/case-studies/${c.slug}`}
                 className="rounded-lg border border-zinc-800 bg-zinc-900/25 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/45"
               >
                 <p className="text-sm text-zinc-500">{c.subtitle}</p>

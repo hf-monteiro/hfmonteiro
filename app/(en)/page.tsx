@@ -5,6 +5,20 @@ import Button from "@/components/Button";
 import { getCaseStudies } from "@/lib/caseStudies";
 import { getNotes } from "@/lib/notes";
 
+export const metadata = {
+  title: "Higor Monteiro | Senior DevOps / Platform Engineer",
+  description:
+    "Senior DevOps / Platform Engineer designing enterprise AWS platforms, private networking architectures, production EKS environments, and delivery systems for regulated SaaS teams.",
+  openGraph: {
+    title: "Higor Monteiro | Senior DevOps / Platform Engineer",
+    description:
+      "Enterprise AWS platforms, advanced cloud networking, production EKS, Terraform, and GitLab CI/CD.",
+    url: "https://hfmonteiro.dev",
+    siteName: "hfmonteiro.dev",
+    type: "website"
+  }
+};
+
 const copy = {
   intro: "Hi, I’m Higor",
   title: "Senior DevOps / Platform Engineer",
@@ -51,7 +65,6 @@ export default function Home() {
   const cases = getCaseStudies("en").slice(0, 2);
   const notes = getNotes("en").slice(0, 2);
   const t = copy;
-  const base = "";
 
   return (
     <main>
@@ -66,9 +79,9 @@ export default function Home() {
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button href={`${base}/case-studies`} variant="primary">{t.buttons.caseStudies}</Button>
-            <Button href={`${base}/labs`} variant="secondary">{t.buttons.labs}</Button>
-            <Button href={`${base}/resume`} variant="secondary">{t.buttons.resume}</Button>
+            <Button href="/case-studies" variant="primary">{t.buttons.caseStudies}</Button>
+            <Button href="/labs" variant="secondary">{t.buttons.labs}</Button>
+            <Button href="/resume" variant="secondary">{t.buttons.resume}</Button>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-2">
@@ -99,7 +112,7 @@ export default function Home() {
         <section className="pb-14">
           <div className="flex items-baseline justify-between gap-4">
             <h2 className="text-base font-semibold">{t.featured.title}</h2>
-            <a className="text-sm text-zinc-400 hover:text-zinc-200" href={`${base}/case-studies`}>
+            <a className="text-sm text-zinc-400 hover:text-zinc-200" href="/case-studies">
               {t.featured.link}
             </a>
           </div>
@@ -108,7 +121,7 @@ export default function Home() {
             {cases.map((c) => (
               <a
                 key={c.slug}
-                href={`${base}/case-studies/${c.slug}`}
+                href={`/case-studies/${c.slug}`}
                 className="rounded-lg border border-zinc-800 bg-zinc-900/25 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/45"
               >
                 <p className="text-sm text-zinc-500">{c.subtitle}</p>
@@ -127,7 +140,7 @@ export default function Home() {
         <section className="pb-14">
           <div className="flex items-baseline justify-between gap-4">
             <h2 className="text-base font-semibold">{t.notes.title}</h2>
-            <a className="text-sm text-zinc-400 hover:text-zinc-200" href={`${base}/notes`}>
+            <a className="text-sm text-zinc-400 hover:text-zinc-200" href="/notes">
               {t.notes.link}
             </a>
           </div>
@@ -136,7 +149,7 @@ export default function Home() {
             {notes.map((note) => (
               <a
                 key={note.slug}
-                href={`${base}/notes/${note.slug}`}
+                href={`/notes/${note.slug}`}
                 className="rounded-lg border border-zinc-800 bg-zinc-900/25 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/45"
               >
                 <p className="text-xs text-zinc-500">{note.date} · {note.readingTime}</p>

@@ -5,7 +5,15 @@ import Pill from "@/components/Pill";
 export const metadata = {
   title: "Infrastructure Labs | Higor Monteiro",
   description:
-    "Infrastructure labs and reference implementations for AWS, Terraform, Kubernetes, CI/CD, Packer, and automation."
+    "Infrastructure labs and reference implementations for AWS, Terraform, Kubernetes, CI/CD, Packer, and automation.",
+  openGraph: {
+    title: "Infrastructure Labs | Higor Monteiro",
+    description:
+      "Curated labs and reference implementations: AWS, Terraform, Kubernetes, CI/CD, Packer, and automation.",
+    url: "https://hfmonteiro.dev/labs",
+    siteName: "hfmonteiro.dev",
+    type: "website"
+  }
 };
 
 const copy = {
