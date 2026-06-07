@@ -5,25 +5,25 @@ type DiagramNode = {
 
 const diagrams: Record<string, DiagramNode[]> = {
   "aws-platform-networking-architecture": [
-    { label: "AWS Organizations", detail: "multi-account foundation" },
-    { label: "Shared networking", detail: "TGW / Direct Connect" },
-    { label: "Private services", detail: "PrivateLink / endpoints" },
-    { label: "Internal DNS", detail: "Route53 PHZ" },
-    { label: "Platform access", detail: "IAM / STS" }
+    { label: "AWS Organizations", detail: "management + member accounts, SCPs, cross-account IAM / STS" },
+    { label: "Transit Gateway", detail: "spoke VPC attachments, route tables, RAM sharing, Direct Connect integration" },
+    { label: "PrivateLink + Endpoints", detail: "VPC Endpoint Services, interface endpoints, NLB-backed producers" },
+    { label: "Route53 PHZ", detail: "private DNS zones, resolver rules, cross-account DNS association" },
+    { label: "Platform modules", detail: "reusable Terraform for VPC, EKS, WAF, MSK, endpoint services" }
   ],
   "production-eks-platform-gitlab-istio": [
-    { label: "GitLab", detail: "pipelines and runners" },
-    { label: "Private EKS", detail: "controlled cluster access" },
-    { label: "Istio", detail: "service mesh routing" },
-    { label: "Ingress", detail: "ALB / NLB / TLS" },
-    { label: "Observability", detail: "Datadog / CloudWatch" }
+    { label: "GitLab CI/CD", detail: "runners inside EKS, secure AWS access via IRSA, environment promotion" },
+    { label: "Private EKS cluster", detail: "private API endpoint, Karpenter node provisioning, OIDC + IRSA" },
+    { label: "Istio service mesh", detail: "Gateways, VirtualServices, EnvoyFilters, mTLS between services" },
+    { label: "Ingress + TLS", detail: "ALB/NLB integration, ACM certificates, private DNS, Route53 routing" },
+    { label: "Observability", detail: "Datadog APM + infra, CloudWatch logs, alerts, incident response" }
   ],
   "gitlab-cicd-standardization-at-scale": [
-    { label: "Source", detail: "merge / tag rules" },
-    { label: "Build & test", detail: "reusable templates" },
-    { label: "Scan", detail: "quality and security gates" },
-    { label: "Promote", detail: "environment controls" },
-    { label: "Deploy", detail: "safer release flow" }
+    { label: "Source control", detail: "branch + tag strategy, merge request rules, protected environments" },
+    { label: "Build + test", detail: "shared CI templates, Docker-in-Docker, unit tests, artifact caching" },
+    { label: "Security gates", detail: "SAST, dependency scan, secret detection, Checkov, SonarQube" },
+    { label: "Artifact + version", detail: "image tagging, registry push, semantic versioning, changelog" },
+    { label: "Deploy + promote", detail: "dev → QA → stage → prod, manual gates, rollback strategy" }
   ]
 };
 
