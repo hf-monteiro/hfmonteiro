@@ -203,7 +203,7 @@ export default function ResumePage() {
                 ))}
               </div>
               <div className="mt-5 flex flex-wrap gap-3">
-                <Button href="/resume.pdf" variant="primary">{copy.download}</Button>
+                <Button href="/resume.pdf" variant="primary" download="Higor_Monteiro_Resume.pdf">{copy.download}</Button>
                 <Button href={`${base}/contact`} variant="secondary">{copy.contact}</Button>
               </div>
             </Card>
