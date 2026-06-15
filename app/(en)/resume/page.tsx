@@ -22,7 +22,7 @@ const copy = {
   intro: "Senior platform, cloud architecture, and infrastructure reliability overview.",
   summaryTitle: "Summary",
   summaryBody:
-    "Senior DevOps / Platform Engineer with 10+ years of experience designing and operating cloud-native infrastructure and enterprise platform architectures in AWS. Specialized in Kubernetes (EKS), Terraform, GitLab CI/CD, AWS networking, PrivateLink, Direct Connect, multi-account architectures, and platform engineering for regulated SaaS environments.",
+    "Senior DevOps Engineer with 15+ years of experience designing, building, and operating production systems. Specialized in AWS, Kubernetes, Infrastructure as Code, and CI/CD automation, with extensive experience supporting large-scale distributed environments for US-based clients. Proven track record designing multi-account AWS environments, improving deployment reliability, automating infrastructure delivery, and leading production incident response.",
   download: "Download PDF",
   contact: "Contact",
   positioning: [
@@ -37,18 +37,21 @@ const copy = {
     "Designed multi-account AWS platform architectures for enterprise SaaS environments.",
     "Built private connectivity patterns with PrivateLink, Transit Gateway, Direct Connect, and Route53 PHZ.",
     "Operated production EKS platforms with GitLab CI/CD, Helm, Istio, and private ingress patterns.",
-    "Standardized GitLab CI/CD workflows, increasing releases from weekly to multiple deployments per day.",
+    "Reduced release cycle time by 800%, enabling 2–6 daily deployments across engineering teams.",
     "Supported large-scale AWS environments serving 16M+ users in regulated financial systems.",
     "Improved platform reliability through observability, incident response, RCA, and operational runbooks."
   ],
   certsTitle: "Certifications",
   certs: [
-    "AWS Certified Advanced Networking - Specialty",
-    "AWS Certified DevOps Engineer - Professional",
-    "GCP Professional Cloud Architect",
-    "GCP Professional Cloud Developer",
-    "AWS Certified Developer / SysOps / Cloud Practitioner",
-    "Certified SAFe 6 - Practitioner / GitLab Certified Associate"
+    "AWS Certified Advanced Networking – Specialty (2025–2028)",
+    "AWS Certified DevOps Engineer – Professional (2024–2027)",
+    "AWS Certified Developer – Associate (2023–2027)",
+    "AWS Certified SysOps Administrator – Associate (2021–2024)",
+    "AWS Certified Cloud Practitioner (2020–2027)",
+    "GCP Professional Cloud Architect (2024–2026)",
+    "GCP Professional Cloud Developer (2025–2027)",
+    "Certified SAFe 6 – Practitioner (2024–2025)",
+    "GitLab Certified Associate (2021)"
   ],
   architectureTitle: "Selected Architecture Experience",
   architectureGroups: [
@@ -68,6 +71,7 @@ const copy = {
         "Private Kubernetes/EKS environments with controlled cluster access",
         "Istio service mesh implementations and internal traffic routing",
         "GitLab CI/CD platform engineering and GitLab runners on Kubernetes",
+        "Nginx reverse proxy, TLS termination, and HTTP/S traffic routing",
         "Highly available ingress architectures using ALB/NLB",
         "Terraform module standardization at scale"
       ]
@@ -75,9 +79,9 @@ const copy = {
     {
       title: "Reliability & Security",
       items: [
-        "AWS WAF, DevSecOps controls, and security hardening",
+        "AWS WAFv2, Checkov, SonarQube integration in CI/CD security gates",
         "MSK/Kafka networking and private connectivity",
-        "Centralized observability and monitoring platforms",
+        "Centralized observability with Datadog, CloudWatch, New Relic, and Dynatrace",
         "Production incident response and root cause analysis",
         "Reliability improvements for distributed AWS systems"
       ]
@@ -95,8 +99,10 @@ const copy = {
         "Designed and implemented multi-account AWS platform architectures for enterprise SaaS environments using Terraform and Infrastructure as Code best practices.",
         "Architected secure cross-account networking with AWS PrivateLink, Transit Gateway, Direct Connect, Route53 Private Hosted Zones, Interface Endpoints, and VPC Endpoint Services.",
         "Built and maintained production EKS platforms with GitLab CI/CD, Helm, Istio, private ingress, observability, and automated deployment pipelines.",
+        "Led monolith-to-microservices migration, improving scalability and high availability across distributed services.",
         "Developed reusable Terraform modules for networking, EKS, MSK, ingress architectures, WAF, Route53, cloud security controls, and platform foundations.",
-        "Optimized CI/CD pipelines across engineering teams, increasing deployment frequency from weekly releases to multiple deployments per day.",
+        "Reduced release cycle time by 800% across engineering teams, enabling 2–6 daily deployments.",
+        "Supported RDS and Aurora (PostgreSQL/MySQL) environments with high availability, automated failover, and performance tuning.",
         "Performed production incident response, root cause analysis, platform troubleshooting, and reliability improvements across distributed AWS systems."
       ]
     },
@@ -108,7 +114,8 @@ const copy = {
       items: [
         "Supported large-scale AWS environments serving 16M+ users with high availability, security, and regulated financial requirements.",
         "Managed mission-critical cloud services including EKS, ECS, API Gateway, MSK, Lambda, RDS/Aurora, IAM, WAFv2, S3, ALB/NLB, and ACM.",
-        "Improved observability, incident response, CI/CD pipelines, and operational maturity for distributed production systems."
+        "Created GitLab pipelines with integrated code quality and security scanning (SAST, dependency scanning, secret detection).",
+        "Improved observability, incident response, and operational maturity for distributed production systems."
       ]
     },
     {
