@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import Pill from "@/components/Pill";
 import { getCaseStudies } from "@/lib/caseStudies";
+import { ogImageUrl } from "@/lib/ogImage";
 
 export const metadata = {
   title: "Projects | Higor Monteiro",
@@ -12,7 +13,8 @@ export const metadata = {
       "Architecture-focused case studies: AWS platforms, private networking, EKS, GitLab CI/CD, and reliability.",
     url: "https://hfmonteiro.dev/case-studies",
     siteName: "hfmonteiro.dev",
-    type: "website"
+    type: "website",
+    images: [ogImageUrl("en")]
   }
 };
 

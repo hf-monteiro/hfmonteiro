@@ -5,6 +5,7 @@ import Button from "@/components/Button";
 import { getCaseStudies } from "@/lib/caseStudies";
 import { getNotes } from "@/lib/notes";
 import { formatDate } from "@/lib/utils";
+import { ogImageUrl } from "@/lib/ogImage";
 
 export const metadata = {
   title: "Higor Monteiro | Senior DevOps / Platform Engineer",
@@ -16,7 +17,8 @@ export const metadata = {
       "Enterprise AWS platforms, advanced cloud networking, production EKS, Terraform, and GitLab CI/CD.",
     url: "https://hfmonteiro.dev",
     siteName: "hfmonteiro.dev",
-    type: "website"
+    type: "website",
+    images: [ogImageUrl("en")]
   }
 };
 
@@ -68,7 +70,7 @@ const copy = {
 };
 
 export default function Home() {
-  const cases = getCaseStudies("en").slice(0, 2);
+  const cases = getCaseStudies("en");
   const notes = getNotes("en").slice(0, 2);
   const t = copy;
 
@@ -131,7 +133,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {cases.map((c) => (
               <a
                 key={c.slug}

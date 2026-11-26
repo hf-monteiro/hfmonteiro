@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import Card from "@/components/Card";
 import Pill from "@/components/Pill";
+import { ogImageUrl } from "@/lib/ogImage";
 
 export const metadata = {
   title: "Infrastructure Labs | Higor Monteiro",
@@ -12,7 +13,8 @@ export const metadata = {
       "Curated labs and reference implementations: AWS, Terraform, Kubernetes, CI/CD, Packer, and automation.",
     url: "https://hfmonteiro.dev/labs",
     siteName: "hfmonteiro.dev",
-    type: "website"
+    type: "website",
+    images: [ogImageUrl("en")]
   }
 };
 

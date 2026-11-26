@@ -1,6 +1,19 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getSiteCopy } from "@/lib/siteCopy";
+import { ogImageUrl } from "@/lib/ogImage";
+
+export const metadata = {
+  openGraph: {
+    siteName: "hfmonteiro.dev",
+    type: "website",
+    locale: "en_US",
+    images: [ogImageUrl("en")]
+  },
+  twitter: {
+    card: "summary_large_image"
+  }
+};
 
 export default function EnLayout({ children }: { children: React.ReactNode }) {
   const copy = getSiteCopy("en");

@@ -15,16 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/notes`, priority: 0.8 },
     { url: `${base}/resume`, priority: 0.8 },
     { url: `${base}/contact`, priority: 0.7 },
-    { url: `${base}/skills`, priority: 0.7 },
-    { url: `${base}/solutions`, priority: 0.7 },
     { url: `${base}/pt-br`, priority: 0.9 },
     { url: `${base}/pt-br/case-studies`, priority: 0.8 },
     { url: `${base}/pt-br/labs`, priority: 0.7 },
     { url: `${base}/pt-br/notes`, priority: 0.7 },
     { url: `${base}/pt-br/resume`, priority: 0.7 },
-    { url: `${base}/pt-br/contact`, priority: 0.6 },
-    { url: `${base}/pt-br/skills`, priority: 0.6 },
-    { url: `${base}/pt-br/solutions`, priority: 0.6 }
+    { url: `${base}/pt-br/contact`, priority: 0.6 }
   ].map((r) => ({ ...r, lastModified: new Date() }));
 
   const caseStudyRoutes: MetadataRoute.Sitemap = caseStudySlugs.flatMap((slug) => [

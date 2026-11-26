@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import Pill from "@/components/Pill";
 import { getNotes } from "@/lib/notes";
 import { formatDate } from "@/lib/utils";
+import { ogImageUrl } from "@/lib/ogImage";
 
 export const metadata = {
   title: "Notes | Higor Monteiro",
@@ -13,7 +14,8 @@ export const metadata = {
       "Technical notes on AWS networking, Kubernetes, platform engineering, Terraform, CI/CD, and reliability.",
     url: "https://hfmonteiro.dev/notes",
     siteName: "hfmonteiro.dev",
-    type: "website"
+    type: "website",
+    images: [ogImageUrl("en")]
   }
 };
 

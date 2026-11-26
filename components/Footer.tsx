@@ -27,7 +27,20 @@ export default function Footer({ lang, footer, nav }: FooterProps) {
               <a className="hover:text-zinc-200" href={`${base}/contact`}>{nav.contact}</a>
             </div>
           </div>
-          <p className="mt-8 text-xs text-zinc-500">© {new Date().getFullYear()} hfmonteiro.dev</p>
+          <div className="mt-8 flex flex-col gap-2 text-xs text-zinc-500 sm:flex-row sm:justify-between">
+            <p>© {new Date().getFullYear()} hfmonteiro.dev</p>
+            <p>
+              {footer.builtWith} ·{" "}
+              <a
+                className="hover:text-zinc-200"
+                href="https://github.com/hf-monteiro/hfmonteiro"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {footer.source} →
+              </a>
+            </p>
+          </div>
         </div>
       </Container>
     </footer>

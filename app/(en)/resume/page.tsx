@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import Card from "@/components/Card";
 import Button from "@/components/Button";
 import Pill from "@/components/Pill";
+import { ogImageUrl } from "@/lib/ogImage";
 
 export const metadata = {
   title: "Resume | Higor Monteiro",
@@ -13,7 +14,8 @@ export const metadata = {
       "Senior DevOps and Platform Engineering resume: AWS architecture, EKS, Terraform, GitLab CI/CD, cloud networking.",
     url: "https://hfmonteiro.dev/resume",
     siteName: "hfmonteiro.dev",
-    type: "website"
+    type: "website",
+    images: [ogImageUrl("en")]
   }
 };
 

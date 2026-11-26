@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import Card from "@/components/Card";
 import Button from "@/components/Button";
 import Pill from "@/components/Pill";
+import { ogImageUrl } from "@/lib/ogImage";
 
 export const metadata = {
   title: "Contact | Higor Monteiro",
@@ -13,7 +14,8 @@ export const metadata = {
       "Reach out for professional conversations, consulting requests, and platform architecture topics.",
     url: "https://hfmonteiro.dev/contact",
     siteName: "hfmonteiro.dev",
-    type: "website"
+    type: "website",
+    images: [ogImageUrl("en")]
   }
 };
 
@@ -25,8 +27,6 @@ const copy = {
   emailBody:
     "Email is the best path for role conversations, consulting requests, architecture reviews, and introductions.",
   email: "higor.fmonteiro@gmail.com",
-  phoneTitle: "Phone",
-  phone: "+55 51 98107-8364",
   profilesTitle: "Profiles",
   linkedin: "LinkedIn",
   github: "GitHub",
@@ -64,12 +64,6 @@ export default function ContactPage() {
                     <p className="text-xs uppercase tracking-wider text-zinc-500">Email</p>
                     <a href={`mailto:${t.email}`} className="mt-2 inline-block text-zinc-200 hover:text-zinc-100">
                       {t.email} →
-                    </a>
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wider text-zinc-500">{t.phoneTitle}</p>
-                    <a href="tel:+5551981078364" className="mt-2 inline-block text-zinc-200 hover:text-zinc-100">
-                      {t.phone} →
                     </a>
                   </div>
                 </div>

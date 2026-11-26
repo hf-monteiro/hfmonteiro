@@ -48,7 +48,7 @@ const copy = {
 };
 
 export default function Home() {
-  const cases = getCaseStudies("pt-br").slice(0, 2);
+  const cases = getCaseStudies("pt-br");
   const notes = getNotes("pt-br").slice(0, 2);
   const t = copy;
   const base = "/pt-br";
@@ -104,7 +104,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {cases.map((c) => (
               <a
                 key={c.slug}

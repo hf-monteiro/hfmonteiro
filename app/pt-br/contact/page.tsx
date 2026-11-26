@@ -17,8 +17,6 @@ const copy = {
   emailBody:
     "Email é o melhor caminho para conversas sobre vagas, consultoria, architecture reviews e apresentações.",
   email: "higor.fmonteiro@gmail.com",
-  phoneTitle: "Telefone",
-  phone: "+55 51 98107-8364",
   profilesTitle: "Perfis",
   linkedin: "LinkedIn",
   github: "GitHub",
@@ -56,12 +54,6 @@ export default function ContactPage() {
                     <p className="text-xs uppercase tracking-wider text-zinc-500">Email</p>
                     <a href={`mailto:${t.email}`} className="mt-2 inline-block text-zinc-200 hover:text-zinc-100">
                       {t.email} →
-                    </a>
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wider text-zinc-500">{t.phoneTitle}</p>
-                    <a href="tel:+5551981078364" className="mt-2 inline-block text-zinc-200 hover:text-zinc-100">
-                      {t.phone} →
                     </a>
                   </div>
                 </div>

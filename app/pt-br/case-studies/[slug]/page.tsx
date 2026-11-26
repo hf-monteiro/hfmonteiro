@@ -3,9 +3,29 @@ import Card from "@/components/Card";
 import Pill from "@/components/Pill";
 import ArchitectureDiagram from "@/components/ArchitectureDiagram";
 import { getCaseStudies, getCaseStudy } from "@/lib/caseStudies";
+import { ogImageUrl } from "@/lib/ogImage";
 
 export function generateStaticParams() {
   return getCaseStudies("pt-br").map((c) => ({ slug: c.slug }));
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }) {
+  const cs = getCaseStudy("pt-br", params.slug);
+  if (!cs) return {};
+
+  const title = `${cs.title} | Higor Monteiro`;
+  return {
+    title,
+    description: cs.subtitle,
+    openGraph: {
+      title,
+      description: cs.subtitle,
+      url: `https://hfmonteiro.dev/pt-br/case-studies/${cs.slug}`,
+      siteName: "hfmonteiro.dev",
+      type: "article",
+      images: [ogImageUrl("pt-br", cs.slug)]
+    }
+  };
 }
 
 const copy = {

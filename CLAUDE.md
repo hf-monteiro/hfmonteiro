@@ -37,12 +37,15 @@ Because the site is fully static, there are no server runtime features: no API r
 
 ### Where content lives
 - Structured, list/detail content is in `lib/` as `Record<Lang, T[]>` data keyed by language: case studies (`lib/caseStudies.ts`) and notes (`lib/notes.ts`), with getter functions (`getCaseStudies(lang)`, `getNote(lang, slug)`, ...). Slugs must match between the `en` and `pt-br` arrays.
-- Page-specific copy (home, resume, labs, skills, solutions, contact) is inlined as a `const copy = {...}` object at the top of each page file, separately in each language's file.
+- Page-specific copy (home, resume, labs, contact) is inlined as a `const copy = {...}` object at the top of each page file, separately in each language's file.
 - Nav/footer copy is in `lib/siteCopy.ts`.
 - `public/resume.pdf` is the downloadable CV; the resume page content is maintained manually and should be kept in sync with it.
 
 ### Architecture diagrams
 Case study detail pages render `components/ArchitectureDiagram.tsx`, which holds Mermaid `flowchart` definitions keyed by case-study slug (shared by both languages). `components/MermaidChart.tsx` is a client component that lazy-loads `mermaid` and renders with a dark zinc theme. Adding a case study diagram means adding an entry keyed by its slug.
+
+### Social preview (Open Graph) images
+`app/og/[image]/route.tsx` renders static PNGs at build time (`/og/site-<lang>.png` and `/og/<case-study-slug>-<lang>.png`) using `lib/ogImage.tsx`. Pages reference them with `ogImageUrl(lang, slug?)`: each language layout sets the site image as the default, but a page that defines its own `openGraph` replaces the layout's entirely, so it must include `images` itself. New case studies get an image automatically. Next 14.1's `opengraph-image.tsx` file convention is not used because it fails under `output: "export"` in dynamic routes and emits files without a `.png` extension.
 
 ### Styling
 Tailwind only, dark theme based on the `zinc` palette (`bg-zinc-950`, `text-zinc-100/300/400`). Shared UI primitives are in `components/` (`Container`, `Card`, `Button`, `Pill`). Imports use the `@/` alias for the repo root.
