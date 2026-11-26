@@ -1,0 +1,42 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Overview
+
+Personal portfolio site (hfmonteiro.dev) built with Next.js 14 App Router, React 18, TypeScript and Tailwind CSS. Deployed to Cloudflare Pages as a **static export** (`output: "export"` in `next.config.js`, build output in `out/`).
+
+## Commands
+
+```bash
+npm install
+npm run dev     # local dev server
+npm run build   # static export to out/ — also the only type/compile check
+```
+
+There is no lint script and no test suite. Use `npm run build` to validate changes. TypeScript runs with `strict: false`.
+
+## Architecture
+
+### Static export constraints
+Because the site is fully static, there are no server runtime features: no API routes, middleware, `headers()`/`cookies()`, or on-demand rendering. Dynamic routes (`[slug]`) must implement `generateStaticParams()`. Images are unoptimized. `app/sitemap.ts` and `app/robots.ts` are generated at build time.
+
+### Bilingual routing (EN + PT-BR)
+- English pages live in the route group `app/(en)/` and are served at the root (`/`, `/case-studies`, ...).
+- Portuguese pages live in `app/pt-br/` and are served under `/pt-br/...`.
+- Each language has its own `layout.tsx` that renders `Header`/`Footer` with copy from `lib/siteCopy.ts`.
+- **Every page exists twice** — one file per language with mirrored structure. When adding or changing a page, update both `app/(en)/...` and `app/pt-br/...`, and add new routes to `app/sitemap.ts` (which is maintained by hand for static routes).
+- `components/LangSwitch.tsx` maps the current path to the other language by adding/removing the `/pt-br` prefix, so equivalent pages must share the same path segments and slugs across languages.
+- `lib/i18n.ts` defines the `Lang` type (`"en" | "pt-br"`) and helpers.
+
+### Where content lives
+- Structured, list/detail content is in `lib/` as `Record<Lang, T[]>` data keyed by language: case studies (`lib/caseStudies.ts`) and notes (`lib/notes.ts`), with getter functions (`getCaseStudies(lang)`, `getNote(lang, slug)`, ...). Slugs must match between the `en` and `pt-br` arrays.
+- Page-specific copy (home, resume, labs, skills, solutions, contact) is inlined as a `const copy = {...}` object at the top of each page file, separately in each language's file.
+- Nav/footer copy is in `lib/siteCopy.ts`.
+- `public/resume.pdf` is the downloadable CV; the resume page content is maintained manually and should be kept in sync with it.
+
+### Architecture diagrams
+Case study detail pages render `components/ArchitectureDiagram.tsx`, which holds Mermaid `flowchart` definitions keyed by case-study slug (shared by both languages). `components/MermaidChart.tsx` is a client component that lazy-loads `mermaid` and renders with a dark zinc theme. Adding a case study diagram means adding an entry keyed by its slug.
+
+### Styling
+Tailwind only, dark theme based on the `zinc` palette (`bg-zinc-950`, `text-zinc-100/300/400`). Shared UI primitives are in `components/` (`Container`, `Card`, `Button`, `Pill`). Imports use the `@/` alias for the repo root.
