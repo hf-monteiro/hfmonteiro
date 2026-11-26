@@ -18,11 +18,19 @@ const copy = {
   sections: [
     {
       title: "Fundação AWS Multi-Conta",
-      repo: "tf-multi-acc",
-      links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/tf-multi-acc" }],
+      repo: "aws-tf-multi-acc",
+      links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-tf-multi-acc" }],
       desc:
         "Padrões Terraform para AWS Organizations, separação de contas, networking compartilhado, contas de segurança, roles cross-account, remote state e blocos reutilizáveis de VPC/subnets.",
       tags: ["AWS Organizations", "Terraform", "IAM cross-account", "VPC", "Segurança"]
+    },
+    {
+      title: "Ambiente EKS Orientado a Produção",
+      repo: "aws-tf-simple-eks",
+      links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-tf-simple-eks" }],
+      desc:
+        "Terraform para um ambiente EKS privado com OIDC/IRSA, autoscaling com Karpenter, GitOps com ArgoCD, External Secrets, ExternalDNS, ECR, EFS, Aurora MySQL e VPC endpoints para acesso privado a serviços AWS.",
+      tags: ["EKS", "Karpenter", "ArgoCD", "IRSA", "Terraform", "VPC Endpoints"]
     },
     {
       title: "Módulos Reutilizáveis de Infraestrutura",
@@ -34,8 +42,8 @@ const copy = {
     },
     {
       title: "Lab de Ambiente ECS/RDS",
-      repo: "simple-ecs-env",
-      links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/simple-ecs-env" }],
+      repo: "aws-tf-simple-ecs",
+      links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-tf-simple-ecs" }],
       desc:
         "Ambiente lab com ECS, RDS, ECR, S3, SQS, roteamento VPC, security groups e integração com Secrets Manager para infraestrutura de aplicações.",
       tags: ["ECS", "RDS", "Secrets Manager", "ECR", "VPC"]
@@ -69,24 +77,24 @@ const copy = {
     },
     {
       title: "Lab de Ansible Tower / Automation Platform",
-      repo: "tf-ansible-tower",
-      links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/tf-ansible-tower" }],
+      repo: "aws-tf-ansible-tower",
+      links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-tf-ansible-tower" }],
       desc:
         "Exemplos Terraform e bootstrap para deploy de uma plataforma de automação lab com EC2, IAM, security groups, user data e scripts operacionais.",
       tags: ["Legacy lab", "Terraform", "Ansible Tower", "EC2", "IAM", "Automação"]
     },
     {
       title: "Lab de Repositório de Pacotes Windows",
-      repo: "tf-chocolatey",
-      links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/tf-chocolatey" }],
+      repo: "aws-tf-chocolatey",
+      links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-tf-chocolatey" }],
       desc:
         "Lab Terraform para criar infraestrutura em torno de um repositório estilo Chocolatey, incluindo EC2, IAM roles e padrões de security groups.",
       tags: ["Legacy lab", "Windows", "Chocolatey", "EC2", "IAM", "Terraform"]
     },
     {
       title: "Exemplos Terraform de EC2, ALB e RDS",
-      repo: "aws-ec2-simple",
-      links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-ec2-simple" }],
+      repo: "aws-tf-ec2-simple",
+      links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-tf-ec2-simple" }],
       desc:
         "Exemplos Terraform anteriores para EC2, ALB, padrões RDS master/replica, IAM roles, security groups e composição básica de infraestrutura AWS.",
       tags: ["Legacy lab", "EC2", "ALB", "RDS", "IAM", "Terraform"]

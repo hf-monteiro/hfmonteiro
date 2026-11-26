@@ -59,7 +59,7 @@ const caseStudiesByLang: Record<Lang, CaseStudy[]> = {
       ],
       stack: ["AWS", "Terraform", "PrivateLink", "Transit Gateway", "Direct Connect", "Route53", "IAM", "WAFv2"],
       relatedLabs: [
-        { label: "tf-multi-acc", href: "https://github.com/hf-monteiro/tf-multi-acc" },
+        { label: "aws-tf-multi-acc", href: "https://github.com/hf-monteiro/aws-tf-multi-acc" },
         { label: "infra-modules", href: "https://github.com/hf-monteiro/infra-modules" }
       ]
     },
@@ -99,6 +99,7 @@ const caseStudiesByLang: Record<Lang, CaseStudy[]> = {
       ],
       stack: ["EKS", "Kubernetes", "Helm", "Istio", "GitLab CI/CD", "ALB", "NLB", "CloudWatch", "Datadog"],
       relatedLabs: [
+        { label: "aws-tf-simple-eks", href: "https://github.com/hf-monteiro/aws-tf-simple-eks" },
         { label: "infra-modules", href: "https://github.com/hf-monteiro/infra-modules" },
         { label: "cicd-examples", href: "https://github.com/hf-monteiro/cicd-examples" }
       ]
@@ -181,7 +182,7 @@ const caseStudiesByLang: Record<Lang, CaseStudy[]> = {
       ],
       stack: ["AWS", "Terraform", "PrivateLink", "Transit Gateway", "Direct Connect", "Route53", "IAM", "WAFv2"],
       relatedLabs: [
-        { label: "tf-multi-acc", href: "https://github.com/hf-monteiro/tf-multi-acc" },
+        { label: "aws-tf-multi-acc", href: "https://github.com/hf-monteiro/aws-tf-multi-acc" },
         { label: "infra-modules", href: "https://github.com/hf-monteiro/infra-modules" }
       ]
     },
@@ -221,6 +222,7 @@ const caseStudiesByLang: Record<Lang, CaseStudy[]> = {
       ],
       stack: ["EKS", "Kubernetes", "Helm", "Istio", "GitLab CI/CD", "ALB", "NLB", "CloudWatch", "Datadog"],
       relatedLabs: [
+        { label: "aws-tf-simple-eks", href: "https://github.com/hf-monteiro/aws-tf-simple-eks" },
         { label: "infra-modules", href: "https://github.com/hf-monteiro/infra-modules" },
         { label: "cicd-examples", href: "https://github.com/hf-monteiro/cicd-examples" }
       ]
