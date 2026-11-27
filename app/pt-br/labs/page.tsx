@@ -1,4 +1,5 @@
 import LabsView, { LabsCopy } from "@/components/views/LabsView";
+import { getRepoStats } from "@/lib/github";
 
 export const metadata = {
   title: "Infrastructure Labs | Higor Monteiro",
@@ -12,7 +13,13 @@ const copy: LabsCopy = {
     "Implementações de referência em AWS, Terraform, Kubernetes e CI/CD.",
   note:
     "Exemplos de aprendizado e arquitetura, não módulos prontos para produção.",
-  legacyTitle: "Labs legados",
+  catalogTitle: "catálogo · repositórios",
+  tiles: { repos: "repositórios", terraform: "repos em hcl", lastPush: "último push", lifecycle: "ativos / legados" },
+  catalog: {
+    all: "todos",
+    columns: { repo: "repo", kind: "tipo", language: "linguagem", updated: "atualizado", lifecycle: "ciclo" },
+    lifecycle: { active: "ativo", legacy: "legado" }
+  },
   sections: [
     {
       title: "Fundação AWS Multi-Conta",
@@ -20,7 +27,7 @@ const copy: LabsCopy = {
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-tf-multi-acc" }],
       desc:
         "Fundação AWS Organizations: separação de contas, networking compartilhado e roles cross-account.",
-      tags: ["AWS Organizations", "Terraform", "IAM cross-account", "VPC", "Segurança"]
+      kind: "terraform"
     },
     {
       title: "Ambiente EKS Orientado a Produção",
@@ -28,7 +35,7 @@ const copy: LabsCopy = {
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-tf-simple-eks" }],
       desc:
         "EKS privado com Karpenter, GitOps com ArgoCD, IRSA, External Secrets e VPC endpoints.",
-      tags: ["EKS", "Karpenter", "ArgoCD", "IRSA", "Terraform", "VPC Endpoints"]
+      kind: "kubernetes"
     },
     {
       title: "Módulos Reutilizáveis de Infraestrutura",
@@ -36,7 +43,7 @@ const copy: LabsCopy = {
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/infra-modules" }],
       desc:
         "Módulos Terraform reutilizáveis para EKS, VPC, RDS, DocumentDB, S3 e SQS.",
-      tags: ["Terraform Modules", "EKS", "RDS", "S3", "SQS", "Directory Service"]
+      kind: "terraform"
     },
     {
       title: "Lab de Ambiente ECS/RDS",
@@ -44,18 +51,18 @@ const copy: LabsCopy = {
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-tf-simple-ecs" }],
       desc:
         "Ambiente de aplicação em ECS com RDS, ECR, SQS e Secrets Manager.",
-      tags: ["ECS", "RDS", "Secrets Manager", "ECR", "VPC"]
+      kind: "terraform"
     },
     {
       title: "Hardening de Imagens STIG com Packer",
-      repo: "packer-rhel-stigs / packer-win-stigs",
+      repo: "packer-{rhel,win}-stigs",
       links: [
-        { label: "Repo RHEL", href: "https://github.com/hf-monteiro/packer-rhel-stigs" },
-        { label: "Repo Windows", href: "https://github.com/hf-monteiro/packer-win-stigs" }
+        { label: "RHEL", href: "https://github.com/hf-monteiro/packer-rhel-stigs" },
+        { label: "Windows", href: "https://github.com/hf-monteiro/packer-win-stigs" }
       ],
       desc:
         "Imagens Linux e Windows endurecidas (STIG) com Packer e Ansible.",
-      tags: ["Packer", "Ansible", "STIG", "Windows", "RHEL"]
+      kind: "images"
     },
     {
       title: "Exemplos de GitLab CI/CD",
@@ -63,7 +70,8 @@ const copy: LabsCopy = {
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/cicd-examples" }],
       desc:
         "Pipelines GitLab CI/CD para um ou vários ambientes, incluindo automação Terraform.",
-      tags: ["GitLab CI/CD", "Terraform", "Multi-env", "Automação"]
+      kind: "ci/cd",
+      language: "YAML"
     },
     {
       title: "Scripts de Automação AWS",
@@ -71,7 +79,14 @@ const copy: LabsCopy = {
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-scripts" }],
       desc:
         "Scripts operacionais em Python e Bash para contas AWS, ECS, IAM e secrets.",
-      tags: ["Python", "Bash", "Boto3", "ECS", "IAM", "Secrets Manager"]
+      kind: "scripts"
+    },
+    {
+      title: "Este Portfólio",
+      repo: "hfmonteiro",
+      links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/hfmonteiro" }],
+      desc: "Site Next.js estático com checks no GitHub Actions (build, link check, Lighthouse) publicado no Cloudflare Pages.",
+      kind: "web"
     },
     {
       title: "Lab de Ansible Tower / Automation Platform",
@@ -79,8 +94,8 @@ const copy: LabsCopy = {
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-tf-ansible-tower" }],
       desc:
         "Terraform e scripts de bootstrap para um lab de Ansible Tower em EC2.",
-      legacy: true,
-      tags: ["Terraform", "Ansible Tower", "EC2", "IAM", "Automação"]
+      kind: "terraform",
+      legacy: true
     },
     {
       title: "Lab de Repositório de Pacotes Windows",
@@ -88,8 +103,8 @@ const copy: LabsCopy = {
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-tf-chocolatey" }],
       desc:
         "Terraform para um repositório de pacotes Windows estilo Chocolatey em EC2.",
-      legacy: true,
-      tags: ["Windows", "Chocolatey", "EC2", "IAM", "Terraform"]
+      kind: "terraform",
+      legacy: true
     },
     {
       title: "Exemplos Terraform de EC2, ALB e RDS",
@@ -97,12 +112,12 @@ const copy: LabsCopy = {
       links: [{ label: "Ver repo", href: "https://github.com/hf-monteiro/aws-tf-ec2-simple" }],
       desc:
         "Exemplos Terraform iniciais: EC2, ALB e RDS primário/réplica.",
-      legacy: true,
-      tags: ["EC2", "ALB", "RDS", "IAM", "Terraform"]
+      kind: "terraform",
+      legacy: true
     }
   ]
 };
 
-export default function LabsPage() {
-  return <LabsView copy={copy} />;
+export default async function LabsPage() {
+  return <LabsView copy={copy} repos={await getRepoStats()} />;
 }

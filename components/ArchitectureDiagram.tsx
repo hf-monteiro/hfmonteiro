@@ -83,9 +83,5 @@ export default function ArchitectureDiagram({ slug }: { slug: string }) {
   const chart = diagrams[slug];
   if (!chart) return null;
 
-  return (
-    <div className="rounded-lg border border-zinc-800 bg-zinc-900/30 p-4">
-      <MermaidChart chart={chart} />
-    </div>
-  );
+  return <MermaidChart chart={chart} />;
 }

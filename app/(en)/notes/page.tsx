@@ -20,7 +20,10 @@ const copy: NotesListCopy = {
   title: "Notes",
   intro:
     "Short technical notes on AWS, Kubernetes, Terraform, and CI/CD.",
-  read: "Read note →"
+  panel: "docs · notes",
+  tiles: { docs: "docs", readTime: "total read time", latest: "latest", topics: "topics" },
+  columns: { doc: "doc", topics: "topics", published: "published", read: "read" },
+  min: "min"
 };
 
 export default function NotesPage() {

@@ -31,7 +31,10 @@ jobs:
       - run: npm ci
 
       # Static export to out/ (Next also runs its own type-check here).
+      # The token only raises the GitHub API rate limit for the Labs catalog.
       - run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Standalone type-check; needs next-env.d.ts, which the build generates.
       - run: npm run typecheck

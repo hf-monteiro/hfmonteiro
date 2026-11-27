@@ -19,24 +19,24 @@ export default function Footer({ lang, footer, nav }: FooterProps) {
   ];
 
   return (
-    <footer className="mt-20 border-t border-zinc-800/80">
+    <footer className="mt-20 border-t border-night-800/80">
       <Container>
-        <div className="flex flex-col gap-6 py-10 text-sm text-zinc-400 sm:flex-row sm:items-start sm:justify-between">
-          <p className="font-medium text-zinc-200">{footer.name}</p>
+        <div className="flex flex-col gap-6 py-10 text-sm text-night-400 sm:flex-row sm:items-start sm:justify-between">
+          <p className="font-medium text-night-200">{footer.name}</p>
           <nav className="flex flex-wrap gap-x-5 gap-y-2">
             {links.map((link) => (
-              <a key={link.href} className="hover:text-zinc-200" href={link.href}>
+              <a key={link.href} className="hover:text-accent-hover" href={link.href}>
                 {link.label}
               </a>
             ))}
           </nav>
         </div>
-        <div className="flex flex-col gap-2 border-t border-zinc-800/80 py-6 text-xs text-zinc-400 sm:flex-row sm:justify-between">
+        <div className="flex flex-col gap-2 border-t border-night-800/80 py-6 text-xs text-night-400 sm:flex-row sm:justify-between">
           <p>© {new Date().getFullYear()} hfmonteiro.dev</p>
           <p>
             {footer.builtWith} ·{" "}
             <a
-              className="hover:text-zinc-200"
+              className="hover:text-accent-hover"
               href="https://github.com/hf-monteiro/hfmonteiro"
               target="_blank"
               rel="noreferrer"

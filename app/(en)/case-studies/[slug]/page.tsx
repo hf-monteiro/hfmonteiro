@@ -28,6 +28,8 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 const copy: CaseStudyCopy = {
   notFound: "Project not found",
   backToList: "Back to Projects",
+  health: "healthy",
+  env: "prod",
   role: "Role",
   scope: "Scope",
   focus: "Focus",

@@ -1,8 +1,9 @@
 import Container from "@/components/Container";
 import Pill from "@/components/Pill";
+import Panel from "@/components/Panel";
 import PageHeader from "@/components/PageHeader";
-import Section from "@/components/Section";
 import BulletList from "@/components/BulletList";
+import ServiceList, { StatusBadges } from "@/components/ServiceList";
 import ArchitectureDiagram from "@/components/ArchitectureDiagram";
 import { CaseStudy, getCaseStudies } from "@/lib/caseStudies";
 import { Lang, langBase } from "@/lib/i18n";
@@ -10,41 +11,20 @@ import { Lang, langBase } from "@/lib/i18n";
 export type CaseStudyListCopy = {
   title: string;
   intro: string;
-  read: string;
+  panel: string;
+  health: string;
+  env: string;
 };
 
 export function CaseStudyListView({ lang, copy: t }: { lang: Lang; copy: CaseStudyListCopy }) {
-  const base = langBase(lang);
-  const cases = getCaseStudies(lang);
-
   return (
     <main>
       <Container>
-        <section className="pt-14">
-          <PageHeader title={t.title} intro={t.intro} />
-
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {cases.map((c) => (
-              <a
-                key={c.slug}
-                href={`${base}/case-studies/${c.slug}`}
-                className="group flex flex-col rounded-lg border border-zinc-800 bg-zinc-900/30 p-5 transition hover:border-zinc-600 hover:bg-zinc-900/60"
-              >
-                <h2 className="font-semibold text-zinc-100">{c.title}</h2>
-                <p className="mt-2 text-sm leading-6 text-zinc-400">{c.impact[0]}</p>
-                <div className="mt-auto pt-5">
-                  <div className="flex flex-wrap gap-1.5">
-                    {c.tags.slice(0, 3).map((tag) => (
-                      <Pill key={tag}>{tag}</Pill>
-                    ))}
-                  </div>
-                  <span className="mt-4 inline-block text-sm text-zinc-400 group-hover:text-zinc-200">
-                    {t.read}
-                  </span>
-                </div>
-              </a>
-            ))}
-          </div>
+        <section className="pt-12">
+          <PageHeader path="hfmonteiro / projects" title={t.title} intro={t.intro} />
+          <Panel title={t.panel} className="mt-8">
+            <ServiceList cases={getCaseStudies(lang)} base={langBase(lang)} health={t.health} env={t.env} detailed />
+          </Panel>
         </section>
       </Container>
     </main>
@@ -54,6 +34,8 @@ export function CaseStudyListView({ lang, copy: t }: { lang: Lang; copy: CaseStu
 export type CaseStudyCopy = {
   notFound: string;
   backToList: string;
+  health: string;
+  env: string;
   role: string;
   scope: string;
   focus: string;
@@ -82,7 +64,7 @@ export function CaseStudyView({
     return (
       <main>
         <Container>
-          <section className="pt-14">
+          <section className="pt-12">
             <PageHeader title={t.notFound} back={back} />
           </section>
         </Container>
@@ -99,72 +81,70 @@ export function CaseStudyView({
   return (
     <main>
       <Container>
-        <article className="pt-14">
-          <PageHeader title={cs.title} intro={cs.subtitle} back={back} />
+        <article className="pt-12">
+          <PageHeader path={`projects / ${cs.slug}`} title={cs.title} intro={cs.subtitle} back={back}>
+            <StatusBadges health={t.health} env={t.env} className="mt-4" />
+          </PageHeader>
 
-          <dl className="mt-8 grid gap-5 border-y border-zinc-800 py-6 sm:grid-cols-3">
-            {meta.map((m) => (
-              <div key={m.label}>
-                <dt className="text-xs uppercase tracking-wider text-zinc-400">{m.label}</dt>
-                <dd className="mt-1 text-sm text-zinc-200">{m.value}</dd>
-              </div>
-            ))}
-          </dl>
+          <div className="mt-8 grid gap-4">
+            <div className="grid gap-4 sm:grid-cols-3">
+              {meta.map((m) => (
+                <Panel key={m.label} title={m.label}>
+                  <p className="text-sm leading-6 text-night-200">{m.value}</p>
+                </Panel>
+              ))}
+            </div>
 
-          <div className="mt-10 space-y-12">
-            <section className="max-w-3xl">
-              <h2 className="text-xl font-semibold">{t.context}</h2>
-              <p className="mt-3 leading-7 text-zinc-300">{cs.context}</p>
-            </section>
+            <Panel title={t.context}>
+              <p className="max-w-3xl leading-7 text-night-300">{cs.context}</p>
+            </Panel>
 
-            <section>
-              <h2 className="mb-4 text-xl font-semibold">{t.diagram}</h2>
+            <Panel title={t.diagram}>
               <ArchitectureDiagram slug={cs.slug} />
-              <p className="mt-2 text-xs text-zinc-400 sm:hidden">{t.diagramHint}</p>
-            </section>
+              <p className="mt-2 text-xs text-night-400 sm:hidden">{t.diagramHint}</p>
+            </Panel>
 
-            <Section title={t.built}>
-              <BulletList items={cs.built} className="max-w-3xl" />
-            </Section>
-
-            <Section title={t.outcomes}>
-              <BulletList items={cs.outcomes} className="max-w-3xl" />
-            </Section>
+            <div className="grid gap-4 lg:grid-cols-2">
+              <Panel title={t.built}>
+                <BulletList items={cs.built} />
+              </Panel>
+              <Panel title={t.outcomes}>
+                <BulletList items={cs.outcomes} tone="success" />
+              </Panel>
+            </div>
 
             {cs.notes?.length ? (
-              <Section title={t.notes}>
+              <Panel title={t.notes}>
                 <BulletList items={cs.notes} className="max-w-3xl" />
-              </Section>
+              </Panel>
             ) : null}
 
-            <div className="grid gap-12 border-t border-zinc-800 pt-8 sm:grid-cols-2">
-              <section>
-                <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-400">{t.stack}</h2>
-                <div className="mt-3 flex flex-wrap gap-1.5">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Panel title={t.stack}>
+                <div className="flex flex-wrap gap-1.5">
                   {cs.stack.map((s) => (
                     <Pill key={s}>{s}</Pill>
                   ))}
                 </div>
-              </section>
+              </Panel>
 
               {cs.relatedLabs?.length ? (
-                <section>
-                  <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-400">{t.relatedLabs}</h2>
-                  <ul className="mt-3 space-y-1.5">
+                <Panel title={t.relatedLabs}>
+                  <ul className="space-y-1.5">
                     {cs.relatedLabs.map((lab) => (
                       <li key={lab.href}>
                         <a
                           href={lab.href}
                           target="_blank"
                           rel="noreferrer"
-                          className="font-mono text-sm text-zinc-300 hover:text-zinc-100"
+                          className="font-mono text-sm text-accent hover:text-accent-hover"
                         >
                           {lab.label} →
                         </a>
                       </li>
                     ))}
                   </ul>
-                </section>
+                </Panel>
               ) : null}
             </div>
           </div>

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StatusBar from "@/components/StatusBar";
 import { getSiteCopy } from "@/lib/siteCopy";
 import { ogImageUrl } from "@/lib/ogImage";
 
@@ -21,6 +22,7 @@ export default function PtBrLayout({ children }: { children: React.ReactNode }) 
   return (
     <>
       <Header lang="pt-br" nav={copy.nav} />
+      <StatusBar copy={copy.status} />
       <div id="main-content" lang="pt-BR" tabIndex={-1}>
         {children}
       </div>

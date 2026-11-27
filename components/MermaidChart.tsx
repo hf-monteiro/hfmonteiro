@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { night } from "@/lib/palette";
 
 let initialized = false;
 
@@ -12,17 +13,18 @@ async function getMermaid() {
       theme: "dark",
       themeVariables: {
         darkMode: true,
-        background: "#09090b",
-        primaryColor: "#27272a",
-        primaryTextColor: "#f4f4f5",
-        primaryBorderColor: "#3f3f46",
-        lineColor: "#71717a",
-        secondaryColor: "#18181b",
-        tertiaryColor: "#3f3f46",
-        nodeBorder: "#3f3f46",
-        clusterBkg: "#18181b",
-        clusterBorder: "#3f3f46",
-        edgeLabelBackground: "#09090b",
+        background: night[950],
+        primaryColor: night[900],
+        primaryTextColor: night[100],
+        primaryBorderColor: night[600],
+        lineColor: night[500],
+        secondaryColor: night[900],
+        tertiaryColor: night[800],
+        nodeBorder: night[600],
+        clusterBkg: night[950],
+        clusterBorder: night[700],
+        titleColor: night[300],
+        edgeLabelBackground: night[950],
         fontFamily: "ui-monospace, monospace",
         fontSize: "13px",
       },

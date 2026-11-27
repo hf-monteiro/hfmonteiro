@@ -10,7 +10,9 @@ const copy: CaseStudyListCopy = {
   title: "Projetos",
   intro:
     "Case studies de arquitetura: plataformas AWS, networking privado, Kubernetes e CI/CD.",
-  read: "Ver projeto →"
+  panel: "serviços · projetos",
+  health: "healthy",
+  env: "prod"
 };
 
 export default function CaseStudiesPage() {

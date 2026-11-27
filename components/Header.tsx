@@ -19,7 +19,7 @@ const NavLink = ({
   <a
     aria-current={active ? "page" : undefined}
     className={`shrink-0 rounded-md px-2 py-1 text-sm transition ${
-      active ? "bg-zinc-800/70 text-zinc-100" : "text-zinc-400 hover:text-zinc-100"
+      active ? "bg-night-800 text-night-100" : "text-night-400 hover:text-accent-hover"
     }`}
     href={href}
   >
@@ -50,7 +50,7 @@ export default function Header({ lang, nav }: HeaderProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-night-800/80 bg-night-950/80 backdrop-blur">
       <Container>
         <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3 sm:flex-nowrap">
           <a href={homeHref} className="shrink-0 transition hover:opacity-80">

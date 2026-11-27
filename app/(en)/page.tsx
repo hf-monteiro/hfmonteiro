@@ -17,33 +17,124 @@ export const metadata = {
 };
 
 const copy: HomeCopy = {
-  intro: "Hi, I’m Higor",
+  name: "Higor Monteiro",
   title: "Senior DevOps / Platform Engineer",
-  summary:
-    "I build secure AWS platforms, private networking, and production Kubernetes for regulated SaaS teams.",
+  meta: [
+    "Gramado, BR (UTC-3)",
+    "remote",
+    "EN · PT · ES"
+  ],
+  summary: "I build secure AWS platforms, private networking, and production Kubernetes for regulated SaaS teams.",
   buttons: {
     caseStudies: "View Projects",
     labs: "Infrastructure Labs",
     resume: "Resume"
   },
-  proof: [
-    { value: "16M+", label: "users supported" },
-    { value: "Multi-account", label: "AWS platforms" },
-    { value: "Private EKS", label: "production operations" },
-    { value: "10–30x", label: "more frequent deploys" },
-    { value: "AWS ANS", label: "advanced networking certified" }
+  metrics: [
+    {
+      label: "users served",
+      value: "16M+",
+      detail: "regulated banking platform"
+    },
+    {
+      label: "deploy frequency",
+      value: "10–30x",
+      detail: "1/week → 2–6/day"
+    },
+    {
+      label: "experience",
+      value: "15+ yrs",
+      detail: "~7 on cloud platforms"
+    },
+    {
+      label: "certifications",
+      value: "7",
+      detail: "AWS ×4 · GCP ×2 · GitLab"
+    }
   ],
-  about: {
-    text: "I like infrastructure that is boring in production and clear in code. Away from the terminal: fishing, hiking, and camping.",
-    link: "More about me →"
+  services: {
+    title: "services · case studies",
+    health: "healthy",
+    env: "prod",
+    link: "all projects →"
   },
-  featured: {
-    title: "Featured Projects",
-    link: "See all →"
+  events: {
+    title: "event log · career",
+    items: [
+      {
+        when: "2025",
+        kind: "cert",
+        text: "AWS Advanced Networking – Specialty"
+      },
+      {
+        when: "2024",
+        kind: "cert",
+        text: "AWS DevOps Engineer – Professional"
+      },
+      {
+        when: "2023",
+        kind: "role",
+        text: "Senior DevOps Engineer · BairesDev"
+      },
+      {
+        when: "2022",
+        kind: "role",
+        text: "DevOps Engineer · BairesDev"
+      },
+      {
+        when: "2021",
+        kind: "role",
+        text: "SRE Analyst · Banco Inter"
+      },
+      {
+        when: "2020",
+        kind: "role",
+        text: "Cloud Architect · KXC Tecnologia"
+      },
+      {
+        when: "2017",
+        kind: "role",
+        text: "Technical Lead · Gtek"
+      },
+      {
+        when: "2014",
+        kind: "role",
+        text: "Technical Lead · Intranetworks"
+      }
+    ]
   },
-  notes: {
-    title: "Recent Notes",
-    link: "Read all →"
+  stack: {
+    title: "stack",
+    groups: [
+      {
+        label: "cloud",
+        items: "AWS (primary), GCP"
+      },
+      {
+        label: "network",
+        items: "Direct Connect, Transit Gateway, PrivateLink, Route 53"
+      },
+      {
+        label: "iac",
+        items: "Terraform, Ansible, CloudFormation"
+      },
+      {
+        label: "containers",
+        items: "EKS, Istio, Helm, ECS"
+      },
+      {
+        label: "ci/cd",
+        items: "GitLab CI, GitHub Actions, Argo CD"
+      },
+      {
+        label: "observability",
+        items: "Datadog, CloudWatch, New Relic"
+      }
+    ]
+  },
+  docs: {
+    title: "docs · notes",
+    link: "all notes →"
   }
 };
 

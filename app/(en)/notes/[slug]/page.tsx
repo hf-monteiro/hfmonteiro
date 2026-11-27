@@ -27,7 +27,11 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 
 const copy: NoteCopy = {
   notFound: "Note not found",
-  backToList: "Back to Notes"
+  backToList: "Back to Notes",
+  meta: { published: "published", readTime: "read time", words: "words", sections: "sections" },
+  min: "min",
+  toc: "on this page",
+  topics: "topics"
 };
 
 export default function NoteDetail({ params }: { params: { slug: string } }) {

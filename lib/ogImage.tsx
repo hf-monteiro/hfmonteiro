@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { getCaseStudies, getCaseStudy } from "@/lib/caseStudies";
 import { LANGS, Lang } from "@/lib/i18n";
+import { accent, night } from "@/lib/palette";
 
 // Build-time Open Graph images, emitted as static PNGs by app/og/[image]/route.tsx:
 //   /og/site-<lang>.png         site-wide default
@@ -74,17 +75,17 @@ export function renderOgImage(file: string) {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 80px",
-          background: "#09090b",
-          color: "#f4f4f5",
-          borderTop: "8px solid #3f3f46"
+          background: night[950],
+          color: night[100],
+          borderTop: `8px solid ${accent.DEFAULT}`
         }}
       >
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 28, color: "#a1a1aa", letterSpacing: 1 }}>{eyebrow}</div>
+          <div style={{ fontSize: 28, color: night[400], letterSpacing: 1 }}>{eyebrow}</div>
           <div style={{ marginTop: 24, fontSize: title.length > 48 ? 60 : 72, lineHeight: 1.1 }}>
             {title}
           </div>
-          <div style={{ marginTop: 28, fontSize: 30, lineHeight: 1.4, color: "#d4d4d8" }}>
+          <div style={{ marginTop: 28, fontSize: 30, lineHeight: 1.4, color: night[300] }}>
             {subtitle}
           </div>
         </div>
@@ -97,17 +98,17 @@ export function renderOgImage(file: string) {
                 style={{
                   display: "flex",
                   padding: "8px 20px",
-                  border: "2px solid #3f3f46",
+                  border: `2px solid ${night[700]}`,
                   borderRadius: 999,
                   fontSize: 22,
-                  color: "#d4d4d8"
+                  color: night[300]
                 }}
               >
                 {tag}
               </div>
             ))}
           </div>
-          <div style={{ fontSize: 28, color: "#a1a1aa" }}>hfmonteiro.dev</div>
+          <div style={{ fontSize: 28, color: night[400] }}>hfmonteiro.dev</div>
         </div>
       </div>
     ),

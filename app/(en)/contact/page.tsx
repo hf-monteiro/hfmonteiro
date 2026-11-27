@@ -18,15 +18,23 @@ export const metadata = {
 
 const copy: ContactCopy = {
   title: "Contact",
-  emailTitle: "Start a conversation",
-  emailBody:
-    "Best for roles, consulting, and architecture reviews.",
-  emailButton: "Email me",
-  resumeButton: "Resume PDF",
+  tiles: { localTime: "local time", timezone: "timezone", channel: "preferred channel", languages: "languages" },
+  tileValues: { timezone: "UTC-3", channel: "email", languages: "EN·PT·ES" },
+  requestTitle: "new request",
+  request: {
+    type: "type",
+    types: ["Role opportunity", "Consulting", "Architecture review", "Other"],
+    name: "name",
+    company: "company",
+    message: "message",
+    placeholder: "What are you working on, and how can I help?",
+    submit: "Open request",
+    hint: "Opens your email client with the request pre-filled."
+  },
+  endpointsTitle: "endpoints",
+  copy: "copy",
+  copied: "copied",
   email: "higor.fmonteiro@gmail.com",
-  profilesTitle: "Profiles",
-  linkedin: "LinkedIn",
-  github: "GitHub",
   fitTitle: "Best fit",
   fit: [
     "Senior DevOps / Platform Engineering",

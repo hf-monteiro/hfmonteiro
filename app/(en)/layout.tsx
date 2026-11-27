@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StatusBar from "@/components/StatusBar";
 import { getSiteCopy } from "@/lib/siteCopy";
 import { ogImageUrl } from "@/lib/ogImage";
 
@@ -21,6 +22,7 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header lang="en" nav={copy.nav} />
+      <StatusBar copy={copy.status} />
       <div id="main-content" lang="en" tabIndex={-1}>
         {children}
       </div>

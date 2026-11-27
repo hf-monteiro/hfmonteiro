@@ -8,6 +8,17 @@ export const metadata = {
 
 const copy: ResumeCopy = {
   title: "Currículo",
+  metrics: [
+    { label: "experiência", value: "15+ anos", detail: "~7 em plataformas cloud" },
+    { label: "cargo atual", value: "Senior DevOps", detail: "BairesDev · desde mar 2023" },
+    { label: "usuários atendidos", value: "16M+", detail: "plataforma bancária regulada" },
+    { label: "certificações", value: "7", detail: "AWS ×4 · GCP ×2 · GitLab" }
+  ],
+  timelineTitle: "linha do tempo",
+  legend: { work: "cargo", study: "formação" },
+  current: "atual",
+  units: { y: "a", m: "m" },
+  certStatus: { active: "ativa", expires: "vence", issued: "emitida" },
   summaryBody:
     "Senior DevOps e Platform Engineer com 15+ anos em infraestrutura, incluindo cerca de 7 anos em plataformas cloud, com foco em plataformas AWS multi-conta, networking híbrido, Kubernetes (Amazon EKS), Infrastructure as Code e Site Reliability Engineering. Atuação hands-on em arquitetura e produção para clientes SaaS dos EUA, incluindo um projeto para o governo americano, e anteriormente em banco digital regulado (16M+ usuários). Padronizei CI/CD levando times de 1 deploy por semana para 2–6 por dia.",
   download: "Baixar PDF",

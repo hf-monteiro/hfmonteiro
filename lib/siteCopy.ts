@@ -14,13 +14,27 @@ export type FooterCopy = {
   source: string;
 };
 
+export type StatusCopy = {
+  env: string;
+  operational: string;
+  deployed: string;
+  built: string;
+};
+
 type SiteCopy = {
   nav: NavCopy;
   footer: FooterCopy;
+  status: StatusCopy;
 };
 
 const copy: Record<Lang, SiteCopy> = {
   en: {
+    status: {
+      env: "hfmonteiro / prod",
+      operational: "All systems operational",
+      deployed: "deployed",
+      built: "built"
+    },
     nav: {
       caseStudies: "Projects",
       labs: "Labs",
@@ -35,6 +49,12 @@ const copy: Record<Lang, SiteCopy> = {
     }
   },
   "pt-br": {
+    status: {
+      env: "hfmonteiro / prod",
+      operational: "Todos os sistemas operacionais",
+      deployed: "deploy",
+      built: "build"
+    },
     nav: {
       caseStudies: "Projetos",
       labs: "Labs",

@@ -2,14 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Colors mirror lib/palette.js (night-950, accent). */
 html,
 body {
-  background: #09090b;
+  background: #0a0b0d;
 }
 
 ::selection {
-  background: #f4f4f5;
-  color: #09090b;
+  background: #6ea8fe;
+  color: #0a0b0d;
 }
 
 a,
@@ -19,5 +20,5 @@ button {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #f4f4f5;
+  outline: 2px solid #6ea8fe;
 }
