@@ -36,37 +36,46 @@ flowchart TD
 `,
 
   "production-eks-platform-gitlab-istio": `
-flowchart LR
-    DEV["Developer\\nMerge Request"] --> GL["GitLab CI/CD\\nPipeline Triggers"]
-    GL --> RUNNERS["GitLab Runners\\ninside EKS · IRSA"]
-    RUNNERS --> ECR["ECR\\nContainer Images"]
-    ECR --> DEPLOY["kubectl / Helm\\nDeploy to EKS"]
-
-    subgraph EKS["Private EKS Cluster"]
-        KARP["Karpenter\\nNode Provisioning"]
-        subgraph ISTIO["Istio Service Mesh"]
-            GW["Istio Gateway\\nInbound Routing"]
-            VS["VirtualServices\\nmTLS + EnvoyFilters"]
-        end
-        IRSA["OIDC + IRSA\\nPod IAM Roles"]
+flowchart TD
+    subgraph CD["Delivery"]
+        direction LR
+        DEV["Developer\\nMerge Request"] --> GL["GitLab CI/CD\\nPipeline Triggers"]
+        GL --> RUNNERS["GitLab Runners\\ninside EKS · IRSA"]
+        RUNNERS --> ECR["ECR\\nContainer Images"]
+        ECR --> DEPLOY["kubectl / Helm\\nDeploy to EKS"]
     end
 
-    DEPLOY --> EKS
-    GW --> ALB["ALB / NLB\\nTLS · Private DNS"]
+    subgraph EKS["Private EKS Cluster"]
+        direction LR
+        GW["Istio Gateway\\nInbound Routing"] --> VS["VirtualServices\\nmTLS + EnvoyFilters"]
+        VS ~~~ KARP["Karpenter\\nNode Provisioning"]
+        KARP ~~~ IRSA["OIDC + IRSA\\nPod IAM Roles"]
+    end
+
+    CD --> EKS
+    EKS --> ALB["ALB / NLB\\nTLS · Private DNS"]
     ALB --> USERS["End Users"]
     EKS --> DD["Datadog\\nAPM · Infra · Alerts"]
     EKS --> CW["CloudWatch\\nLogs · Metrics"]
 `,
 
   "gitlab-cicd-standardization-at-scale": `
-flowchart LR
-    SRC["Source Control\\nBranch + Tag Strategy\\nMR Rules"] --> BUILD["Build + Test\\nShared CI Templates\\nDocker-in-Docker"]
-    BUILD --> SCAN["Security Gates\\nSAST · Dependency Scan\\nSecret Detection · Checkov · SonarQube"]
-    SCAN --> ARTIFACT["Artifact + Version\\nImage Registry\\nSemantic Versioning"]
-    ARTIFACT --> DEV["Dev\\nAuto on merge"]
-    DEV --> QA["QA\\nAuto promote"]
-    QA --> STG["Stage\\nAuto promote"]
-    STG -- "manual gate" --> PROD["Production\\nControlled release"]
+flowchart TD
+    subgraph PIPE["Shared pipeline"]
+        direction LR
+        SRC["Source Control\\nBranch + Tag Strategy\\nMR Rules"] --> BUILD["Build + Test\\nShared CI Templates\\nDocker-in-Docker"]
+        BUILD --> SCAN["Security Gates\\nSAST · Deps · Secrets\\nCheckov · SonarQube"]
+        SCAN --> ARTIFACT["Artifact + Version\\nImage Registry\\nSemantic Versioning"]
+    end
+
+    subgraph ENVS["Environment promotion"]
+        direction LR
+        DEV["Dev\\nAuto on merge"] --> QA["QA\\nAuto promote"]
+        QA --> STG["Stage\\nAuto promote"]
+        STG -- "manual gate" --> PROD["Production\\nControlled release"]
+    end
+
+    PIPE --> ENVS
 `,
 };
 
@@ -75,7 +84,7 @@ export default function ArchitectureDiagram({ slug }: { slug: string }) {
   if (!chart) return null;
 
   return (
-    <div className="overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950/40 p-4">
+    <div className="rounded-lg border border-zinc-800 bg-zinc-900/30 p-4">
       <MermaidChart chart={chart} />
     </div>
   );

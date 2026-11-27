@@ -25,7 +25,7 @@ export default function LangSwitch({ lang }: { lang: Lang }) {
   return (
     <a
       href={nextPath}
-      className="rounded-full border border-zinc-800 px-3 py-1 text-sm text-zinc-300 transition hover:border-zinc-600 hover:text-zinc-100"
+      className="rounded-md border border-zinc-800 px-2 py-1 text-xs font-medium text-zinc-300 transition hover:border-zinc-600 hover:text-zinc-100"
     >
       {labelMap[lang]}
     </a>

@@ -1,7 +1,4 @@
-import Container from "@/components/Container";
-import Card from "@/components/Card";
-import Button from "@/components/Button";
-import Pill from "@/components/Pill";
+import ResumeView, { ResumeCopy } from "@/components/views/ResumeView";
 import { ogImageUrl } from "@/lib/ogImage";
 
 export const metadata = {
@@ -19,30 +16,12 @@ export const metadata = {
   }
 };
 
-const copy = {
+const copy: ResumeCopy = {
   title: "Resume",
-  intro: "Senior platform, cloud architecture, and infrastructure reliability overview.",
-  summaryTitle: "Summary",
   summaryBody:
     "Senior DevOps and Platform Engineer with 15+ years in infrastructure, including about 7 years on cloud platforms, focused on AWS multi-account platforms, hybrid networking, Kubernetes (Amazon EKS), Infrastructure as Code, and Site Reliability Engineering. Hands-on in architecture and production for US-based SaaS clients, including a US government engagement, and earlier in regulated banking (16M+ users). Standardized CI/CD to take teams from 1 deploy per week to 2–6 per day.",
   download: "Download PDF",
   contact: "Contact",
-  positioning: [
-    "Senior Platform Engineer",
-    "Cloud Infrastructure Architect",
-    "AWS Networking Specialist",
-    "Kubernetes Platform Engineer",
-    "DevOps Lead"
-  ],
-  outcomesTitle: "Key Outcomes",
-  outcomes: [
-    "Designed multi-account AWS platform architectures for enterprise SaaS environments.",
-    "Built private connectivity patterns with PrivateLink, Transit Gateway, Direct Connect, and Route53 PHZ.",
-    "Operated production EKS platforms with GitLab CI/CD, Helm, Istio, and private ingress patterns.",
-    "Standardized GitLab CI/CD across engineering teams: 1 deploy/week to 2–6/day (10–30x).",
-    "Led infrastructure delivery for a US government client in a regulated, high-security environment.",
-    "Operated production AWS serving 16M+ users in regulated banking."
-  ],
   certsTitle: "Certifications",
   certs: [
     "AWS Certified Advanced Networking – Specialty (2025–2028)",
@@ -60,40 +39,6 @@ const copy = {
   ],
   languagesTitle: "Languages",
   languages: ["English: Fluent", "Portuguese: Native", "Spanish: Advanced"],
-  architectureTitle: "Selected Architecture Experience",
-  architectureGroups: [
-    {
-      title: "AWS Platform & Networking",
-      items: [
-        "Multi-account AWS SaaS platform architectures",
-        "AWS PrivateLink and VPC Endpoint Service architectures",
-        "Hybrid connectivity using AWS Direct Connect and Transit Gateway",
-        "Cross-account IAM and STS federation patterns",
-        "Enterprise DNS architectures with Route53 Private Hosted Zones"
-      ]
-    },
-    {
-      title: "Kubernetes & Delivery",
-      items: [
-        "Private Kubernetes/EKS environments with controlled cluster access",
-        "Istio service mesh implementations and internal traffic routing",
-        "GitLab CI/CD platform engineering and GitLab runners on Kubernetes",
-        "Nginx reverse proxy, TLS termination, and HTTP/S traffic routing",
-        "Highly available ingress architectures using ALB/NLB",
-        "Terraform module standardization at scale"
-      ]
-    },
-    {
-      title: "Reliability & Security",
-      items: [
-        "AWS WAFv2, Checkov, SonarQube integration in CI/CD security gates",
-        "MSK/Kafka networking and private connectivity",
-        "Centralized observability with Datadog, CloudWatch, New Relic, and Dynatrace",
-        "Production incident response and root cause analysis",
-        "Reliability improvements for distributed AWS systems"
-      ]
-    }
-  ],
   recentTitle: "Recent Platform & Cloud Experience",
   earlierTitle: "Earlier Infrastructure Leadership",
   recentRoles: [
@@ -101,23 +46,18 @@ const copy = {
       title: "Senior DevOps Engineer",
       company: "BairesDev",
       period: "Mar 2023 - Present",
-      tags: ["AWS", "Direct Connect", "PrivateLink", "Terraform", "EKS", "GitLab CI/CD", "SRE"],
       items: [
-        "Designed hybrid AWS networking over Direct Connect (DX Gateway, Transit Gateway) with a centralized PrivateLink endpoint VPC, Route 53 Resolver, and conditional DNS forwarding for partner connectivity.",
+        "Designed hybrid AWS networking over Direct Connect and Transit Gateway with a centralized PrivateLink endpoint VPC and Route 53 Resolver for partner connectivity.",
         "Built multi-account AWS environments with reusable Terraform modules across dozens of accounts, enabling self-service provisioning.",
         "Led a team of engineers delivering cloud infrastructure for a US government client in a regulated, high-security environment.",
         "Standardized GitLab CI/CD across engineering teams: 1 deploy/week to 2–6/day (10–30x).",
-        "Led the migration from monolith to microservices on Amazon EKS and ECS.",
-        "Hardened public-facing services with AWS WAFv2 and least-privilege IAM.",
-        "Own the production lifecycle with SRE practices: Datadog/CloudWatch observability, incident response, RCA, and post-mortems.",
-        "Use Claude Code daily for Terraform module creation and refactoring, AWS architecture design, GitLab CI/CD pipeline development, and production troubleshooting."
+        "Led the monolith-to-microservices migration on Amazon EKS and ECS, and own production with SRE practices: observability, incident response, and post-mortems."
       ]
     },
     {
       title: "DevOps Engineer",
       company: "BairesDev",
       period: "Feb 2022 - Mar 2023",
-      tags: ["EKS", "Argo CD", "GitOps", "Terraform", "Ansible", "RDS/Aurora"],
       items: [
         "Set up GitOps deployments to Amazon EKS with Argo CD and reusable Terraform modules.",
         "Led a DevOps team for a high-security US client (May–Jul 2022), standardizing Terraform and Ansible provisioning across Windows and Linux.",
@@ -129,7 +69,6 @@ const copy = {
       title: "SRE Analyst",
       company: "Banco Inter",
       period: "Sep 2021 - Feb 2022",
-      tags: ["AWS", "Financial Services", "EKS", "ECS", "MSK", "Reliability", "16M+ users"],
       items: [
         "Operated production AWS for one of Brazil's largest digital banks (16M+ users) across VPC, EKS, ECS, API Gateway, RDS, Lambda, and MSK.",
         "Built GitLab pipelines with integrated code quality and security scanning for a regulated SDLC.",
@@ -140,7 +79,6 @@ const copy = {
       title: "Cloud Architect",
       company: "KXC Tecnologia",
       period: "Jun 2020 - Sep 2021",
-      tags: ["AWS", "Terraform", "CodePipeline", "CodeDeploy", "Cloud Migration"],
       items: [
         "Architected AWS solutions with Terraform and AWS CI/CD tools (CodePipeline, CodeDeploy) for enterprise clients.",
         "Automated deployments with AWS CodePipeline, GitHub, and GitLab, replacing manual releases.",
@@ -153,7 +91,6 @@ const copy = {
       title: "Technical Lead",
       company: "Gtek Soluções Tecnológicas",
       period: "Sep 2017 - Jun 2019",
-      tags: ["Leadership", "Networking", "Virtualization", "Incident Management"],
       items: [
         "Led a technical team, owning incident management and on-premises virtualization projects.",
         "Architected and delivered network infrastructure projects for enterprise clients."
@@ -163,7 +100,6 @@ const copy = {
       title: "Technical Lead",
       company: "Intranetworks",
       period: "Sep 2014 - Aug 2017",
-      tags: ["Leadership", "Data Center", "Networking", "Virtualization"],
       items: [
         "Promoted from IT Analyst to Technical Lead within a year; led team and incident management.",
         "Designed and delivered data center, network, and virtualization infrastructure projects."
@@ -172,154 +108,6 @@ const copy = {
   ]
 };
 
-function RoleCard({
-  role,
-  compact = false
-}: {
-  role: {
-    title: string;
-    company: string;
-    period: string;
-    tags: string[];
-    items: string[];
-  };
-  compact?: boolean;
-}) {
-  return (
-    <Card>
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <h3 className="text-lg font-semibold">{role.title}</h3>
-          <p className="mt-1 text-sm text-zinc-400">{role.company}</p>
-        </div>
-        <p className="text-sm text-zinc-500">{role.period}</p>
-      </div>
-      <div className="mt-4 flex flex-wrap gap-2">
-        {role.tags.map((tag) => (
-          <Pill key={tag}>{tag}</Pill>
-        ))}
-      </div>
-      <ul className={`mt-4 list-disc space-y-2 pl-5 text-zinc-300 ${compact ? "text-sm" : ""}`}>
-        {role.items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </Card>
-  );
-}
-
 export default function ResumePage() {
-  return (
-    <main>
-      <Container>
-        <section className="py-14">
-          <h1 className="text-3xl font-semibold">{copy.title}</h1>
-          <p className="mt-3 max-w-2xl text-zinc-400">{copy.intro}</p>
-
-          <div className="mt-8 grid gap-5">
-            <Card>
-              <h2 className="text-lg font-semibold">{copy.summaryTitle}</h2>
-              <p className="mt-2 text-zinc-300">{copy.summaryBody}</p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {copy.positioning.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-white bg-white px-3 py-1 text-xs font-medium text-zinc-950"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-              <div className="mt-5 flex flex-wrap gap-3">
-                <Button href="/resume.pdf" variant="primary" download="Higor_Monteiro_Resume.pdf">{copy.download}</Button>
-                <Button href="/contact" variant="secondary">{copy.contact}</Button>
-              </div>
-            </Card>
-
-            <Card>
-              <h2 className="text-lg font-semibold">{copy.outcomesTitle}</h2>
-              <ul className="mt-3 grid gap-2 text-zinc-300 sm:grid-cols-2">
-                {copy.outcomes.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
-
-            <Card>
-              <h2 className="text-lg font-semibold">{copy.certsTitle}</h2>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {copy.certs.map((cert) => (
-                  <Pill key={cert}>{cert}</Pill>
-                ))}
-              </div>
-            </Card>
-
-            <div className="grid gap-5 sm:grid-cols-3">
-              <div className="sm:col-span-2">
-                <Card>
-                  <h2 className="text-lg font-semibold">{copy.educationTitle}</h2>
-                  <ul className="mt-3 space-y-3">
-                    {copy.education.map((item) => (
-                      <li key={item.degree}>
-                        <p className="text-zinc-200">{item.degree}</p>
-                        <p className="text-sm text-zinc-400">{item.school} · {item.period}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </Card>
-              </div>
-              <Card>
-                <h2 className="text-lg font-semibold">{copy.languagesTitle}</h2>
-                <ul className="mt-3 space-y-2 text-zinc-300">
-                  {copy.languages.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </Card>
-            </div>
-
-            <div>
-              <h2 className="mb-4 text-xl font-semibold">{copy.architectureTitle}</h2>
-              <div className="grid gap-4 lg:grid-cols-3">
-                {copy.architectureGroups.map((group) => (
-                  <Card key={group.title}>
-                    <h3 className="text-lg font-semibold">{group.title}</h3>
-                    <ul className="mt-3 space-y-2 text-sm text-zinc-300">
-                      {group.items.map((item) => (
-                        <li key={item} className="flex gap-2">
-                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h2 className="mb-4 text-xl font-semibold">{copy.recentTitle}</h2>
-              <div className="grid gap-4">
-                {copy.recentRoles.map((role) => (
-                  <RoleCard key={`${role.company}-${role.title}`} role={role} />
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h2 className="mb-4 text-xl font-semibold">{copy.earlierTitle}</h2>
-              <div className="grid gap-4">
-                {copy.earlierRoles.map((role) => (
-                  <RoleCard key={`${role.company}-${role.title}`} role={role} compact />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      </Container>
-    </main>
-  );
+  return <ResumeView lang="en" copy={copy} />;
 }

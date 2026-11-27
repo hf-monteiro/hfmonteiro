@@ -1,6 +1,4 @@
-import Container from "@/components/Container";
-import Card from "@/components/Card";
-import Pill from "@/components/Pill";
+import LabsView, { LabsCopy } from "@/components/views/LabsView";
 import { ogImageUrl } from "@/lib/ogImage";
 
 export const metadata = {
@@ -18,20 +16,20 @@ export const metadata = {
   }
 };
 
-const copy = {
+const copy: LabsCopy = {
   title: "Infrastructure Labs",
   intro:
-    "Curated labs and reference implementations across AWS, Terraform, Kubernetes, CI/CD, Packer, and automation.",
+    "Reference implementations across AWS, Terraform, Kubernetes, and CI/CD.",
   note:
-    "These projects are designed as learning, architecture, and implementation examples rather than drop-in production modules.",
-  back: "Back to home",
+    "Learning and architecture examples, not drop-in production modules.",
+  legacyTitle: "Legacy labs",
   sections: [
     {
       title: "AWS Multi-Account Foundation",
       repo: "aws-tf-multi-acc",
       links: [{ label: "View repo", href: "https://github.com/hf-monteiro/aws-tf-multi-acc" }],
       desc:
-        "Terraform patterns for AWS Organizations, account separation, shared networking, security accounts, cross-account roles, remote state, and reusable subnet/VPC building blocks.",
+        "AWS Organizations foundation: account separation, shared networking, and cross-account roles.",
       tags: ["AWS Organizations", "Terraform", "Cross-account IAM", "VPC", "Security"]
     },
     {
@@ -39,7 +37,7 @@ const copy = {
       repo: "aws-tf-simple-eks",
       links: [{ label: "View repo", href: "https://github.com/hf-monteiro/aws-tf-simple-eks" }],
       desc:
-        "Terraform for a private EKS environment with OIDC/IRSA, Karpenter autoscaling, ArgoCD GitOps, External Secrets, ExternalDNS, ECR, EFS, Aurora MySQL, and VPC endpoints for private AWS service access.",
+        "Private EKS with Karpenter, ArgoCD GitOps, IRSA, External Secrets, and VPC endpoints.",
       tags: ["EKS", "Karpenter", "ArgoCD", "IRSA", "Terraform", "VPC Endpoints"]
     },
     {
@@ -47,7 +45,7 @@ const copy = {
       repo: "infra-modules",
       links: [{ label: "View repo", href: "https://github.com/hf-monteiro/infra-modules" }],
       desc:
-        "Reference Terraform modules and examples for EKS, VPC, RDS, DocumentDB, S3, SQS FIFO, Directory Service, and environment-oriented infrastructure patterns.",
+        "Reusable Terraform modules for EKS, VPC, RDS, DocumentDB, S3, and SQS.",
       tags: ["Terraform Modules", "EKS", "RDS", "S3", "SQS", "Directory Service"]
     },
     {
@@ -55,7 +53,7 @@ const copy = {
       repo: "aws-tf-simple-ecs",
       links: [{ label: "View repo", href: "https://github.com/hf-monteiro/aws-tf-simple-ecs" }],
       desc:
-        "A lab environment showing ECS, RDS, ECR, S3, SQS, VPC routing, security groups, and Secrets Manager integration for application infrastructure.",
+        "ECS application environment with RDS, ECR, SQS, and Secrets Manager.",
       tags: ["ECS", "RDS", "Secrets Manager", "ECR", "VPC"]
     },
     {
@@ -66,7 +64,7 @@ const copy = {
         { label: "Windows repo", href: "https://github.com/hf-monteiro/packer-win-stigs" }
       ],
       desc:
-        "Packer and Ansible examples for building hardened Linux and Windows images, including STIG-oriented configuration and remote automation bootstrap patterns.",
+        "Hardened, STIG-oriented Linux and Windows images built with Packer and Ansible.",
       tags: ["Packer", "Ansible", "STIG", "Windows", "RHEL"]
     },
     {
@@ -74,7 +72,7 @@ const copy = {
       repo: "cicd-examples",
       links: [{ label: "View repo", href: "https://github.com/hf-monteiro/cicd-examples" }],
       desc:
-        "Pipeline examples for single-environment and multi-environment GitLab CI/CD workflows, Terraform automation, and reusable delivery patterns.",
+        "Single- and multi-environment GitLab CI/CD pipelines, including Terraform automation.",
       tags: ["GitLab CI/CD", "Terraform", "Multi-env", "Automation"]
     },
     {
@@ -82,7 +80,7 @@ const copy = {
       repo: "aws-scripts",
       links: [{ label: "View repo", href: "https://github.com/hf-monteiro/aws-scripts" }],
       desc:
-        "Small operational scripts for AWS account automation, ECS deployment checks, Secrets Manager reads, SSL monitoring, IAM inspection, and role creation workflows.",
+        "Operational Python and Bash scripts for AWS accounts, ECS, IAM, and secrets.",
       tags: ["Python", "Bash", "Boto3", "ECS", "IAM", "Secrets Manager"]
     },
     {
@@ -90,78 +88,31 @@ const copy = {
       repo: "aws-tf-ansible-tower",
       links: [{ label: "View repo", href: "https://github.com/hf-monteiro/aws-tf-ansible-tower" }],
       desc:
-        "Terraform and bootstrap examples for deploying an automation platform lab with EC2, IAM, security groups, user data, and operational setup scripts.",
-      tags: ["Legacy lab", "Terraform", "Ansible Tower", "EC2", "IAM", "Automation"]
+        "Terraform and bootstrap scripts for an Ansible Tower lab on EC2.",
+      legacy: true,
+      tags: ["Terraform", "Ansible Tower", "EC2", "IAM", "Automation"]
     },
     {
       title: "Windows Package Repository Lab",
       repo: "aws-tf-chocolatey",
       links: [{ label: "View repo", href: "https://github.com/hf-monteiro/aws-tf-chocolatey" }],
       desc:
-        "Terraform lab for standing up infrastructure around a Chocolatey-style package repository, including EC2, IAM roles, and security group patterns.",
-      tags: ["Legacy lab", "Windows", "Chocolatey", "EC2", "IAM", "Terraform"]
+        "Terraform for a Chocolatey-style Windows package repository on EC2.",
+      legacy: true,
+      tags: ["Windows", "Chocolatey", "EC2", "IAM", "Terraform"]
     },
     {
       title: "EC2, ALB, and RDS Terraform Examples",
       repo: "aws-tf-ec2-simple",
       links: [{ label: "View repo", href: "https://github.com/hf-monteiro/aws-tf-ec2-simple" }],
       desc:
-        "Earlier Terraform examples for EC2, ALB, RDS master/replica patterns, IAM roles, security groups, and basic AWS infrastructure composition.",
-      tags: ["Legacy lab", "EC2", "ALB", "RDS", "IAM", "Terraform"]
+        "Early Terraform examples: EC2, ALB, and RDS primary/replica.",
+      legacy: true,
+      tags: ["EC2", "ALB", "RDS", "IAM", "Terraform"]
     }
   ]
 };
 
 export default function LabsPage() {
-  return (
-    <main>
-      <Container>
-        <section className="py-14">
-          <a className="text-sm text-zinc-400 hover:text-zinc-200" href="/">
-            ← {copy.back}
-          </a>
-          <h1 className="mt-4 text-3xl font-semibold">{copy.title}</h1>
-          <p className="mt-3 max-w-3xl text-zinc-300">{copy.intro}</p>
-          <p className="mt-3 max-w-3xl text-sm text-zinc-500">{copy.note}</p>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {copy.sections.map((lab) => (
-              <Card key={lab.title}>
-                <p className="text-xs uppercase tracking-wider text-zinc-500">{lab.repo}</p>
-                <h2 className="mt-2 text-lg font-semibold">{lab.title}</h2>
-                <p className="mt-3 line-clamp-3 text-sm text-zinc-300">{lab.desc}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {lab.tags.slice(0, 4).map((tag) => (
-                    tag === "Legacy lab" ? (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-white bg-white px-3 py-1 text-xs font-medium text-zinc-950"
-                      >
-                        {tag}
-                      </span>
-                    ) : (
-                      <Pill key={tag}>{tag}</Pill>
-                    )
-                  ))}
-                </div>
-                <div className="mt-5 flex flex-wrap gap-3">
-                  {lab.links.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-sm font-medium text-zinc-300 hover:text-zinc-100"
-                    >
-                      {link.label} →
-                    </a>
-                  ))}
-                </div>
-              </Card>
-            ))}
-          </div>
-        </section>
-      </Container>
-    </main>
-  );
+  return <LabsView copy={copy} />;
 }

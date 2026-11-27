@@ -50,5 +50,5 @@ export default function MermaidChart({ chart }: { chart: string }) {
   }, [chart]);
 
   if (error) return null;
-  return <div ref={ref} className="overflow-x-auto [&_svg]:max-w-full" />;
+  return <div ref={ref} className="overflow-x-auto [&_svg]:mx-auto [&_svg]:min-w-[40rem]" />;
 }

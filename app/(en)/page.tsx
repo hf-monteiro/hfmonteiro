@@ -1,10 +1,4 @@
-import Container from "@/components/Container";
-import Card from "@/components/Card";
-import Pill from "@/components/Pill";
-import Button from "@/components/Button";
-import { getCaseStudies } from "@/lib/caseStudies";
-import { getNotes } from "@/lib/notes";
-import { formatDate } from "@/lib/utils";
+import HomeView, { HomeCopy } from "@/components/views/HomeView";
 import { ogImageUrl } from "@/lib/ogImage";
 
 export const metadata = {
@@ -22,41 +16,25 @@ export const metadata = {
   }
 };
 
-const copy = {
+const copy: HomeCopy = {
   intro: "Hi, I’m Higor",
   title: "Senior DevOps / Platform Engineer",
   summary:
-    "I design enterprise AWS platforms, private networking architectures, production EKS environments, and delivery systems for regulated SaaS and distributed engineering teams.",
+    "I build secure AWS platforms, private networking, and production Kubernetes for regulated SaaS teams.",
   buttons: {
     caseStudies: "View Projects",
     labs: "Infrastructure Labs",
     resume: "Resume"
   },
-  pills: ["AWS Architecture", "PrivateLink", "EKS", "Terraform", "GitLab CI/CD"],
   proof: [
     { value: "16M+", label: "users supported" },
     { value: "Multi-account", label: "AWS platforms" },
     { value: "Private EKS", label: "production operations" },
-    { value: "Weekly → daily", label: "release acceleration" },
+    { value: "10–30x", label: "more frequent deploys" },
     { value: "AWS ANS", label: "advanced networking certified" }
   ],
-  highlights: [
-    {
-      title: "Enterprise AWS Platforms",
-      desc: "Multi-account foundations, cross-account IAM/STS, private DNS, guardrails, and regulated SaaS infrastructure."
-    },
-    {
-      title: "Advanced Cloud Networking",
-      desc: "PrivateLink, VPC Endpoint Services, Transit Gateway, Direct Connect, Route53 PHZ, hybrid connectivity, and private EKS access."
-    },
-    {
-      title: "Production Kubernetes & Reliability",
-      desc: "EKS operations, Istio service mesh, GitLab runners on Kubernetes, observability, incident response, and MTTR reduction."
-    }
-  ],
   about: {
-    work: "I like infrastructure that is boring in production and clear in code. The best platform work gives teams strong defaults without hiding the architecture — a good Terraform module, DNS pattern, or deployment workflow should reduce cognitive load while keeping the important boundaries visible.",
-    personal: "Away from the terminal: fishing, hiking, and camping. The same mindset applies in both places — read the environment, prepare well, respect constraints, and stay calm when conditions change.",
+    text: "I like infrastructure that is boring in production and clear in code. Away from the terminal: fishing, hiking, and camping.",
     link: "More about me →"
   },
   featured: {
@@ -70,112 +48,5 @@ const copy = {
 };
 
 export default function Home() {
-  const cases = getCaseStudies("en");
-  const notes = getNotes("en").slice(0, 2);
-  const t = copy;
-
-  return (
-    <main>
-      <Container>
-        <section className="py-14">
-          <p className="text-sm text-zinc-400">{t.intro}</p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
-            {t.title}
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-zinc-300">
-            {t.summary}
-          </p>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button href="/case-studies" variant="primary">{t.buttons.caseStudies}</Button>
-            <Button href="/labs" variant="secondary">{t.buttons.labs}</Button>
-            <Button href="/resume" variant="secondary">{t.buttons.resume}</Button>
-          </div>
-
-          <div className="mt-8 flex flex-wrap gap-2">
-            {t.pills.map((tag) => (
-              <Pill key={tag}>{tag}</Pill>
-            ))}
-          </div>
-
-          <div className="mt-10 grid gap-3 border-y border-zinc-800 py-5 sm:grid-cols-5">
-            {t.proof.map((item) => (
-              <div key={item.value}>
-                <p className="text-base font-semibold text-white">{item.value}</p>
-                <p className="mt-1 text-xs text-zinc-500">{item.label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="grid gap-4 pb-14 sm:grid-cols-3">
-          {t.highlights.map((b) => (
-            <Card key={b.title}>
-              <h2 className="text-lg font-semibold">{b.title}</h2>
-              <p className="mt-2 text-zinc-400">{b.desc}</p>
-            </Card>
-          ))}
-        </section>
-
-        <section className="pb-14 max-w-2xl">
-          <p className="leading-7 text-zinc-300">{t.about.work}</p>
-          <p className="mt-4 leading-7 text-zinc-400">{t.about.personal}</p>
-          <a className="mt-4 inline-block text-sm text-zinc-400 hover:text-zinc-200" href="/notes/about-me">
-            {t.about.link}
-          </a>
-        </section>
-
-        <section className="pb-14">
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-xl font-semibold">{t.featured.title}</h2>
-            <a className="text-sm text-zinc-400 hover:text-zinc-200" href="/case-studies">
-              {t.featured.link}
-            </a>
-          </div>
-
-          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {cases.map((c) => (
-              <a
-                key={c.slug}
-                href={`/case-studies/${c.slug}`}
-                className="rounded-lg border border-zinc-800 bg-zinc-900/25 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/45"
-              >
-                <p className="text-sm text-zinc-500">{c.subtitle}</p>
-                <h3 className="mt-2 text-lg font-semibold">{c.title}</h3>
-                <p className="mt-3 text-sm text-zinc-400">{c.impact[0]}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {c.tags.slice(0, 3).map((tag) => (
-                    <Pill key={tag}>{tag}</Pill>
-                  ))}
-                </div>
-              </a>
-            ))}
-          </div>
-        </section>
-
-        <section className="pb-14">
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-xl font-semibold">{t.notes.title}</h2>
-            <a className="text-sm text-zinc-400 hover:text-zinc-200" href="/notes">
-              {t.notes.link}
-            </a>
-          </div>
-
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            {notes.map((note) => (
-              <a
-                key={note.slug}
-                href={`/notes/${note.slug}`}
-                className="rounded-lg border border-zinc-800 bg-zinc-900/25 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/45"
-              >
-                <p className="text-xs text-zinc-500">{formatDate(note.date)} · {note.readingTime}</p>
-                <h3 className="mt-2 text-lg font-semibold">{note.title}</h3>
-                <p className="mt-3 text-sm text-zinc-400">{note.excerpt}</p>
-              </a>
-            ))}
-          </div>
-        </section>
-      </Container>
-    </main>
-  );
+  return <HomeView lang="en" copy={copy} />;
 }

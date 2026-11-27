@@ -10,7 +10,6 @@ export type NavCopy = {
 
 export type FooterCopy = {
   name: string;
-  blurb: string;
   builtWith: string;
   source: string;
 };
@@ -31,7 +30,6 @@ const copy: Record<Lang, SiteCopy> = {
     },
     footer: {
       name: "Higor Monteiro",
-      blurb: "Senior DevOps / Platform Engineer — AWS architecture, EKS, Terraform, GitLab CI/CD, and advanced cloud networking.",
       builtWith: "Built with Next.js · checked by GitHub Actions · deployed on Cloudflare Pages",
       source: "Source"
     }
@@ -46,7 +44,6 @@ const copy: Record<Lang, SiteCopy> = {
     },
     footer: {
       name: "Higor Monteiro",
-      blurb: "Senior DevOps / Platform Engineer — arquitetura AWS, EKS, Terraform, GitLab CI/CD e networking cloud avançado.",
       builtWith: "Feito com Next.js · validado com GitHub Actions · publicado no Cloudflare Pages",
       source: "Código-fonte"
     }

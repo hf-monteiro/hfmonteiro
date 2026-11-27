@@ -18,10 +18,8 @@ const NavLink = ({
 }) => (
   <a
     aria-current={active ? "page" : undefined}
-    className={`border-b py-1 text-sm transition ${
-      active
-        ? "border-zinc-100 text-zinc-100"
-        : "border-transparent text-zinc-400 hover:border-zinc-600 hover:text-zinc-100"
+    className={`shrink-0 rounded-md px-2 py-1 text-sm transition ${
+      active ? "bg-zinc-800/70 text-zinc-100" : "text-zinc-400 hover:text-zinc-100"
     }`}
     href={href}
   >
@@ -43,35 +41,30 @@ export default function Header({ lang, nav }: HeaderProps) {
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
+  const links = [
+    { href: `${base}/case-studies`, label: nav.caseStudies },
+    { href: `${base}/labs`, label: nav.labs },
+    { href: `${base}/notes`, label: nav.notes },
+    { href: `${base}/resume`, label: nav.resume },
+    { href: `${base}/contact`, label: nav.contact }
+  ];
+
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/70 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur">
       <Container>
-        <div className="flex min-h-20 flex-col items-start justify-center gap-3 py-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex w-full items-center justify-between sm:w-auto">
-            <a href={homeHref} className="flex items-center gap-2 transition hover:opacity-80">
-              <Image
-                src="/logo.png"
-                alt="hfmonteiro.dev"
-                width={64}
-                height={64}
-                priority
-              />
-              <span className="sr-only">hfmonteiro.dev</span>
-            </a>
-            <div className="sm:hidden">
-              <LangSwitch lang={lang} />
-            </div>
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3 sm:flex-nowrap">
+          <a href={homeHref} className="shrink-0 transition hover:opacity-80">
+            <Image src="/logo.png" alt="hfmonteiro.dev" width={36} height={36} priority />
+          </a>
+
+          <div className="sm:order-last">
+            <LangSwitch lang={lang} />
           </div>
 
-          <nav className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <NavLink href={`${base}/case-studies`} label={nav.caseStudies} active={isActive(`${base}/case-studies`)} />
-            <NavLink href={`${base}/labs`} label={nav.labs} active={isActive(`${base}/labs`)} />
-            <NavLink href={`${base}/notes`} label={nav.notes} active={isActive(`${base}/notes`)} />
-            <NavLink href={`${base}/resume`} label={nav.resume} active={isActive(`${base}/resume`)} />
-            <NavLink href={`${base}/contact`} label={nav.contact} active={isActive(`${base}/contact`)} />
-            <div className="hidden sm:block">
-              <LangSwitch lang={lang} />
-            </div>
+          <nav className="-mx-2 flex w-full items-center sm:mx-0 sm:ml-auto sm:w-auto sm:gap-x-2">
+            {links.map((link) => (
+              <NavLink key={link.href} href={link.href} label={link.label} active={isActive(link.href)} />
+            ))}
           </nav>
         </div>
       </Container>

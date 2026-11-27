@@ -24,3 +24,8 @@ export function langFromAcceptLanguage(header?: string | null): Lang {
   if (lower.includes("pt-br") || lower.includes("pt")) return "pt-br";
   return "en";
 }
+
+// URL prefix for a language's routes: "" for English, "/pt-br" for Portuguese.
+export function langBase(lang: Lang): string {
+  return lang === "pt-br" ? "/pt-br" : "";
+}
