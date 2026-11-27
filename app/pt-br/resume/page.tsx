@@ -14,7 +14,7 @@ const copy = {
   intro: "Resumo sênior de plataforma, arquitetura cloud e confiabilidade de infraestrutura.",
   summaryTitle: "Resumo",
   summaryBody:
-    "Senior DevOps / Platform Engineer com 10+ anos de experiência desenhando e operando infraestrutura cloud-native e arquiteturas de plataforma corporativas em AWS. Especializado em Kubernetes (EKS), Terraform, GitLab CI/CD, AWS networking, PrivateLink, Direct Connect, arquiteturas multi-conta e engenharia de plataforma para ambientes SaaS regulados.",
+    "Senior DevOps e Platform Engineer com 15+ anos em infraestrutura, incluindo cerca de 7 anos em plataformas cloud, com foco em plataformas AWS multi-conta, networking híbrido, Kubernetes (Amazon EKS), Infrastructure as Code e Site Reliability Engineering. Atuação hands-on em arquitetura e produção para clientes SaaS dos EUA, incluindo um projeto para o governo americano, e anteriormente em banco digital regulado (16M+ usuários). Padronizei CI/CD levando times de 1 deploy por semana para 2–6 por dia.",
   download: "Baixar PDF",
   contact: "Contato",
   positioning: [
@@ -29,19 +29,27 @@ const copy = {
     "Desenhei arquiteturas AWS multi-conta para ambientes SaaS corporativos.",
     "Construí padrões de conectividade privada com PrivateLink, Transit Gateway, Direct Connect e Route53 PHZ.",
     "Operei plataformas EKS em produção com GitLab CI/CD, Helm, Istio e ingress privado.",
-    "Padronizei workflows GitLab CI/CD, aumentando releases de semanais para múltiplos deploys por dia.",
-    "Apoiei ambientes AWS de grande escala atendendo 16M+ usuários em sistemas financeiros regulados.",
-    "Melhorei confiabilidade de plataforma com observabilidade, incident response, RCA e runbooks."
+    "Padronizei GitLab CI/CD entre times de engenharia: de 1 deploy/semana para 2–6/dia (10–30x).",
+    "Liderei a entrega de infraestrutura para um cliente do governo americano em ambiente regulado e de alta segurança.",
+    "Operei AWS em produção atendendo 16M+ usuários em banco digital regulado."
   ],
   certsTitle: "Certificações",
   certs: [
-    "AWS Certified Advanced Networking - Specialty",
-    "AWS Certified DevOps Engineer - Professional",
-    "GCP Professional Cloud Architect",
-    "GCP Professional Cloud Developer",
-    "AWS Certified Developer / SysOps / Cloud Practitioner",
-    "Certified SAFe 6 - Practitioner / GitLab Certified Associate"
+    "AWS Certified Advanced Networking – Specialty (2025–2028)",
+    "AWS Certified DevOps Engineer – Professional (2024–2027)",
+    "AWS Certified Developer – Associate (2023–2027)",
+    "AWS Certified Cloud Practitioner (2020–2027)",
+    "GCP Professional Cloud Developer (2025–2027)",
+    "GCP Professional Cloud Architect (2024–2026)",
+    "GitLab Certified Associate (2021)"
   ],
+  educationTitle: "Formação",
+  education: [
+    { degree: "Mestrado em Big Data e Data Intelligence", school: "INSA Barcelona", period: "2019 - 2020" },
+    { degree: "Bacharelado em Infraestrutura e Redes de Computadores", school: "Senac RS", period: "2013 - 2017" }
+  ],
+  languagesTitle: "Idiomas",
+  languages: ["Inglês: Fluente", "Português: Nativo", "Espanhol: Avançado"],
   architectureTitle: "Experiência Selecionada em Arquitetura",
   architectureGroups: [
     {
@@ -60,6 +68,7 @@ const copy = {
         "Ambientes Kubernetes/EKS privados com acesso controlado",
         "Implementações de Istio service mesh e roteamento interno",
         "Platform engineering com GitLab CI/CD e GitLab runners em Kubernetes",
+        "Nginx reverse proxy, terminação TLS e roteamento de tráfego HTTP/S",
         "Arquiteturas de ingress altamente disponíveis com ALB/NLB",
         "Padronização de módulos Terraform em escala"
       ]
@@ -67,9 +76,9 @@ const copy = {
     {
       title: "Confiabilidade e Segurança",
       items: [
-        "AWS WAF, DevSecOps e hardening de segurança",
+        "AWS WAFv2, Checkov e SonarQube como gates de segurança no CI/CD",
         "Networking MSK/Kafka e conectividade privada",
-        "Plataformas centralizadas de observabilidade e monitoramento",
+        "Observabilidade centralizada com Datadog, CloudWatch, New Relic e Dynatrace",
         "Incident response em produção e root cause analysis",
         "Melhorias de confiabilidade para sistemas AWS distribuídos"
       ]
@@ -79,28 +88,42 @@ const copy = {
   earlierTitle: "Liderança Anterior em Infraestrutura",
   recentRoles: [
     {
-      title: "DevOps / Platform Engineering",
+      title: "Senior DevOps Engineer",
       company: "BairesDev",
-      period: "Feb 2022 - Presente",
-      tags: ["AWS", "Terraform", "EKS", "PrivateLink", "Istio", "GitLab CI/CD", "SaaS regulado"],
+      period: "Mar 2023 - Presente",
+      tags: ["AWS", "Direct Connect", "PrivateLink", "Terraform", "EKS", "GitLab CI/CD", "SRE"],
       items: [
-        "Desenhei e implementei arquiteturas de plataforma AWS multi-conta para ambientes SaaS corporativos usando Terraform e boas práticas de Infrastructure as Code.",
-        "Arquiteturei networking seguro cross-account com AWS PrivateLink, Transit Gateway, Direct Connect, Route53 Private Hosted Zones, Interface Endpoints e VPC Endpoint Services.",
-        "Construí e mantive plataformas EKS em produção com GitLab CI/CD, Helm, Istio, ingress privado, observabilidade e pipelines automatizados.",
-        "Desenvolvi módulos Terraform reutilizáveis para networking, EKS, MSK, ingress, WAF, Route53, controles de segurança cloud e fundações de plataforma.",
-        "Otimizei pipelines CI/CD entre times de engenharia, aumentando a frequência de deploy de releases semanais para múltiplos deploys por dia.",
-        "Atuei em incident response, root cause analysis, troubleshooting de plataforma e melhorias de confiabilidade em sistemas AWS distribuídos."
+        "Desenhei networking AWS híbrido sobre Direct Connect (DX Gateway, Transit Gateway) com uma VPC centralizada de endpoints PrivateLink, Route 53 Resolver e encaminhamento DNS condicional para conectividade com parceiros.",
+        "Construí ambientes AWS multi-conta com módulos Terraform reutilizáveis em dezenas de contas, habilitando provisionamento self-service.",
+        "Liderei um time de engenheiros entregando infraestrutura cloud para um cliente do governo americano em ambiente regulado e de alta segurança.",
+        "Padronizei GitLab CI/CD entre times de engenharia: de 1 deploy/semana para 2–6/dia (10–30x).",
+        "Liderei a migração de monolito para microsserviços em Amazon EKS e ECS.",
+        "Reforcei a segurança de serviços públicos com AWS WAFv2 e IAM de menor privilégio.",
+        "Responsável pelo ciclo de vida em produção com práticas de SRE: observabilidade com Datadog/CloudWatch, incident response, RCA e post-mortems.",
+        "Uso Claude Code diariamente para criação e refatoração de módulos Terraform, design de arquitetura AWS, desenvolvimento de pipelines GitLab CI/CD e troubleshooting em produção."
       ]
     },
     {
-      title: "Cloud Reliability e DevOps",
+      title: "DevOps Engineer",
+      company: "BairesDev",
+      period: "Feb 2022 - Mar 2023",
+      tags: ["EKS", "Argo CD", "GitOps", "Terraform", "Ansible", "RDS/Aurora"],
+      items: [
+        "Implementei deploys GitOps no Amazon EKS com Argo CD e módulos Terraform reutilizáveis.",
+        "Liderei um time DevOps para um cliente americano de alta segurança (mai–jul 2022), padronizando provisionamento com Terraform e Ansible em Windows e Linux.",
+        "Construí pipelines GitLab CI e AWS CodePipeline automatizando build, teste e deploy.",
+        "Operei clusters RDS e Aurora (PostgreSQL/MySQL) altamente disponíveis com failover automático Multi-AZ."
+      ]
+    },
+    {
+      title: "SRE Analyst",
       company: "Banco Inter",
       period: "Sep 2021 - Feb 2022",
       tags: ["AWS", "Financial Services", "EKS", "ECS", "MSK", "Confiabilidade", "16M+ usuários"],
       items: [
-        "Apoiei ambientes AWS de grande escala atendendo 16M+ usuários com requisitos de alta disponibilidade, segurança e regulação financeira.",
-        "Gerenciei serviços cloud mission-critical incluindo EKS, ECS, API Gateway, MSK, Lambda, RDS/Aurora, IAM, WAFv2, S3, ALB/NLB e ACM.",
-        "Melhorei observabilidade, incident response, pipelines CI/CD e maturidade operacional para sistemas distribuídos em produção."
+        "Operei AWS em produção para um dos maiores bancos digitais do Brasil (16M+ usuários), cobrindo VPC, EKS, ECS, API Gateway, RDS, Lambda e MSK.",
+        "Construí pipelines GitLab com análise de qualidade de código e segurança integradas para um SDLC regulado.",
+        "Implementei monitoramento, logging e alertas que reduziram o trabalho manual do plantão."
       ]
     },
     {
@@ -109,34 +132,31 @@ const copy = {
       period: "Jun 2020 - Sep 2021",
       tags: ["AWS", "Terraform", "CodePipeline", "CodeDeploy", "Cloud Migration"],
       items: [
-        "Arquiteturei soluções AWS usando Terraform e serviços AWS de CI/CD, incluindo CodePipeline e CodeDeploy.",
-        "Automatizei workflows de deploy com AWS CodePipeline, GitHub e GitLab, reduzindo ciclos de release e melhorando a consistência de entrega.",
-        "Executei projetos de migração cloud em larga escala e otimizei workloads corporativos para confiabilidade, escalabilidade e eficiência operacional."
+        "Arquitetei soluções AWS com Terraform e ferramentas AWS de CI/CD (CodePipeline, CodeDeploy) para clientes corporativos.",
+        "Automatizei deploys com AWS CodePipeline, GitHub e GitLab, substituindo releases manuais.",
+        "Liderei migrações em larga escala de workloads legados para a AWS."
       ]
     }
   ],
   earlierRoles: [
     {
-      title: "Tech Lead",
+      title: "Technical Lead",
       company: "Gtek Soluções Tecnológicas",
       period: "Sep 2017 - Jun 2019",
-      tags: ["Liderança", "Networking", "Virtualização", "Consultoria"],
+      tags: ["Liderança", "Networking", "Virtualização", "Gestão de Incidentes"],
       items: [
-        "Liderei um time técnico responsável por gestão de incidentes, operação de infraestrutura e projetos de virtualização on-premises.",
-        "Arquiteturei e executei projetos de infraestrutura de rede para clientes corporativos.",
-        "Prestei consultoria de TI e conduzi operações de equipe, planejamento de entregas e execução técnica."
+        "Liderei um time técnico, responsável por gestão de incidentes e projetos de virtualização on-premises.",
+        "Arquitetei e entreguei projetos de infraestrutura de rede para clientes corporativos."
       ]
     },
     {
-      title: "Tech Lead",
+      title: "Technical Lead",
       company: "Intranetworks",
       period: "Sep 2014 - Aug 2017",
       tags: ["Liderança", "Data Center", "Networking", "Virtualização"],
       items: [
-        "Direcionei operações de equipe e gestão de incidentes enquanto entregava projetos de virtualização on-premises.",
-        "Arquiteturei e gerenciei projetos de infraestrutura de rede em ambientes de clientes.",
-        "Desenhei e implementei projetos de infraestrutura de data center, incluindo fundações de networking e virtualização.",
-        "Prestei consultoria de TI e suporte a serviços enquanto gerenciava operações de infraestrutura de rede."
+        "Promovido de Analista de TI a Technical Lead em menos de um ano; liderei o time e a gestão de incidentes.",
+        "Desenhei e entreguei projetos de infraestrutura de data center, rede e virtualização."
       ]
     }
   ]
@@ -170,7 +190,7 @@ function RoleCard({
         ))}
       </div>
       <ul className={`mt-4 list-disc space-y-2 pl-5 text-zinc-300 ${compact ? "text-sm" : ""}`}>
-        {role.items.slice(0, compact ? 2 : 3).map((item) => (
+        {role.items.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
@@ -211,7 +231,7 @@ export default function ResumePage() {
             <Card>
               <h2 className="text-lg font-semibold">{copy.outcomesTitle}</h2>
               <ul className="mt-3 grid gap-2 text-zinc-300 sm:grid-cols-2">
-                {copy.outcomes.slice(0, 4).map((item) => (
+                {copy.outcomes.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
                     <span>{item}</span>
@@ -229,6 +249,30 @@ export default function ResumePage() {
               </div>
             </Card>
 
+            <div className="grid gap-5 sm:grid-cols-3">
+              <div className="sm:col-span-2">
+                <Card>
+                  <h2 className="text-lg font-semibold">{copy.educationTitle}</h2>
+                  <ul className="mt-3 space-y-3">
+                    {copy.education.map((item) => (
+                      <li key={item.degree}>
+                        <p className="text-zinc-200">{item.degree}</p>
+                        <p className="text-sm text-zinc-400">{item.school} · {item.period}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </div>
+              <Card>
+                <h2 className="text-lg font-semibold">{copy.languagesTitle}</h2>
+                <ul className="mt-3 space-y-2 text-zinc-300">
+                  {copy.languages.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </Card>
+            </div>
+
             <div>
               <h2 className="mb-4 text-xl font-semibold">{copy.architectureTitle}</h2>
               <div className="grid gap-4 lg:grid-cols-3">
@@ -236,7 +280,7 @@ export default function ResumePage() {
                   <Card key={group.title}>
                     <h3 className="text-lg font-semibold">{group.title}</h3>
                     <ul className="mt-3 space-y-2 text-sm text-zinc-300">
-                      {group.items.slice(0, 3).map((item) => (
+                      {group.items.map((item) => (
                         <li key={item} className="flex gap-2">
                           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
                           <span>{item}</span>

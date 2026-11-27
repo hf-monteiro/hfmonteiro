@@ -24,7 +24,7 @@ const copy = {
   intro: "Senior platform, cloud architecture, and infrastructure reliability overview.",
   summaryTitle: "Summary",
   summaryBody:
-    "Senior DevOps Engineer with 15+ years of experience designing, building, and operating production systems. Specialized in AWS, Kubernetes, Infrastructure as Code, and CI/CD automation, with extensive experience supporting large-scale distributed environments for US-based clients. Proven track record designing multi-account AWS environments, improving deployment reliability, automating infrastructure delivery, and leading production incident response.",
+    "Senior DevOps and Platform Engineer with 15+ years in infrastructure, including about 7 years on cloud platforms, focused on AWS multi-account platforms, hybrid networking, Kubernetes (Amazon EKS), Infrastructure as Code, and Site Reliability Engineering. Hands-on in architecture and production for US-based SaaS clients, including a US government engagement, and earlier in regulated banking (16M+ users). Standardized CI/CD to take teams from 1 deploy per week to 2–6 per day.",
   download: "Download PDF",
   contact: "Contact",
   positioning: [
@@ -39,22 +39,27 @@ const copy = {
     "Designed multi-account AWS platform architectures for enterprise SaaS environments.",
     "Built private connectivity patterns with PrivateLink, Transit Gateway, Direct Connect, and Route53 PHZ.",
     "Operated production EKS platforms with GitLab CI/CD, Helm, Istio, and private ingress patterns.",
-    "Reduced release cycle time by 800%, enabling 2–6 daily deployments across engineering teams.",
-    "Supported large-scale AWS environments serving 16M+ users in regulated financial systems.",
-    "Improved platform reliability through observability, incident response, RCA, and operational runbooks."
+    "Standardized GitLab CI/CD across engineering teams: 1 deploy/week to 2–6/day (10–30x).",
+    "Led infrastructure delivery for a US government client in a regulated, high-security environment.",
+    "Operated production AWS serving 16M+ users in regulated banking."
   ],
   certsTitle: "Certifications",
   certs: [
     "AWS Certified Advanced Networking – Specialty (2025–2028)",
     "AWS Certified DevOps Engineer – Professional (2024–2027)",
     "AWS Certified Developer – Associate (2023–2027)",
-    "AWS Certified SysOps Administrator – Associate (2021–2024)",
     "AWS Certified Cloud Practitioner (2020–2027)",
-    "GCP Professional Cloud Architect (2024–2026)",
     "GCP Professional Cloud Developer (2025–2027)",
-    "Certified SAFe 6 – Practitioner (2024–2025)",
+    "GCP Professional Cloud Architect (2024–2026)",
     "GitLab Certified Associate (2021)"
   ],
+  educationTitle: "Education",
+  education: [
+    { degree: "Master's Degree in Big Data and Data Intelligence", school: "INSA Barcelona", period: "2019 - 2020" },
+    { degree: "Bachelor's Degree in Computer Infrastructure and Networks", school: "Senac RS", period: "2013 - 2017" }
+  ],
+  languagesTitle: "Languages",
+  languages: ["English: Fluent", "Portuguese: Native", "Spanish: Advanced"],
   architectureTitle: "Selected Architecture Experience",
   architectureGroups: [
     {
@@ -93,31 +98,42 @@ const copy = {
   earlierTitle: "Earlier Infrastructure Leadership",
   recentRoles: [
     {
-      title: "DevOps / Platform Engineering",
+      title: "Senior DevOps Engineer",
       company: "BairesDev",
-      period: "Feb 2022 - Present",
-      tags: ["AWS", "Terraform", "EKS", "PrivateLink", "Istio", "GitLab CI/CD", "Regulated SaaS"],
+      period: "Mar 2023 - Present",
+      tags: ["AWS", "Direct Connect", "PrivateLink", "Terraform", "EKS", "GitLab CI/CD", "SRE"],
       items: [
-        "Designed and implemented multi-account AWS platform architectures for enterprise SaaS environments using Terraform and Infrastructure as Code best practices.",
-        "Architected secure cross-account networking with AWS PrivateLink, Transit Gateway, Direct Connect, Route53 Private Hosted Zones, Interface Endpoints, and VPC Endpoint Services.",
-        "Built and maintained production EKS platforms with GitLab CI/CD, Helm, Istio, private ingress, observability, and automated deployment pipelines.",
-        "Led monolith-to-microservices migration, improving scalability and high availability across distributed services.",
-        "Developed reusable Terraform modules for networking, EKS, MSK, ingress architectures, WAF, Route53, cloud security controls, and platform foundations.",
-        "Reduced release cycle time by 800% across engineering teams, enabling 2–6 daily deployments.",
-        "Supported RDS and Aurora (PostgreSQL/MySQL) environments with high availability, automated failover, and performance tuning.",
-        "Performed production incident response, root cause analysis, platform troubleshooting, and reliability improvements across distributed AWS systems."
+        "Designed hybrid AWS networking over Direct Connect (DX Gateway, Transit Gateway) with a centralized PrivateLink endpoint VPC, Route 53 Resolver, and conditional DNS forwarding for partner connectivity.",
+        "Built multi-account AWS environments with reusable Terraform modules across dozens of accounts, enabling self-service provisioning.",
+        "Led a team of engineers delivering cloud infrastructure for a US government client in a regulated, high-security environment.",
+        "Standardized GitLab CI/CD across engineering teams: 1 deploy/week to 2–6/day (10–30x).",
+        "Led the migration from monolith to microservices on Amazon EKS and ECS.",
+        "Hardened public-facing services with AWS WAFv2 and least-privilege IAM.",
+        "Own the production lifecycle with SRE practices: Datadog/CloudWatch observability, incident response, RCA, and post-mortems.",
+        "Use Claude Code daily for Terraform module creation and refactoring, AWS architecture design, GitLab CI/CD pipeline development, and production troubleshooting."
       ]
     },
     {
-      title: "Cloud Reliability and DevOps",
+      title: "DevOps Engineer",
+      company: "BairesDev",
+      period: "Feb 2022 - Mar 2023",
+      tags: ["EKS", "Argo CD", "GitOps", "Terraform", "Ansible", "RDS/Aurora"],
+      items: [
+        "Set up GitOps deployments to Amazon EKS with Argo CD and reusable Terraform modules.",
+        "Led a DevOps team for a high-security US client (May–Jul 2022), standardizing Terraform and Ansible provisioning across Windows and Linux.",
+        "Built GitLab CI and AWS CodePipeline pipelines that automated build, test, and deploy.",
+        "Ran highly available RDS and Aurora (PostgreSQL/MySQL) clusters with Multi-AZ automated failover."
+      ]
+    },
+    {
+      title: "SRE Analyst",
       company: "Banco Inter",
       period: "Sep 2021 - Feb 2022",
       tags: ["AWS", "Financial Services", "EKS", "ECS", "MSK", "Reliability", "16M+ users"],
       items: [
-        "Supported large-scale AWS environments serving 16M+ users with high availability, security, and regulated financial requirements.",
-        "Managed mission-critical cloud services including EKS, ECS, API Gateway, MSK, Lambda, RDS/Aurora, IAM, WAFv2, S3, ALB/NLB, and ACM.",
-        "Created GitLab pipelines with integrated code quality and security scanning (SAST, dependency scanning, secret detection).",
-        "Improved observability, incident response, and operational maturity for distributed production systems."
+        "Operated production AWS for one of Brazil's largest digital banks (16M+ users) across VPC, EKS, ECS, API Gateway, RDS, Lambda, and MSK.",
+        "Built GitLab pipelines with integrated code quality and security scanning for a regulated SDLC.",
+        "Implemented monitoring, logging, and alerting that reduced on-call toil."
       ]
     },
     {
@@ -126,34 +142,31 @@ const copy = {
       period: "Jun 2020 - Sep 2021",
       tags: ["AWS", "Terraform", "CodePipeline", "CodeDeploy", "Cloud Migration"],
       items: [
-        "Architected AWS solutions using Terraform and AWS CI/CD services including CodePipeline and CodeDeploy.",
-        "Automated deployment workflows with AWS CodePipeline, GitHub, and GitLab, reducing release cycles and improving delivery consistency.",
-        "Executed large-scale cloud migration projects and optimized enterprise workloads for reliability, scalability, and operational efficiency."
+        "Architected AWS solutions with Terraform and AWS CI/CD tools (CodePipeline, CodeDeploy) for enterprise clients.",
+        "Automated deployments with AWS CodePipeline, GitHub, and GitLab, replacing manual releases.",
+        "Led large-scale migrations of legacy workloads to AWS."
       ]
     }
   ],
   earlierRoles: [
     {
-      title: "Tech Lead",
-      company: "Gtek Solucoes Tecnologicas",
+      title: "Technical Lead",
+      company: "Gtek Soluções Tecnológicas",
       period: "Sep 2017 - Jun 2019",
-      tags: ["Leadership", "Networking", "Virtualization", "Consulting"],
+      tags: ["Leadership", "Networking", "Virtualization", "Incident Management"],
       items: [
-        "Led a technical team responsible for incident management, infrastructure operations, and on-premises virtualization projects.",
-        "Architected and executed network infrastructure projects for enterprise customers.",
-        "Provided IT consulting services and oversaw team operations, delivery planning, and technical execution."
+        "Led a technical team, owning incident management and on-premises virtualization projects.",
+        "Architected and delivered network infrastructure projects for enterprise clients."
       ]
     },
     {
-      title: "Tech Lead",
+      title: "Technical Lead",
       company: "Intranetworks",
       period: "Sep 2014 - Aug 2017",
       tags: ["Leadership", "Data Center", "Networking", "Virtualization"],
       items: [
-        "Directed team operations and incident management while delivering on-premises virtualization projects.",
-        "Architected and managed network infrastructure projects across customer environments.",
-        "Designed and implemented data center infrastructure projects, including networking and virtualization foundations.",
-        "Provided IT consulting and service support while managing network infrastructure operations."
+        "Promoted from IT Analyst to Technical Lead within a year; led team and incident management.",
+        "Designed and delivered data center, network, and virtualization infrastructure projects."
       ]
     }
   ]
@@ -243,6 +256,30 @@ export default function ResumePage() {
                 ))}
               </div>
             </Card>
+
+            <div className="grid gap-5 sm:grid-cols-3">
+              <div className="sm:col-span-2">
+                <Card>
+                  <h2 className="text-lg font-semibold">{copy.educationTitle}</h2>
+                  <ul className="mt-3 space-y-3">
+                    {copy.education.map((item) => (
+                      <li key={item.degree}>
+                        <p className="text-zinc-200">{item.degree}</p>
+                        <p className="text-sm text-zinc-400">{item.school} · {item.period}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </div>
+              <Card>
+                <h2 className="text-lg font-semibold">{copy.languagesTitle}</h2>
+                <ul className="mt-3 space-y-2 text-zinc-300">
+                  {copy.languages.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </Card>
+            </div>
 
             <div>
               <h2 className="mb-4 text-xl font-semibold">{copy.architectureTitle}</h2>
