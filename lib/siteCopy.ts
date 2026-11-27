@@ -21,14 +21,21 @@ export type StatusCopy = {
   built: string;
 };
 
+export type ThemeCopy = {
+  toLight: string;
+  toDark: string;
+};
+
 type SiteCopy = {
   nav: NavCopy;
+  theme: ThemeCopy;
   footer: FooterCopy;
   status: StatusCopy;
 };
 
 const copy: Record<Lang, SiteCopy> = {
   en: {
+    theme: { toLight: "Switch to light mode", toDark: "Switch to dark mode" },
     status: {
       env: "hfmonteiro / prod",
       operational: "All systems operational",
@@ -49,6 +56,7 @@ const copy: Record<Lang, SiteCopy> = {
     }
   },
   "pt-br": {
+    theme: { toLight: "Mudar para modo claro", toDark: "Mudar para modo escuro" },
     status: {
       env: "hfmonteiro / prod",
       operational: "Todos os sistemas operacionais",

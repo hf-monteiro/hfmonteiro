@@ -88,7 +88,7 @@ export default function ContactRequest({ email, copy: t }: { email: string; copy
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         <button
           type="submit"
-          className="inline-flex items-center justify-center rounded-lg border border-night-100 bg-night-100 px-5 py-2.5 text-sm font-medium text-night-950 transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-night-950"
+          className="inline-flex items-center justify-center rounded-lg border border-night-100 bg-night-100 px-5 py-2.5 text-sm font-medium text-night-950 transition hover:bg-night-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-night-950"
         >
           {t.submit}
         </button>

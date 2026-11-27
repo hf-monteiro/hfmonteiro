@@ -21,7 +21,7 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <Header lang="en" nav={copy.nav} />
+      <Header lang="en" nav={copy.nav} theme={copy.theme} />
       <StatusBar copy={copy.status} />
       <div id="main-content" lang="en" tabIndex={-1}>
         {children}

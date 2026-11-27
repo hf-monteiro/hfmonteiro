@@ -4,8 +4,9 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Container from "./Container";
 import LangSwitch from "./LangSwitch";
+import ThemeToggle from "./ThemeToggle";
 import { Lang } from "@/lib/i18n";
-import { NavCopy } from "@/lib/siteCopy";
+import { NavCopy, ThemeCopy } from "@/lib/siteCopy";
 
 const NavLink = ({
   href,
@@ -30,9 +31,10 @@ const NavLink = ({
 type HeaderProps = {
   lang: Lang;
   nav: NavCopy;
+  theme: ThemeCopy;
 };
 
-export default function Header({ lang, nav }: HeaderProps) {
+export default function Header({ lang, nav, theme }: HeaderProps) {
   const pathname = usePathname() || "/";
   const base = lang === "pt-br" ? "/pt-br" : "";
   const homeHref = base || "/";
@@ -54,10 +56,11 @@ export default function Header({ lang, nav }: HeaderProps) {
       <Container>
         <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3 sm:flex-nowrap">
           <a href={homeHref} className="shrink-0 transition hover:opacity-80">
-            <Image src="/logo.png" alt="hfmonteiro.dev" width={36} height={36} priority />
+            <Image src="/logo.png" alt="hfmonteiro.dev" width={36} height={36} priority className="logo-invert" />
           </a>
 
-          <div className="sm:order-last">
+          <div className="flex items-center gap-2 sm:order-last">
+            <ThemeToggle labels={theme} />
             <LangSwitch lang={lang} />
           </div>
 

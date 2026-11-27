@@ -1,7 +1,10 @@
 import { ImageResponse } from "next/og";
 import { getCaseStudies, getCaseStudy } from "@/lib/caseStudies";
 import { LANGS, Lang } from "@/lib/i18n";
-import { accent, night } from "@/lib/palette";
+import { themes } from "@/lib/palette";
+
+// Preview images are always rendered in the dark theme.
+const { night, accent } = themes.dark;
 
 // Build-time Open Graph images, emitted as static PNGs by app/og/[image]/route.tsx:
 //   /og/site-<lang>.png         site-wide default
@@ -77,7 +80,7 @@ export function renderOgImage(file: string) {
           padding: "72px 80px",
           background: night[950],
           color: night[100],
-          borderTop: `8px solid ${accent.DEFAULT}`
+          borderTop: `8px solid ${accent}`
         }}
       >
         <div style={{ display: "flex", flexDirection: "column" }}>

@@ -2,15 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Colors mirror lib/palette.js (night-950, accent). */
+/* Theme variables (--night-*, --accent, ...) are generated from lib/palette.js in app/layout.tsx. */
 html,
 body {
-  background: #0a0b0d;
+  background: rgb(var(--night-950));
 }
 
 ::selection {
-  background: #6ea8fe;
-  color: #0a0b0d;
+  background: rgb(var(--accent));
+  color: rgb(var(--night-950));
 }
 
 a,
@@ -20,5 +20,10 @@ button {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #6ea8fe;
+  outline: 2px solid rgb(var(--accent));
+}
+
+/* The logo is white artwork; invert it on light backgrounds. */
+[data-theme="light"] .logo-invert {
+  filter: invert(1);
 }

@@ -21,7 +21,7 @@ export default function PtBrLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <>
-      <Header lang="pt-br" nav={copy.nav} />
+      <Header lang="pt-br" nav={copy.nav} theme={copy.theme} />
       <StatusBar copy={copy.status} />
       <div id="main-content" lang="pt-BR" tabIndex={-1}>
         {children}

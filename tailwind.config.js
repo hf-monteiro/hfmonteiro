@@ -1,7 +1,7 @@
-const { night, accent, highlight, success } = require("./lib/palette");
+const { tailwindColors } = require("./lib/palette");
 
 module.exports = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}"],
-  theme: { extend: { colors: { night, accent, highlight, success } } },
+  theme: { extend: { colors: tailwindColors } },
   plugins: []
 };
